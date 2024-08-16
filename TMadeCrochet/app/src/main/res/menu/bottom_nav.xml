@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/symbolItem"
+    android:icon="@drawable/ico_symbol_active"
+    android:title="@string/symbol_tab"
+    />
+    <item android:id="@+id/counterItem"
+        android:icon="@drawable/group_1"
+        android:title="@string/counter_tab"
+        />
+    <item android:id="@+id/tutorialItem"
+        android:icon="@drawable/group_1"
+        android:title="@string/tutorial_tab"
+        />
+    <item android:id="@+id/settingItem"
+        android:icon="@drawable/group_1"
+        android:title="@string/setting_tab"
+        />
+</menu>
