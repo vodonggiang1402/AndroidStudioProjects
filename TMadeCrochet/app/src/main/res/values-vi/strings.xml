@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">TMadeCrochet</string>
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="symbol_tab">Mũi móc</string>
-    <string name="counter_tab">Bộ đếm</string>
-    <string name="tutorial_tab">Hướng dẫn</string>
-    <string name="setting_tab">Cài đặt</string>
-</resources>
