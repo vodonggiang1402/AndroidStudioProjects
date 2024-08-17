@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TMade</string>
     <string name="title_activity_splash">title_activity_splash</string>
+    <string name="tab_symbol_title">Symbol</string>
+    <string name="tab_counter_title">Counter</string>
+    <string name="tab_tutorial_title">Tutorial</string>
+    <string name="tab_setting_title">Setting</string>
 </resources>

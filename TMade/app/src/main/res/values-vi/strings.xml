@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">TMade</string>
     <string name="title_activity_splash">title_activity_splash</string>
+    <string name="tab_symbol_title">Mũi móc</string>
+    <string name="tab_counter_title">Bộ đếm</string>
+    <string name="tab_tutorial_title">Hướng dẫn</string>
+    <string name="tab_setting_title">Cài đặt</string>
 </resources>
