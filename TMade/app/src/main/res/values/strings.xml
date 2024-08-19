@@ -5,4 +5,8 @@
     <string name="tab_counter_title">Counter</string>
     <string name="tab_tutorial_title">Tutorial</string>
     <string name="tab_setting_title">Setting</string>
+    <string name="hello_counter" translatable="false">Hello Counter</string>
+    <string name="hello_setting" translatable="false">Hello Setting</string>
+    <string name="hello_symbol" translatable="false">Hello Symbol</string>
+    <string name="hello_tutorial" translatable="false">Hello Tutorial</string>
 </resources>
