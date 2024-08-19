@@ -30,4 +30,18 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 3000);
     }
+
+//    public loadData() {
+//        try {
+//            InputStream myJsonFile = getAssets().open("my_json_data.json");
+//            int size = myJsonFile.available();
+//            byte[] buffer = new byte[size];
+//            myJsonFile.read(buffer);
+//            myJsonFile.close();
+//            String myJsonData = new String(buffer, "UTF-8");
+//            MyResponseModel jsonResponse = gson.fromJson(myJsonData, MyResponseModel.class);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
