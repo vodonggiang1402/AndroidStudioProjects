@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/bottom_symbol"
     android:title="@string/tab_symbol_title"
-    android:icon="@drawable/ico_symbol_active"/>
+    android:icon="@drawable/ico_symbol"/>
 
     <item android:id="@+id/bottom_counter"
         android:title="@string/tab_counter_title"
-        android:icon="@drawable/ico_count_active"/>
+        android:icon="@drawable/ico_counter"/>
 
     <item android:id="@+id/bottom_tutorial"
         android:title="@string/tab_tutorial_title"
-        android:icon="@drawable/ico_tutorial_active"/>
+        android:icon="@drawable/ico_tutorial"/>
 
     <item android:id="@+id/bottom_setting"
         android:title="@string/tab_setting_title"
-        android:icon="@drawable/ico_setting_active"/>
+        android:icon="@drawable/ico_setting"/>
 
 </menu>
