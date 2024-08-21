@@ -29,6 +29,8 @@ android {
 }
 
 dependencies {
+    implementation libs.recyclerview
+    implementation libs.cardview
     implementation libs.gson
     implementation libs.appcompat
     implementation libs.material

@@ -1,4 +1,4 @@
-package com.tmadecrochet.tmade.fragment;
+package Modules.SettingScreen;
 
 import android.os.Bundle;
 

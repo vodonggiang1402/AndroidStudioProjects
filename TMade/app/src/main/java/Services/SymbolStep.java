@@ -1,4 +1,4 @@
-package model;
+package com.tmadecrochet.tmade.model;
 
 import androidx.annotation.NonNull;
 

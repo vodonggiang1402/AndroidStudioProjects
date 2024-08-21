@@ -1,9 +1,9 @@
-package model;
+package Services;
 import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+import com.tmadecrochet.tmade.model.SymbolStep;
 import java.util.ArrayList;
 
 public class SymbolModel {

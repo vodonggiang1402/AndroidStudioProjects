@@ -9,4 +9,5 @@
     <string name="hello_setting" translatable="false">Hello Setting</string>
     <string name="hello_symbol" translatable="false">Hello Symbol</string>
     <string name="hello_tutorial" translatable="false">Hello Tutorial</string>
+    <string name="chain" >Chain</string>
 </resources>
