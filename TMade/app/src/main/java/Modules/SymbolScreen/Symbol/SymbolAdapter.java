@@ -58,7 +58,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
 //        }
 
 //        holder.imageView.setImageBitmap(bm);
-//        holder.textView.setText(symbolModel.getSymbolName());
+        holder.textView.setText(symbolModel.getSymbolName());
     }
 
     @Override
