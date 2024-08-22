@@ -1,9 +1,13 @@
 package Modules.SymbolScreen.SymbolCategory;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import Modules.SymbolScreen.Symbol.SymbolAdapter;
@@ -43,7 +49,7 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
             return;
         }
         holder.nameSymbolCategory.setText(symbolCategory.getNameCategory());
-
+        holder.imageView.setImageResource(symbolCategory.getIconName());
         GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
         holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
 
@@ -62,14 +68,21 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
 
     public static class SymbolCategoryViewHolder extends RecyclerView.ViewHolder {
 
+        private final ImageView imageView;
         private final TextView nameSymbolCategory;
         private final RecyclerView rcvSymbolCategory;
 
         public SymbolCategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            imageView = itemView.findViewById(R.id.img_symbol_header);
             nameSymbolCategory = itemView.findViewById(R.id.symbol_category_title);
             rcvSymbolCategory = itemView.findViewById(R.id.rcv_symbol_category);
         }
+    }
+
+    private Bitmap getBitmapFromAsset(String strName) throws IOException {
+        AssetManager assetManager = cContext.getAssets();
+        InputStream instr = assetManager.open(strName);
+        return BitmapFactory.decodeStream(instr);
     }
 }

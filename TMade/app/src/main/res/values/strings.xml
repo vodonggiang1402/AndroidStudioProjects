@@ -9,5 +9,9 @@
     <string name="hello_setting" translatable="false">Hello Setting</string>
     <string name="hello_symbol" translatable="false">Hello Symbol</string>
     <string name="hello_tutorial" translatable="false">Hello Tutorial</string>
-    <string name="chain" >Chain</string>
+    <string name="basic_stitches" >Basic stitches</string>
+    <string name="puff_stitches" >Puff stitch - Popcorn stitch</string>
+    <string name="increases_stitches" >Increases stitches</string>
+    <string name="decreases_stitches" >Decreases stitches</string>
+    <string name="blo_flo_stitches" >BLO &amp; FLO stitches</string>
 </resources>

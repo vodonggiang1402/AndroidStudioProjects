@@ -6,5 +6,9 @@
     <string name="tab_counter_title">Bộ đếm</string>
     <string name="tab_tutorial_title">Hướng dẫn</string>
     <string name="tab_setting_title">Cài đặt</string>
-    <string name="chain"> Mũi gút </string>
+    <string name="basic_stitches" >Mũi cơ bản</string>
+    <string name="puff_stitches" >Mũi hạt bắp</string>
+    <string name="increases_stitches" >Mũi tăng</string>
+    <string name="decreases_stitches" >Mũi giảm</string>
+    <string name="blo_flo_stitches" >Mũi BLO và FLO</string>
 </resources>

@@ -15,7 +15,7 @@
             android:id="@+id/img_symbol"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:contentDescription="@string/chain"
+            android:contentDescription="@string/app_name"
             android:scaleType="center"
             android:src="@drawable/ico_chain"/>
         <TextView
@@ -24,11 +24,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="14sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:textColor="@android:color/black"
-            android:text="@string/chain"
             android:gravity="center"
             />
     </LinearLayout>
-
-    
 </androidx.cardview.widget.CardView>

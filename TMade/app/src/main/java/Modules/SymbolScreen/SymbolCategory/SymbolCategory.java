@@ -4,11 +4,17 @@ import Services.SymbolModel;
 
 public class SymbolCategory {
     private String nameCategory;
+    private final int iconName;
     private ArrayList<SymbolModel> symbols;
 
-    public SymbolCategory(String nameCategory, ArrayList<SymbolModel> symbols) {
+    public SymbolCategory(String nameCategory, int iconName, ArrayList<SymbolModel> symbols) {
         this.nameCategory = nameCategory;
+        this.iconName = iconName;
         this.symbols = symbols;
+    }
+
+    public int getIconName() {
+        return iconName;
     }
 
     public String getNameCategory() {
