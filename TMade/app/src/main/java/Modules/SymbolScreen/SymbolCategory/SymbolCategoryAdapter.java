@@ -44,10 +44,10 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
         }
         holder.nameSymbolCategory.setText(symbolCategory.getNameCategory());
 
-        GridLayoutManager gridlayoutManager = new GridLayoutManager(cContext, 3);
+        GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
         holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
 
-        SymbolAdapter symbolAdapter = new SymbolAdapter(cContext);
+        SymbolAdapter symbolAdapter = new SymbolAdapter(this.cContext);
         symbolAdapter.setData(symbolCategory.getSymbols());
         holder.rcvSymbolCategory.setAdapter(symbolAdapter);
     }

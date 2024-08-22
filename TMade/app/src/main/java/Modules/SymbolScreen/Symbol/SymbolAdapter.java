@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +26,7 @@ import Services.SymbolModel;
 
 public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolViewHolder> {
     private final Context sContext;
-    private List<SymbolModel> symbols;
+    private static List<SymbolModel> symbols;
 
     public SymbolAdapter(Context sContext) {
         this.sContext = sContext;
@@ -76,6 +77,16 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             super(itemView);
             imageView = itemView.findViewById(R.id.img_symbol);
             textView = itemView.findViewById(R.id.symbol_title);
+
+        }
+
+        public void setClickMethod(int position){
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "abc", Toast.LENGTH_LONG).show();
+                }
+            });
 
         }
     }

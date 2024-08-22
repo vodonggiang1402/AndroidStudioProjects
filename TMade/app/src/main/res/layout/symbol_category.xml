@@ -12,6 +12,7 @@
         android:textSize="14sp"
         android:textColor="@android:color/black"
         android:text="@string/chain" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_symbol_category"
         android:layout_width="match_parent"

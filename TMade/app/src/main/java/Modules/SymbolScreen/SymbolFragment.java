@@ -56,55 +56,54 @@ public class SymbolFragment extends Fragment {
         ArrayList<SymbolCategory> listSymbolCategory  = new ArrayList<>();
         ArrayList<SymbolModel> listSymbol = new ArrayList<>();
         listSymbol.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-        listSymbol.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-        listSymbol.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-        listSymbol.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-        listSymbol.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-        listSymbol.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol.add(new SymbolModel("2","hai", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol.add(new SymbolModel("3","ba", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol.add(new SymbolModel("4","bon", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+
         listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol));
 
         ArrayList<SymbolModel> listSymbol1 = new ArrayList<>();
         listSymbol1.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-        listSymbol1.add(new SymbolModel("2","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-        listSymbol1.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol1.add(new SymbolModel("2","hai", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol1.add(new SymbolModel("3","ba", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
         listSymbolCategory.add(new SymbolCategory("Mui kep", listSymbol1));
 
-//        ArrayList<SymbolModel> listSymbol2 = new ArrayList<>();
-//        listSymbol2.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol2.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol2.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol2.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol2.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol2.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol2));
-//
-//
-//        ArrayList<SymbolModel> listSymbol3 = new ArrayList<>();
-//        listSymbol3.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol3.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol3.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol3.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol3.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol3.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol3));
-//
-//        ArrayList<SymbolModel> listSymbol4 = new ArrayList<>();
-//        listSymbol4.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol4.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol4.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol4.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol4.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol4.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol4));
-//
-//        ArrayList<SymbolModel> listSymbol5 = new ArrayList<>();
-//        listSymbol5.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol5.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol5.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol5.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbol5.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
-//        listSymbol5.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
-//        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol5));
+        ArrayList<SymbolModel> listSymbol2 = new ArrayList<>();
+        listSymbol2.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol2.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol2.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol2.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol2.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol2.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol2));
+
+
+        ArrayList<SymbolModel> listSymbol3 = new ArrayList<>();
+        listSymbol3.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol3.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol3.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol3.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol3.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol3.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol3));
+
+        ArrayList<SymbolModel> listSymbol4 = new ArrayList<>();
+        listSymbol4.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol4.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol4.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol4.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol4.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol4.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol4));
+
+        ArrayList<SymbolModel> listSymbol5 = new ArrayList<>();
+        listSymbol5.add(new SymbolModel("1","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol5.add(new SymbolModel("2","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol5.add(new SymbolModel("3","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol5.add(new SymbolModel("4","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbol5.add(new SymbolModel("5","mot", "abc", "ico_chain", "", "", true, new ArrayList<>(), ""));
+        listSymbol5.add(new SymbolModel("6","mot", "abc", "ico_slip_stich", "", "", true, new ArrayList<>(), ""));
+        listSymbolCategory.add(new SymbolCategory("Mui don", listSymbol5));
         return  listSymbolCategory;
     }
 
