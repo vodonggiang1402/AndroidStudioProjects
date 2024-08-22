@@ -3,6 +3,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.gson.Gson;
 
+import Services.SymbolResponse;
+
 public class SharedPrefHelper {
     // save data in sharedPrefences
     public static void setSharedOBJECT(Context context, String key,
@@ -18,14 +20,15 @@ public class SharedPrefHelper {
         prefsEditor.apply();
     }
 
-    // get data from sharedPrefences
-//    public static Object getSharedOBJECT(Context context, String key) {
-//
-//        SharedPreferences sharedPreferences = context.getSharedPreferences(
-//                context.getPackageName(), Context.MODE_PRIVATE);
-//
-//        Gson gson = new Gson();
-//        String json = sharedPreferences.getString(key, "");
-//        return gson.fromJson(json, SymbolResponse.class);
-//    }
+    //get data from sharedPrefences
+    public static Object getSharedOBJECT(Context context, String key) {
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                context.getPackageName(), Context.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(key, "");
+        return gson.fromJson(json, SymbolResponse.class);
+    }
 }
+
