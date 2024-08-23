@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,6 @@ import com.tmadecrochet.tmade.R;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import Services.SymbolModel;
@@ -50,15 +48,15 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         if (symbolModel == null) {
             return;
         }
-
-//        Bitmap bm = null;
-//        try {
-//            bm = getBitmapFromAsset(symbolModel.getIconName());
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-
-//        holder.imageView.setImageBitmap(bm);
+        String iconName = symbolModel.getIconName();
+        if (!iconName.isEmpty()) {
+            Context context = holder.imageView.getContext();
+            int id = context.getResources().getIdentifier(iconName, "drawable",
+                    context.getPackageName());
+            holder.imageView.setImageResource(id);
+        } else {
+            holder.imageView.setImageResource(R.drawable.ico_chain);
+        }
         holder.textView.setText(symbolModel.getSymbolName());
     }
 
@@ -91,9 +89,4 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         }
     }
 
-    private Bitmap getBitmapFromAsset(String strName) throws IOException {
-        AssetManager assetManager = sContext.getAssets();
-        InputStream instr = assetManager.open(strName);
-        return BitmapFactory.decodeStream(instr);
-    }
 }

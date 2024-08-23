@@ -49,7 +49,7 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
             return;
         }
         holder.nameSymbolCategory.setText(symbolCategory.getNameCategory());
-        holder.imageView.setImageResource(symbolCategory.getIconName());
+        holder.nameSymbolCategory.setCompoundDrawablesWithIntrinsicBounds(symbolCategory.getIconName(), 0, 0, 0);
         GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
         holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
 
@@ -68,21 +68,13 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
 
     public static class SymbolCategoryViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView imageView;
         private final TextView nameSymbolCategory;
         private final RecyclerView rcvSymbolCategory;
 
         public SymbolCategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.img_symbol_header);
             nameSymbolCategory = itemView.findViewById(R.id.symbol_category_title);
             rcvSymbolCategory = itemView.findViewById(R.id.rcv_symbol_category);
         }
-    }
-
-    private Bitmap getBitmapFromAsset(String strName) throws IOException {
-        AssetManager assetManager = cContext.getAssets();
-        InputStream instr = assetManager.open(strName);
-        return BitmapFactory.decodeStream(instr);
     }
 }
