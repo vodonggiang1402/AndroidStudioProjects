@@ -58,9 +58,8 @@ public class SymbolFragment extends Fragment {
     private ArrayList<SymbolCategory> getListSymbolCategory(Context context) {
         ArrayList<SymbolCategory> listSymbolCategory  = new ArrayList<>();
         SymbolResponse data = (SymbolResponse) SharedPrefHelper.getSharedOBJECT(context,"symbol_response");
-        Log.i("MainActivity","data" + data);
+//        Log.i("MainActivity","data" + data);
 
-        /*
         ArrayList<ArrayList<SymbolModel>> listCategory =  data.list;
         for (int i=0; i<listCategory.size(); i++) {
             String text= "";
@@ -91,11 +90,11 @@ public class SymbolFragment extends Fragment {
             }
             ArrayList<SymbolModel> symbols = listCategory.get(i);
             listSymbolCategory.add(new SymbolCategory(text, iconName, symbols));
-        }*/
+        }
 
-        ArrayList<SymbolModel> symbols = new ArrayList<>();
-        symbols.add(new SymbolModel("", "1", "", "ico_single_crochet", "", "", false, new ArrayList<>(), ""));
-        listSymbolCategory.add(new SymbolCategory("mui don", R.drawable.ico_symbol_header_5, symbols));
+//        ArrayList<SymbolModel> symbols = new ArrayList<>();
+//        symbols.add(new SymbolModel("", "1", "", "ico_single_crochet", "", "", false, new ArrayList<>(), ""));
+//        listSymbolCategory.add(new SymbolCategory("mui don", R.drawable.ico_symbol_header_5, symbols));
 
         return  listSymbolCategory;
     }

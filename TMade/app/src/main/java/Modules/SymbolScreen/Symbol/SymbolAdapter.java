@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +60,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             holder.imageView.setImageResource(R.drawable.ico_chain);
         }
         holder.textView.setText(symbolModel.getSymbolName());
+        holder.linearLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
     }
 
     @Override
@@ -69,10 +72,12 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
     }
 
     public static class SymbolViewHolder extends RecyclerView.ViewHolder {
+        private final LinearLayout linearLayout;
         private final ImageView imageView;
         private final TextView textView;
         public SymbolViewHolder(@NonNull View itemView) {
             super(itemView);
+            linearLayout = itemView.findViewById(R.id.symbol_item_linear_layout);
             imageView = itemView.findViewById(R.id.img_symbol);
             textView = itemView.findViewById(R.id.symbol_title);
 

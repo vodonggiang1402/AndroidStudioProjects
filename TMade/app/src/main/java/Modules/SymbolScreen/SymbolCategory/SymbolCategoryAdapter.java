@@ -1,24 +1,16 @@
 package Modules.SymbolScreen.SymbolCategory;
 
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import Modules.SymbolScreen.Symbol.SymbolAdapter;

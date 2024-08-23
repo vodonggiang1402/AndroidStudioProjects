@@ -5,4 +5,5 @@
     <color name="main_color">#F76A89</color>
     <color name="plash_color">#F6D4D2</color>
     <color name="background_color">#FAFAFA</color>
+    <color name="symbol_item_background_color">#FED1B2</color>
 </resources>
