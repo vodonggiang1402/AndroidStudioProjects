@@ -2,6 +2,7 @@ package Modules.SymbolScreen.Symbol;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -57,9 +58,13 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
                     context.getPackageName());
             holder.imageView.setImageResource(id);
         } else {
-            holder.imageView.setImageResource(R.drawable.ico_chain);
+            holder.imageView.setImageResource(R.drawable.ico_chain_crochet);
         }
-        holder.textView.setText(symbolModel.getSymbolName());
+
+        String symbolName =  getStringByIdName(sContext, symbolModel.getSymbolName());
+        if (!symbolName.isEmpty()) {
+            holder.textView.setText(symbolName);
+        }
         holder.linearLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
     }
 
@@ -94,4 +99,16 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         }
     }
 
+    public static String getStringByIdName(Context context, String idName) {
+        String resuls = "";
+        Resources res = context.getResources();
+        int resId = res.getIdentifier(idName, "string", context.getPackageName());
+        if (resId > 0) {
+            String resString = res.getString(resId);
+            if (!resString.isEmpty()) {
+                resuls = resString;
+            }
+        }
+        return resuls;
+    }
 }

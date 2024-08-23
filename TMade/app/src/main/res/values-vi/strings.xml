@@ -11,4 +11,35 @@
     <string name="increases_stitches" >Mũi tăng</string>
     <string name="decreases_stitches" >Mũi giảm</string>
     <string name="blo_flo_stitches" >Mũi BLO và FLO</string>
+
+    <string name="stitch_slip_knot_crochet_name" >Mũi gút</string>
+    <string name="stitch_slip_stitch_crochet_name" >Mũi trượt</string>
+    <string name="stitch_chain_crochet_name" >Mũi bính</string>
+    <string name="stitch_single_crochet_name" >Mũi đơn</string>
+    <string name="stitch_half_double_crochet_name" >Mũi nửa kép</string>
+    <string name="stitch_double_crochet_name" >Mũi kép đơn</string>
+    <string name="stitch_triple_crochet_name" >Mũi kép đôi</string>
+    <string name="stitch_double_triple_crochet_name" >Mũi kép ba</string>
+
+    <string name="stitch_hdc3tog_into_same_st_crochet_name" >Mũi hạt bắp ( 3 mũi nửa kép)</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_name" >Mũi hạt bắp (3 mũi kép đơn)</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_name" >Mũi hạt bắp (5 mũi kép đơn)</string>
+
+    <string name="stitch_2sc_into_same_st_crochet_name" >2 mũi đơn chung chân</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_name" >1 mũi đơn- 1 bính - 1 mũi đơn chung chân</string>
+    <string name="stitch_3sc_into_same_st_crochet_name" >3 mũi đơn chung chân</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_name" >2 mũi nửa kép chung chân</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_name" >3 mũi nửa kép chung chân</string>
+    <string name="stitch_2dcs_into_same_st_crochet_name" >2 mũi kép chung chân</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_name" >1 kép - bính - 1 kép chung chân</string>
+    <string name="stitch_3dc_into_same_st_crochet_name" >3 mũi kép chung chân</string>
+    <string name="stitch_5dcs_into_same_st_crochet_name" >5 mũi kép chung chân</string>
+
+    <string name="stitch_sc2tog_crochet_name" >2 đơn chụm đầu</string>
+    <string name="stitch_hdc2tog_crochet_name" >2 mũi nửa kép chụm đầu</string>
+    <string name="stitch_dc2tog_crochet_name" >2 mũi kép chụm đầu</string>
+    <string name="stitch_sc3tog_crochet_name" >3 mũi đơn chụm đầu</string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name" >3 mũi đơn chụm đầu</string>
+    <string name="stitch_hdc3tog_crochet_name" >3 mũi nửa kép chụm đầu</string>
+    <string name="stitch_dc3tog_crochet_name" >3 mũi kép chụm đầu</string>
 </resources>
