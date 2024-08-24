@@ -14,6 +14,7 @@
     <string name="increases_stitches" >Increases stitches</string>
     <string name="decreases_stitches" >Decreases stitches</string>
     <string name="blo_flo_stitches" >BLO &amp; FLO stitches</string>
+    <string name="update_text" >Updating…</string>
 
 
     <string name="stitch_slip_knot_crochet_name" >Slip knot</string>

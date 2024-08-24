@@ -11,6 +11,7 @@
     <string name="increases_stitches" >Mũi tăng</string>
     <string name="decreases_stitches" >Mũi giảm</string>
     <string name="blo_flo_stitches" >Mũi BLO và FLO</string>
+    <string name="update_text" >Đang cập nhật…</string>
 
     <string name="stitch_slip_knot_crochet_name" >Mũi gút</string>
     <string name="stitch_slip_stitch_crochet_name" >Mũi trượt</string>

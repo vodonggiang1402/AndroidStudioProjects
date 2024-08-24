@@ -8,12 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import Modules.SymbolScreen.Symbol.SymbolAdapter;
+import Modules.SymbolScreen.UpdateView.UpdateViewAdapter;
+import Services.SymbolModel;
 
 public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAdapter.SymbolCategoryViewHolder> {
     private final Context cContext;
@@ -42,12 +47,20 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
         }
         holder.nameSymbolCategory.setText(symbolCategory.getNameCategory());
         holder.nameSymbolCategory.setCompoundDrawablesWithIntrinsicBounds(symbolCategory.getIconName(), 0, 0, 0);
-        GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
-        holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
 
-        SymbolAdapter symbolAdapter = new SymbolAdapter(this.cContext);
-        symbolAdapter.setData(symbolCategory.getSymbols());
-        holder.rcvSymbolCategory.setAdapter(symbolAdapter);
+        ArrayList<SymbolModel> list = symbolCategory.getSymbols();
+        if (!list.isEmpty()) {
+            GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
+            holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
+            SymbolAdapter symbolAdapter = new SymbolAdapter(this.cContext);
+            symbolAdapter.setData(symbolCategory.getSymbols());
+            holder.rcvSymbolCategory.setAdapter(symbolAdapter);
+        } else  {
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
+            holder.rcvSymbolCategory.setLayoutManager(linearLayoutManager);
+            UpdateViewAdapter updateViewAdapter  = new UpdateViewAdapter(this.cContext);
+            holder.rcvSymbolCategory.setAdapter(updateViewAdapter);
+        }
     }
 
     @Override

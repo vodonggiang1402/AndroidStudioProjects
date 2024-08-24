@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
                     context.getPackageName());
             holder.imageView.setImageResource(id);
         } else {
-            holder.imageView.setImageResource(R.drawable.ico_chain_crochet);
+            holder.imageView.setVisibility(View.INVISIBLE);
         }
 
         String symbolName =  getStringByIdName(sContext, symbolModel.getSymbolName());
