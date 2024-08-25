@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
@@ -67,6 +68,12 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             holder.textView.setText(symbolName);
         }
         holder.linearLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), symbolModel.getSymbolName(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -78,6 +85,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
     }
 
     public static class SymbolViewHolder extends RecyclerView.ViewHolder {
+        private final CardView cardView;
         private final LinearLayout linearLayout;
         private final ImageView imageView;
         private final TextView textView;
@@ -86,7 +94,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             linearLayout = itemView.findViewById(R.id.symbol_item_linear_layout);
             imageView = itemView.findViewById(R.id.img_symbol);
             textView = itemView.findViewById(R.id.symbol_title);
-
+            cardView = itemView.findViewById(R.id.card_view);
         }
 
         public void setClickMethod(int position){
