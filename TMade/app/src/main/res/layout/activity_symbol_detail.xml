@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/symbol_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
+    android:fitsSystemWindows="true"
     tools:context="Modules.SymbolScreen.SymbolDetail.SymbolDetail">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/symbol_detail_toolbar"
@@ -27,4 +28,4 @@
             android:text="@string/symbol_detail_title"
             android:id="@+id/symbol_detail_toolbar_title"/>
     </androidx.appcompat.widget.Toolbar>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
