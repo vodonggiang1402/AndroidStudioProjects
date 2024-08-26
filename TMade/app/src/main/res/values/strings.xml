@@ -5,47 +5,45 @@
     <string name="tab_counter_title">Counter</string>
     <string name="tab_tutorial_title">Tutorial</string>
     <string name="tab_setting_title">Setting</string>
-    <string name="hello_counter" translatable="false">Hello Counter</string>
-    <string name="hello_setting" translatable="false">Hello Setting</string>
-    <string name="hello_symbol" translatable="false">Hello Symbol</string>
-    <string name="hello_tutorial" translatable="false">Hello Tutorial</string>
-    <string name="basic_stitches" >Basic stitches</string>
-    <string name="puff_stitches" >Puff stitch - Popcorn stitch</string>
-    <string name="increases_stitches" >Increases stitches</string>
-    <string name="decreases_stitches" >Decreases stitches</string>
-    <string name="blo_flo_stitches" >BLO &amp; FLO stitches</string>
-    <string name="update_text" >Updating…</string>
+
+    <string name="symbol_detail_title">Symbol detail</string>
+    <string name="basic_stitches">Basic stitches</string>
+    <string name="puff_stitches">Puff stitch - Popcorn stitch</string>
+    <string name="increases_stitches">Increases stitches</string>
+    <string name="decreases_stitches">Decreases stitches</string>
+    <string name="blo_flo_stitches">BLO &amp; FLO stitches</string>
+    <string name="update_text">Updating…</string>
 
 
-    <string name="stitch_slip_knot_crochet_name" >Slip knot</string>
-    <string name="stitch_slip_stitch_crochet_name" >Slip stitch</string>
-    <string name="stitch_chain_crochet_name" >Chain</string>
-    <string name="stitch_single_crochet_name" >Single</string>
-    <string name="stitch_half_double_crochet_name" >Half double</string>
-    <string name="stitch_double_crochet_name" >Double</string>
-    <string name="stitch_triple_crochet_name" >Triple</string>
-    <string name="stitch_double_triple_crochet_name" >Double triple</string>
+    <string name="stitch_slip_knot_crochet_name">Slip knot</string>
+    <string name="stitch_slip_stitch_crochet_name">Slip stitch</string>
+    <string name="stitch_chain_crochet_name">Chain</string>
+    <string name="stitch_single_crochet_name">Single</string>
+    <string name="stitch_half_double_crochet_name">Half double</string>
+    <string name="stitch_double_crochet_name">Double</string>
+    <string name="stitch_triple_crochet_name">Triple</string>
+    <string name="stitch_double_triple_crochet_name">Double triple</string>
 
-    <string name="stitch_hdc3tog_into_same_st_crochet_name" >hdc3tog into same st</string>
-    <string name="stitch_dc3tog_into_same_st_crochet_name" >dc3tog into same st</string>
-    <string name="stitch_dc5tog_into_same_st_crochet_name" >dc5tog into same st</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_name">hdc3tog into same st</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_name">dc3tog into same st</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_name">dc5tog into same st</string>
 
-    <string name="stitch_2sc_into_same_st_crochet_name" >2sc into same st</string>
-    <string name="stitch_1sc_1ch_1sc_crochet_name" >(1sc-1ch-1sc) into same st</string>
-    <string name="stitch_3sc_into_same_st_crochet_name" >3sc into same st</string>
-    <string name="stitch_2hdcs_into_same_st_crochet_name" >2hdcs into same st</string>
-    <string name="stitch_3hdcs_into_same_st_crochet_name" >3hdcs into same st</string>
-    <string name="stitch_2dcs_into_same_st_crochet_name" >2dcs into same st</string>
-    <string name="stitch_1dc_1ch_1dc_crochet_name" >(1dc-1ch-1dc) into same st</string>
-    <string name="stitch_3dc_into_same_st_crochet_name" >3dcs into same st</string>
-    <string name="stitch_5dcs_into_same_st_crochet_name" >5dcs into same st</string>
+    <string name="stitch_2sc_into_same_st_crochet_name">2sc into same st</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_name">(1sc-1ch-1sc) into same st</string>
+    <string name="stitch_3sc_into_same_st_crochet_name">3sc into same st</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_name">2hdcs into same st</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_name">3hdcs into same st</string>
+    <string name="stitch_2dcs_into_same_st_crochet_name">2dcs into same st</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_name">(1dc-1ch-1dc) into same st</string>
+    <string name="stitch_3dc_into_same_st_crochet_name">3dcs into same st</string>
+    <string name="stitch_5dcs_into_same_st_crochet_name">5dcs into same st</string>
 
-    <string name="stitch_sc2tog_crochet_name" >Single crochet 2 stitches together sc2tog</string>
-    <string name="stitch_hdc2tog_crochet_name" >Half-double crochet 2 stitches together hdc2tog</string>
-    <string name="stitch_dc2tog_crochet_name" >Double crochet 2 stitches together dc2tog</string>
-    <string name="stitch_sc3tog_crochet_name" >Single crochet 3 stitches together sc3tog</string>
-    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name" >sc3tog(skipping the center st)</string>
-    <string name="stitch_hdc3tog_crochet_name" >hdc3tog</string>
-    <string name="stitch_dc3tog_crochet_name" >dc3tog</string>
+    <string name="stitch_sc2tog_crochet_name">Single crochet 2 stitches together sc2tog</string>
+    <string name="stitch_hdc2tog_crochet_name">Half-double crochet 2 stitches together hdc2tog</string>
+    <string name="stitch_dc2tog_crochet_name">Double crochet 2 stitches together dc2tog</string>
+    <string name="stitch_sc3tog_crochet_name">Single crochet 3 stitches together sc3tog</string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name">sc3tog(skipping the center st)</string>
+    <string name="stitch_hdc3tog_crochet_name">hdc3tog</string>
+    <string name="stitch_dc3tog_crochet_name">dc3tog</string>
 
 </resources>

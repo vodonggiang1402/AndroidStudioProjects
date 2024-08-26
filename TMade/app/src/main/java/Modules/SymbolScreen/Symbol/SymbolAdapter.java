@@ -1,6 +1,7 @@
 package Modules.SymbolScreen.Symbol;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -25,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
 import Services.SymbolModel;
 
 public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolViewHolder> {
@@ -71,7 +73,9 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), symbolModel.getSymbolName(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(v.getContext(), symbolModel.getSymbolName(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(sContext, SymbolDetail.class);
+                sContext.startActivity(intent);
             }
         });
     }
