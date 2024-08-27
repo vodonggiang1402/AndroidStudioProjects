@@ -16,34 +16,194 @@
 
 
     <string name="stitch_slip_knot_crochet_name">Slip knot</string>
+    <string name="stitch_slip_knot_crochet_description"> </string>
+    <string name="stitch_slip_knot_crochet_content_1">To make a starting loop - fold the yarn to make a loop.</string>
+    <string name="stitch_slip_knot_crochet_content_2">Catch the yarn through the loop.</string>
+    <string name="stitch_slip_knot_crochet_content_3">Pull it through.</string>
+    <string name="stitch_slip_knot_crochet_content_4">Pull the ends to tighten the slipknot. Now put this slipknot on the left hand needle.</string>
+
     <string name="stitch_slip_stitch_crochet_name">Slip stitch</string>
+    <string name="stitch_slip_stich_crochet_description"> </string>
+    <string name="stitch_slip_stich_crochet_content_1">With yarn in back.</string>
+    <string name="stitch_slip_stich_crochet_content_2">Yarn over hook and draw through.</string>
+    <string name="stitch_slip_stich_crochet_content_3">1 slip stitch done. Insert hook into the next st.</string>
+    <string name="stitch_slip_stich_crochet_content_4">Repeat these steps to continue slip stitch.</string>
+
     <string name="stitch_chain_crochet_name">Chain</string>
+    <string name="stitch_chain_crochet_description"> </string>
+    <string name="stitch_chain_crochet_content_1">With hook behind yarn.</string>
+    <string name="stitch_chain_crochet_content_2">Using left thumb and middle finger.</string>
+    <string name="stitch_chain_crochet_content_3">Draw yarn through loop.</string>
+    <string name="stitch_chain_crochet_content_4">3 sts worked. Continue working the required number of sts (by counting sts made below hook).</string>
+
     <string name="stitch_single_crochet_name">Single</string>
+    <string name="stitch_single_crochet_description"> </string>
+    <string name="stitch_single_crochet_content_1">Insert hook into the back loop of chain st.</string>
+    <string name="stitch_single_crochet_content_2">Yarn over hook as shown from back to front and draw through loop.</string>
+    <string name="stitch_single_crochet_content_3">Yarn over hook again and draw through both loops on hook.</string>
+    <string name="stitch_single_crochet_content_4">1sc (single crochet) done.</string>
+
     <string name="stitch_half_double_crochet_name">Half double</string>
+    <string name="stitch_half_double_crochet_description"> </string>
+    <string name="stitch_half_double_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st.</string>
+    <string name="stitch_half_double_crochet_content_2">Yarn over hook and draw through loop as shown.</string>
+    <string name="stitch_half_double_crochet_content_3">Yarn over hook again and draw through all three loops on hook.</string>
+    <string name="stitch_half_double_crochet_content_4">1hdc (half - double crochet) done.</string>
+
     <string name="stitch_double_crochet_name">Double</string>
+    <string name="stitch_double_crochet_description"> </string>
+    <string name="stitch_double_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st.</string>
+    <string name="stitch_double_crochet_content_2">Yarn over hook and draw through loop as shown.</string>
+    <string name="stitch_double_crochet_content_3">Yarn over hook again and draw through two loops on hook.</string>
+    <string name="stitch_double_crochet_content_4">Yarn over hook once more and draw through remaining two loops on hook.</string>
+    <string name="stitch_double_crochet_content_5">1dc (double crochet) done.</string>
+
     <string name="stitch_triple_crochet_name">Triple</string>
+    <string name="stitch_triple_crochet_description"> </string>
+    <string name="stitch_triple_crochet_content_1">Yarn over hook twice and insert hook into the back loop of chain st.</string>
+    <string name="stitch_triple_crochet_content_2">Yarn over hook and draw through loop.</string>
+    <string name="stitch_triple_crochet_content_3">Yarn over hook and draw through first twoo loops on hook.</string>
+    <string name="stitch_triple_crochet_content_4">Yarn over hook and draw through first two loops on hook two more times.</string>
+    <string name="stitch_triple_crochet_content_5">1tr (triple crochet) done.</string>
+
     <string name="stitch_double_triple_crochet_name">Double triple</string>
+    <string name="stitch_double_triple_crochet_description"> </string>
+    <string name="stitch_double_triple_crochet_content_1">Wrap yarn around hook three times and insert hook into the back loop of chain st.</string>
+    <string name="stitch_double_triple_crochet_content_2">Yarn over hook and draw through loop.</string>
+    <string name="stitch_double_triple_crochet_content_3">Yarn over hook again and draw through first two loops on hook.</string>
+    <string name="stitch_double_triple_crochet_content_4">Repeat the previous step three more times.</string>
+    <string name="stitch_double_triple_crochet_content_5">1dtr (double-triple crochet) done.</string>
 
     <string name="stitch_hdc3tog_into_same_st_crochet_name">hdc3tog into same st</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_description"> </string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_2">Work an incomplete hdc. Work 2 more incomplete hdcs into the same st.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_3">Yarn over hook and draw through 7 loops on hook all at once.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_4">This completes as hdc3tog into same stitch.</string>
+
     <string name="stitch_dc3tog_into_same_st_crochet_name">dc3tog into same st</string>
-    <string name="stitch_dc5tog_into_same_st_crochet_name">dc5tog into same st</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_description"> </string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_2">Work an incomplete hdc. Work 2 more incomplete hdcs into the same st.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_3">Yarn over hook and draw through 4 loops on hook all at once.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_4">This completes as dc3tog into same stitch.</string>
+
+    <string name="stitch_dc5tog_into_same_st_crochet_name" >dc5tog into same st</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_description"> </string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_2">Work an incomplete hdc. Work 4 more incomplete hdcs into the same st.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_3">Yarn over hook and draw through 6 loops on hook all at once.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_4">This completes as dc5tog into same stitch.</string>
 
     <string name="stitch_2sc_into_same_st_crochet_name">2sc into same st</string>
+    <string name="stitch_2sc_into_same_st_crochet_description"> </string>
+    <string name="stitch_2sc_into_same_st_crochet_content_1">Work 1 sc into the top loops of st from the pre row.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_2">Yarn over hook and draw through.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_3">Work 1 more sc into the same st.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_4">2sc worked into same st. 1 st increased.</string>
+
     <string name="stitch_1sc_1ch_1sc_crochet_name">(1sc-1ch-1sc) into same st</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_description"> </string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_1">Work 1sc into the top loops of st from the pre row and yarn over hook.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_2">Make 1 chain and then insert hook into the same st.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_3">Draw through and work a sc.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_4">2scs with 1ch worked into same st. 2sts increased.</string>
+
     <string name="stitch_3sc_into_same_st_crochet_name">3sc into same st</string>
+    <string name="stitch_3sc_into_same_st_crochet_description"> </string>
+    <string name="stitch_3sc_into_same_st_crochet_content_1">Work 1sc into the top loops of st from the pre row.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_2">Work one more sc into the same st.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_3">Work 1 more sc into the same st.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_4">3sc worked into same st. 2 sts increased.</string>
+
     <string name="stitch_2hdcs_into_same_st_crochet_name">2hdcs into same st</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain st and draw through.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_2">Work 1 hdc. Yarn over hook.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_3">Work 1 more hdc into the same st.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_4">2 hdcs worked into same st. 1 st increased.</string>
+
     <string name="stitch_3hdcs_into_same_st_crochet_name">3hdcs into same st</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_1">Work 1 hdc into the back loops of chain. Yarn over and insert hook into same st.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_2">Work another hdc.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_3">Work 1 more hdc into the same st.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_4">3 hdcs worked into same st. 2 sts increased.</string>
+
     <string name="stitch_2dcs_into_same_st_crochet_name">2dcs into same st</string>
+    <string name="stitch_2dcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain and draw through.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_2">Work 1 dc. Yarn over hook.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_3">Work 1 more dc into the same st.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_4">2 dcs worked into same st. 1 st increased.</string>
+
     <string name="stitch_1dc_1ch_1dc_crochet_name">(1dc-1ch-1dc) into same st</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_description"> </string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_1">Yarn over hook and insert hook into the back loop of chain.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_2">Work 1 dc. Chain 1.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_3">Work 1 more dc into the same st.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_4">2 dcs worked into same st.</string>
+
     <string name="stitch_3dc_into_same_st_crochet_name">3dcs into same st</string>
+    <string name="stitch_3dc_into_same_st_crochet_description"> </string>
+    <string name="stitch_3dc_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain. Yarn over and draw through.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_2">Work 1 dc.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_3">Work 2 more dcs into the same st.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_4">3 dcs worked into same st.</string>
+
     <string name="stitch_5dcs_into_same_st_crochet_name">5dcs into same st</string>
+    <string name="stitch_5dcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_1">Yarn over hook and insert hook into the back loop of chain.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_2">Work 1 dc.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_3">Work 4 more dcs into the same st.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_4">5 dcs worked into same st.</string>
 
     <string name="stitch_sc2tog_crochet_name">Single crochet 2 stitches together sc2tog</string>
+    <string name="stitch_sc2tog_crochet_description"> </string>
+    <string name="stitch_sc2tog_crochet_content_1">Insert hook into the both loops of the prev row as shown and yarn over hook.</string>
+    <string name="stitch_sc2tog_crochet_content_2">Draw through. Repeat by inserting hook into next st and yarn over hook and draw through.</string>
+    <string name="stitch_sc2tog_crochet_content_3">This makes two incomplete scs. Yarn over and draw through 3 loops on hook all at once.</string>
+    <string name="stitch_sc2tog_crochet_content_4">This completes a sc2tog.</string>
+
     <string name="stitch_hdc2tog_crochet_name">Half-double crochet 2 stitches together hdc2tog</string>
+    <string name="stitch_hdc2tog_crochet_description"> </string>
+    <string name="stitch_hdc2tog_crochet_content_1">Yarn over and insert hook into the back loop of chain st.</string>
+    <string name="stitch_hdc2tog_crochet_content_2">Draw through. Yarn over hook and insert hook into the back loop of the next st and draw through.</string>
+    <string name="stitch_hdc2tog_crochet_content_3">This makes two incomplete hdcs. Yarn over and draw through 5 loops on hook all at once.</string>
+    <string name="stitch_hdc2tog_crochet_content_4">This completes a hdc2tog.</string>
+
     <string name="stitch_dc2tog_crochet_name">Double crochet 2 stitches together dc2tog</string>
+    <string name="stitch_dc2tog_crochet_description"> </string>
+    <string name="stitch_dc2tog_crochet_content_1">Insert hook into the back loop of chain st and work 1 incomplete dc. Yarn over hook and insert hook into back loop of the next st and draw through.</string>
+    <string name="stitch_dc2tog_crochet_content_2">Yarn over hook again and draw through first 2 loops on hook.</string>
+    <string name="stitch_dc2tog_crochet_content_3">This makes two incomplete double crochet sts. Yarn over and draw through all 3 loops on hook at once.</string>
+    <string name="stitch_dc2tog_crochet_content_4">This completes a dc2tog.</string>
+
     <string name="stitch_sc3tog_crochet_name">Single crochet 3 stitches together sc3tog</string>
+    <string name="stitch_sc3tog_crochet_description"> </string>
+    <string name="stitch_sc3tog_crochet_content_1">Insert hook into the both loops of the prev row as shown.</string>
+    <string name="stitch_sc3tog_crochet_content_2">Repeat the previous step for the next two sts.</string>
+    <string name="stitch_sc3tog_crochet_content_3">This makes three incomplete scs. Yarn over and draw through all 4 loops on hook at once.</string>
+    <string name="stitch_sc3tog_crochet_content_4">This completes a sc3tog.</string>
+
     <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name">sc3tog(skipping the center st)</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_description"> </string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_1">Insert hook into the both loops of the first of three sts.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_2">This makes two incomplete scs. Yarn over and draw through all 3 loops on hook at once.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_3">This completes a sc3tog.</string>
+
     <string name="stitch_hdc3tog_crochet_name">hdc3tog</string>
+    <string name="stitch_hdc3tog_crochet_description"> </string>
+    <string name="stitch_hdc3tog_crochet_content_1">Yarn over and insert hook into the back loop of chain st.</string>
+    <string name="stitch_hdc3tog_crochet_content_2">Work an incomplete hdc. Work 2 more incomplete hdc in each of the next two sts.</string>
+    <string name="stitch_hdc3tog_crochet_content_3">Yarn over hook and draw through all 7 loops on hook at once.</string>
+    <string name="stitch_hdc3tog_crochet_content_4">This completes a hdc3tog</string>
+
     <string name="stitch_dc3tog_crochet_name">dc3tog</string>
+    <string name="stitch_dc3tog_crochet_description"> </string>
+    <string name="stitch_dc3tog_crochet_content_1">Yarn over and insert hook into the back loop of chain st and work an incomplete dc.</string>
+    <string name="stitch_dc3tog_crochet_content_2">Work 2 more incomplete dc in each of the next 2 sts.</string>
+    <string name="stitch_dc3tog_crochet_content_3">Yarn over hook and draw through all 4 loops on hook at once.</string>
+    <string name="stitch_dc3tog_crochet_content_4">This completes a dc3tog</string>
 
 </resources>

@@ -15,33 +15,195 @@
     <string name="update_text" >Đang cập nhật…</string>
 
     <string name="stitch_slip_knot_crochet_name" >Mũi gút</string>
+    <string name="stitch_slip_knot_crochet_description">"Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên."</string>
+    <string name="stitch_slip_knot_crochet_content_1">Đặt kim móc sau sợi len.</string>
+    <string name="stitch_slip_knot_crochet_content_2">Vòng kim ra phía trước sợi len và ngoặc kim lên để tạo thành 1 vòng tròn.</string>
+    <string name="stitch_slip_knot_crochet_content_3">Dùng kim lấy len và kéo qua vòng tròn vừa tạo.</string>
+    <string name="stitch_slip_knot_crochet_content_4">Kéo sợi len thừa để thắt chặt mũi gút.</string>
+
     <string name="stitch_slip_stitch_crochet_name" >Mũi trượt</string>
+    <string name="stitch_slip_stich_crochet_description">Được viết tắt là SL hoặc ST, mũi này sẽ giúp bạn dời kim đến mũi mong muốn nào đó bất kỳ trên hàng móc. Mũi này thường được sử dụng để kết thúc một vòng tròn, hay giảm độ cao của hàng.</string>
+    <string name="stitch_slip_stich_crochet_content_1">Sợi nằm phía sau kim móc.</string>
+    <string name="stitch_slip_stich_crochet_content_2">Dùng kim lấy len và kéo len qua chân móc.</string>
+    <string name="stitch_slip_stich_crochet_content_3">Hoàn thành 1 mũi trượt. Luồn kim qua chân mũi tiếp theo.</string>
+    <string name="stitch_slip_stich_crochet_content_4">Lặp lại các bước trên để tiếp tục các mũi trượt.</string>
+
     <string name="stitch_chain_crochet_name" >Mũi bính</string>
+    <string name="stitch_chain_crochet_description">Mũi bính được tính là mũi móc len cơ bản đầu tiên đối với bất kỳ các loại sản phẩm nào, được viết tắt là ch. Ký hiệu của mũi bính là hình oval nằm ngang. Và để bắt đầu một mũi bính bạn cần phải tạo mũi gút trước.</string>
+    <string name="stitch_chain_crochet_content_1">Dùng kim móc lấy len.</string>
+    <string name="stitch_chain_crochet_content_2">Kéo len qua vòng tròn mũi gút.</string>
+    <string name="stitch_chain_crochet_content_3">Hoàn thành được 1 mũi bính.</string>
+    <string name="stitch_chain_crochet_content_4">Tiếp tục lặp lại các bước trên để có được dây bính với số mũi bính cần thiết.</string>
+
     <string name="stitch_single_crochet_name" >Mũi đơn</string>
+    <string name="stitch_single_crochet_description">Mũi móc đơn có độ cao bằng một mũi bính. Để có thể bắt đầu mũi đơn bạn cần chuẩn bị một hàng với ít nhất 2 mũi bính. Mũi móc đơn đầu tiên được móc vào mũi bính thứ 2 của dây bính.</string>
+    <string name="stitch_single_crochet_content_1">Luồn kim qua chân mũi bính thứ 2 của dây bính.</string>
+    <string name="stitch_single_crochet_content_2">Dùng kim lấy len và kéo len qua chân bính.</string>
+    <string name="stitch_single_crochet_content_3">Tiếp tục lấy len và kéo len qua cả 2 vòng trên kim.</string>
+    <string name="stitch_single_crochet_content_4">Hoàn thành được một mũi đơn.</string>
+
     <string name="stitch_half_double_crochet_name" >Mũi nửa kép</string>
+    <string name="stitch_half_double_crochet_description">Mũi nữa kép có độ cao bằng 2 lần mũi bính. Mũi kép đơn đầu tiên sẽ được móc vào chân bính thứ 4 của dây bính.</string>
+    <string name="stitch_half_double_crochet_content_1">Dùng kim móc lấy len, và luồn kim qua chân bính thứ 4 của dây bính.</string>
+    <string name="stitch_half_double_crochet_content_2">Lấy len và kéo qua chân bính lúc này trên kim sẽ có 3 vòng sợi.</string>
+    <string name="stitch_half_double_crochet_content_3">Tiếp tục lấy len và kéo len qua cả 3 vòng trên kim.</string>
+    <string name="stitch_half_double_crochet_content_4">Hoàn thành 1 mũi nửa kép. Lặp lại 3 bước trên để được những mũi nửa kép tiếp theo.</string>
+
     <string name="stitch_double_crochet_name" >Mũi kép đơn</string>
+    <string name="stitch_double_crochet_description">Mũi kép đơn có độ cao bằng 3 lần mũi bính.</string>
+    <string name="stitch_double_crochet_content_1">Dùng kim móc lấy len và luồn kim qua chân bính thứ 5 của dây bính.</string>
+    <string name="stitch_double_crochet_content_2">Dùng kim lấy len và kéo len qua chân bính.</string>
+    <string name="stitch_double_crochet_content_3">Tiếp tục lấy len và kéo len qua 2 vòng đầu tiên trên kim.</string>
+    <string name="stitch_double_crochet_content_4">Lấy len và kéo len qua 2 vòng còn lại trên kim.</string>
+    <string name="stitch_double_crochet_content_5">Hoàn thành 1 mũi móc kép đơn.</string>
+
     <string name="stitch_triple_crochet_name" >Mũi kép đôi</string>
+    <string name="stitch_triple_crochet_description">Mũi kép đôi có độ cao bằng 4 lần mũi bính.</string>
+    <string name="stitch_triple_crochet_content_1">Dùng kim móc quấn 2 vòng len và luồn kim qua chân bính thứ 6 của dây bính.</string>
+    <string name="stitch_triple_crochet_content_2">Dùng kim lấy len và kéo len qua chân bính.</string>
+    <string name="stitch_triple_crochet_content_3">Lặp lại lấy len và kéo len qua 2 vòng len trên kim 2 lần nữa.</string>
+    <string name="stitch_triple_crochet_content_4">Lặp lại lấy len và kéo len qua 2 vòng len trên kim 2 lần nữa.</string>
+    <string name="stitch_triple_crochet_content_5">Hoàn thành 1 mũi móc kép đôi.</string>
+
     <string name="stitch_double_triple_crochet_name" >Mũi kép ba</string>
+    <string name="stitch_double_triple_crochet_description">Mũi kép ba có độ cao bằng 5 lần mũi bính.</string>
+    <string name="stitch_double_triple_crochet_content_1">Dùng kim móc quấn 3 vòng len và luồn kim qua chân bính thứ 7 của dây bính.</string>
+    <string name="stitch_double_triple_crochet_content_2">Dùng kim lấy len và kéo len qua chân bính.</string>
+    <string name="stitch_double_triple_crochet_content_3">Tiếp tục lấy len và kéo len qua 2 vòng đầu tiên trên kim.</string>
+    <string name="stitch_double_triple_crochet_content_4">Lặp lại lấy len và kéo len qua 2 vòng len trên kim 3 lần nữa.</string>
+    <string name="stitch_double_triple_crochet_content_5">Hoàn thành 1 mũi móc kép ba.</string>
 
     <string name="stitch_hdc3tog_into_same_st_crochet_name" >Mũi hạt bắp ( 3 mũi nửa kép)</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_description">Mũi hạt bắp (3 mũi nửa kép) được hình thành từ 3 mũi nửa kép chưa hoàn chỉnh cùng móc vào 1 chân móc.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_1">Dùng kim móc lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_2">Kéo len qua chân bính được 1 mũi nửa kép chưa hoàn chỉnh, lặp lại thêm 2 lần mũi nửa kép chưa hoàn chỉnh vào chung 1 chân móc.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_3">Dùng kim lấy len và kéo len qua cả 7 vòng trên kim để chụm thành 1 mũi.</string>
+    <string name="stitch_hdc3tog_into_same_st_crochet_content_4">Hoàn thành 1 mũi hạt bắp từ 3 mũi nữa kép.</string>
+
     <string name="stitch_dc3tog_into_same_st_crochet_name" >Mũi hạt bắp (3 mũi kép đơn)</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_description">Mũi hạt bắp (3 mũi kép đơn) hình thành từ 3 mũi kép chưa hoàn chỉnh cùng móc vào 1 chân móc.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_1">Dùng kim móc lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_2">Kéo len qua chân bính và móc 1 mũi kép chưa hoàn chỉnh, lặp lại thêm 2 lần mũi  kép chưa hoàn chỉnh vào chung 1 chân móc.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_3">Dùng kim lấy len và kéo len qua cả 4 vòng trên kim để chụm thành 1 mũi.</string>
+    <string name="stitch_dc3tog_into_same_st_crochet_content_4">Hoàn thành 1 mũi hạt bắp từ 3 mũi kép đơn.</string>
+
     <string name="stitch_dc5tog_into_same_st_crochet_name" >Mũi hạt bắp (5 mũi kép đơn)</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_description">Mũi hạt bắp (5 mũi kép đơn) được hình thành từ 5 mũi kép chưa đầy đủ cùng móc vào 1 chân.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_1">Dùng kim móc lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_2">Kéo len qua chân bính và móc 1 mũi kép chưa hoàn chỉnh, lặp lại thêm 4 lần mũi  kép chưa hoàn chỉnh vào chung 1 chân móc.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_3">Dùng kim lấy len và kéo len qua cả 6 vòng trên kim để chụm thành 1 mũi.</string>
+    <string name="stitch_dc5tog_into_same_st_crochet_content_4">Hoàn thành 1 mũi hạt bắp từ 5 mũi kép đơn.</string>
 
     <string name="stitch_2sc_into_same_st_crochet_name" >2 mũi đơn chung chân</string>
+    <string name="stitch_2sc_into_same_st_crochet_description"> </string>
+    <string name="stitch_2sc_into_same_st_crochet_content_1">Móc 1 mũi đơn vào chân mũi móc của hàng trước đó.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_2">Luồn kim qua chân mũi móc và lấy len.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_3">Móc thêm 1 mũi móc đơn vào cùng chân móc.</string>
+    <string name="stitch_2sc_into_same_st_crochet_content_4">2 mũi móc đơn cùng 1 chân móc. Đã tăng thêm 1 mũi móc.</string>
+
     <string name="stitch_1sc_1ch_1sc_crochet_name" >1 mũi đơn- 1 bính - 1 mũi đơn chung chân</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_description"> </string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_1">Móc 1 mũi đơn vào chân mũi móc của hàng trước đó và dùng kim lấy len.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_2">Móc 1 mũi bính và sau đó luồn kim vào cùng chân mũi vừa rồi.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_3">Lấy len và móc 1 mũi móc đơn.</string>
+    <string name="stitch_1sc_1ch_1sc_crochet_content_4">2 mũi móc đơn và 1 mũi bính cùng 1 chân móc. Đã tăng thêm 2 mũi móc.</string>
+
     <string name="stitch_3sc_into_same_st_crochet_name" >3 mũi đơn chung chân</string>
+    <string name="stitch_3sc_into_same_st_crochet_description"> </string>
+    <string name="stitch_3sc_into_same_st_crochet_content_1">Móc 1 mũi đơn vào chân mũi móc của hàng trước đó.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_2">Móc thêm 1 mũi móc đơn vào cùng chân móc.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_3">Tiếp tục móc thêm 1 mũi móc đơn vào cùng 2 chân móc vừa rồi.</string>
+    <string name="stitch_3sc_into_same_st_crochet_content_4">3 mũi móc đơn cùng 1 chân móc. Đã tăng thêm 2 mũi móc.</string>
+
+
     <string name="stitch_2hdcs_into_same_st_crochet_name" >2 mũi nửa kép chung chân</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính và kéo len qua chân bính.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_2">Móc 1 mũi nửa kép. Dùng kim lấy len.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_3">Móc thêm 1 mũi nửa kép vào cùng chân bính.</string>
+    <string name="stitch_2hdcs_into_same_st_crochet_content_4">2 mũi nửa kép cùng chân móc. Đã tăng thêm 1 mũi móc.</string>
+
     <string name="stitch_3hdcs_into_same_st_crochet_name" >3 mũi nửa kép chung chân</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_1">Móc 1 mũi nửa kép vào mặt sau của chân bính. Lấy len và luồn kim qua cùng chân bính vừa móc.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_2">Móc thêm 1 mũi nửa kép.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_3">Móc thêm 1 mũi nửa kép vào cùng chân bính vừa rồi.</string>
+    <string name="stitch_3hdcs_into_same_st_crochet_content_4">3 mũi nửa kép cùng chân móc. Đã tăng thêm 2 mũi móc.</string>
+
     <string name="stitch_2dcs_into_same_st_crochet_name" >2 mũi kép chung chân</string>
+    <string name="stitch_2dcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính và kéo len qua chân bính.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_2">Móc 1 mũi kép. Dùng kim lấy len.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_3">Móc thêm 1 mũi kép vào cùng chân bính.</string>
+    <string name="stitch_2dcs_into_same_st_crochet_content_4">2 mũi kép cùng chân móc. Đã tăng thêm 1 mũi móc.</string>
+
     <string name="stitch_1dc_1ch_1dc_crochet_name" >1 kép - bính - 1 kép chung chân</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_description"> </string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính và kéo len qua chân bính.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_2">Móc 1 mũi kép sau đó móc 1 mũi bính.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_3">Móc thêm 1 mũi kép vào cùng 1 chân móc.</string>
+    <string name="stitch_1dc_1ch_1dc_crochet_content_4">2 mũi nửa kép và 1 mũi bính cùng chân móc.</string>
+
     <string name="stitch_3dc_into_same_st_crochet_name" >3 mũi kép chung chân</string>
+    <string name="stitch_3dc_into_same_st_crochet_description"> </string>
+    <string name="stitch_3dc_into_same_st_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính và kéo len qua chân bính.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_2">Móc 1 mũi kép đơn.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_3">Móc thêm 2 mũi kép đơn vào cùng 1 chân móc.</string>
+    <string name="stitch_3dc_into_same_st_crochet_content_4">3 mũi kép đơn cùng chân móc.</string>
+
     <string name="stitch_5dcs_into_same_st_crochet_name" >5 mũi kép chung chân</string>
+    <string name="stitch_5dcs_into_same_st_crochet_description"> </string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính và kéo len qua chân bính.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_2">Móc 1 mũi kép đơn.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_3">Móc thêm 4 mũi kép đơn vào cùng 1 chân móc.</string>
+    <string name="stitch_5dcs_into_same_st_crochet_content_4">5 mũi kép đơn cùng chân móc.</string>
 
     <string name="stitch_sc2tog_crochet_name" >2 đơn chụm đầu</string>
+    <string name="stitch_sc2tog_crochet_description"> </string>
+    <string name="stitch_sc2tog_crochet_content_1">Luồn kim vào chân móc của hàng trước và lấy len.</string>
+    <string name="stitch_sc2tog_crochet_content_2">Kéo len qua chân móc, lặp lại luồn kim và lấy len qua chân móc tại chân móc tiếp theo.</string>
+    <string name="stitch_sc2tog_crochet_content_3">Ta có 2 mũi móc đơn chưa hoàn chỉnh. Dùng kim lấy len và kéo qua cả 3 vòng len trên kim.</string>
+    <string name="stitch_sc2tog_crochet_content_4">Hoàn thành 1 mũi móc sc2tog (2 mũi đơn chụm đầu).</string>
+
     <string name="stitch_hdc2tog_crochet_name" >2 mũi nửa kép chụm đầu</string>
+    <string name="stitch_hdc2tog_crochet_description"> </string>
+    <string name="stitch_hdc2tog_crochet_content_1">Dùng kim lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_hdc2tog_crochet_content_2">Kéo len qua chân bính. Lặp lại, dùng kim lấy len và luồn kim  qua chân móc tại chân móc tiếp theo, kéo len qua chân móc.</string>
+    <string name="stitch_hdc2tog_crochet_content_3">Ta có 2 mũi nửa kép chưa hoàn chỉnh. Dùng kim lấy len và kéo len qua cả 5 vòng trên kim.</string>
+    <string name="stitch_hdc2tog_crochet_content_4">Hoàn thành 1 mũi móc hdc2tog ( 2 mũi nửa kép chụm đầu).</string>
+
     <string name="stitch_dc2tog_crochet_name" >2 mũi kép chụm đầu</string>
+    <string name="stitch_dc2tog_crochet_description"> </string>
+    <string name="stitch_dc2tog_crochet_content_1">Móc 1 mũi kép chưa hoàn chỉnh vào mặt sau của chân bính. Dùng kim lấy len và luồn kim qua chân bính tiếp theo và kéo len qua chân bính.</string>
+    <string name="stitch_dc2tog_crochet_content_2">Tiếp tục lấy len và kéo len qua 2 vòng đầu tiên trên kim.</string>
+    <string name="stitch_dc2tog_crochet_content_3">Ta có được 2 mũi kép chưa hoàn chỉnh. Dùng kim lấy len và kéo len qua cả 3 vòng len trên kim.</string>
+    <string name="stitch_dc2tog_crochet_content_4">Hoàn thành 1 mũi móc dc2tog (2 mũi kép chụm đầu).</string>
+
     <string name="stitch_sc3tog_crochet_name" >3 mũi đơn chụm đầu</string>
+    <string name="stitch_sc3tog_crochet_description"> </string>
+    <string name="stitch_sc3tog_crochet_content_1">Luồn kim vào chân móc của hàng trước và lấy len.</string>
+    <string name="stitch_sc3tog_crochet_content_2">Lặp lại bước vừa rồi cho 2 chân móc tiếp theo.</string>
+    <string name="stitch_sc3tog_crochet_content_3">Ta được 3 mũi đơn chưa hoàn chỉnh. Dùng kim lấy len và kéo len qua cả 4 vòng len trên kim.</string>
+    <string name="stitch_sc3tog_crochet_content_4">Hoàn thành 1 mũi móc sc3tog (3 mũi đơn chụm đầu).</string>
+
     <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name" >3 mũi đơn chụm đầu</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_description"> </string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_1">Luồn kim vào chân móc thứ nhất và thứ 3 của hàng trước và lấy len.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_2">Ta được 2 mũi móc đơn chưa hoàn chỉnh. Dùng kim lấy len và kéo len qua cả 3 vòng len trên kim.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_3">Hoàn thành 1 mũi móc sc3tog (bỏ qua chân móc ở giữa).</string>
+
     <string name="stitch_hdc3tog_crochet_name" >3 mũi nửa kép chụm đầu</string>
+    <string name="stitch_hdc3tog_crochet_description"> </string>
+    <string name="stitch_hdc3tog_crochet_content_1">Lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_hdc3tog_crochet_content_2">Móc 1 mũi nửa kép chưa hoàn chỉnh sau đó móc thêm 2 mũi nửa kép chưa hoàn chỉnh nữa.</string>
+    <string name="stitch_hdc3tog_crochet_content_3">Dùng kim lấy len và kéo qua cả 7 vòng len trên kim.</string>
+    <string name="stitch_hdc3tog_crochet_content_4">Hoàn thành 1 mũi hdc3tog (3 mũi nửa kép chụm đầu).</string>
+
     <string name="stitch_dc3tog_crochet_name" >3 mũi kép chụm đầu</string>
+    <string name="stitch_dc3tog_crochet_description"> </string>
+    <string name="stitch_dc3tog_crochet_content_1">Lấy len và luồn kim qua mặt sau của chân bính.</string>
+    <string name="stitch_dc3tog_crochet_content_2">Móc 1 mũi  kép chưa hoàn chỉnh sau đó móc thêm 2 mũi kép chưa hoàn chỉnh nữa.</string>
+    <string name="stitch_dc3tog_crochet_content_3">Dùng kim lấy len và kéo qua cả 4 vòng len trên kim.</string>
+    <string name="stitch_dc3tog_crochet_content_4">Hoàn thành 1 mũi dc3tog (3 mũi kép chụm đầu).</string>
+
 </resources>

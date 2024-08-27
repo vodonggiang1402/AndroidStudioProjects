@@ -75,6 +75,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             public void onClick(View v) {
 //                Toast.makeText(v.getContext(), symbolModel.getSymbolName(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(sContext, SymbolDetail.class);
+                intent.putExtra("SymbolModel", symbolModel);
                 sContext.startActivity(intent);
             }
         });

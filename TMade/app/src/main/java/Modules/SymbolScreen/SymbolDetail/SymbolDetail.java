@@ -1,6 +1,7 @@
 package Modules.SymbolScreen.SymbolDetail;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.tmadecrochet.tmade.R;
 
 import java.util.Objects;
+
+import Services.SymbolModel;
 
 public class SymbolDetail extends AppCompatActivity {
 
@@ -39,5 +42,9 @@ public class SymbolDetail extends AppCompatActivity {
                 getOnBackPressedDispatcher().onBackPressed();
             }
         });
+
+        //receive
+        SymbolModel model = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
+        Log.d("SymbolDetail", String.valueOf(model));
     }
 }
