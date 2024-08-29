@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,15 +11,16 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
 
-import java.util.Objects;
+import java.util.List;
 
+import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.SymbolModel;
+import Services.SymbolStep;
 
 public class SymbolDetail extends AppCompatActivity {
     @Override
@@ -48,12 +48,17 @@ public class SymbolDetail extends AppCompatActivity {
         });
 
 
+        RelativeLayout relativeLayout = findViewById(R.id.symbol_detail_title_relative_layout);
+        TextView symbolTitle = findViewById(R.id.symbol_detail_title);
+        TextView symbolDes = findViewById(R.id.symbol_detail_des);
+        RecyclerView rcvStepView = findViewById(R.id.rcv_step_view);
+        rcvStepView.setNestedScrollingEnabled(false);
         //receive
         SymbolModel symbolModel = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
-
-        TextView symbolTitle = findViewById(R.id.symbol_detail_title);
-        RelativeLayout relativeLayout = findViewById(R.id.symbol_detail_title_relative_layout);
         if (symbolModel != null) {
+
+            relativeLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
+
             String symbolName = getStringByIdName(this, symbolModel.getSymbolName());
             if (!symbolName.isEmpty()) {
                 symbolTitle.setText(symbolName);
@@ -66,7 +71,21 @@ public class SymbolDetail extends AppCompatActivity {
                 symbolTitle.setCompoundDrawablesWithIntrinsicBounds(id, 0, 0, 0);
             }
 
-            relativeLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
+            String symbolDesText = getStringByIdName(this, symbolModel.getSymbolDes());
+            if (!symbolDesText.isEmpty()) {
+                symbolDes.setText(symbolDesText);
+            } else {
+                symbolDes.setVisibility(View.INVISIBLE);
+            }
+
+            List<SymbolStep> steps = symbolModel.getSteps();
+            if (!steps.isEmpty()) {
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
+                rcvStepView.setLayoutManager(linearLayoutManager);
+                StepAdapter stepAdapter = new StepAdapter(this);
+                stepAdapter.setData(steps);
+                rcvStepView.setAdapter(stepAdapter);
+            }
         }
     }
 

@@ -13,6 +13,7 @@
     <string name="decreases_stitches" >Mũi giảm</string>
     <string name="blo_flo_stitches" >Mũi BLO và FLO</string>
     <string name="update_text" >Đang cập nhật…</string>
+    <string name="step_text">Bước</string>
 
     <string name="stitch_slip_knot_crochet_name" >Mũi gút</string>
     <string name="stitch_slip_knot_crochet_description">"Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên."</string>
@@ -22,11 +23,11 @@
     <string name="stitch_slip_knot_crochet_content_4">Kéo sợi len thừa để thắt chặt mũi gút.</string>
 
     <string name="stitch_slip_stitch_crochet_name" >Mũi trượt</string>
-    <string name="stitch_slip_stich_crochet_description">Được viết tắt là SL hoặc ST, mũi này sẽ giúp bạn dời kim đến mũi mong muốn nào đó bất kỳ trên hàng móc. Mũi này thường được sử dụng để kết thúc một vòng tròn, hay giảm độ cao của hàng.</string>
-    <string name="stitch_slip_stich_crochet_content_1">Sợi nằm phía sau kim móc.</string>
-    <string name="stitch_slip_stich_crochet_content_2">Dùng kim lấy len và kéo len qua chân móc.</string>
-    <string name="stitch_slip_stich_crochet_content_3">Hoàn thành 1 mũi trượt. Luồn kim qua chân mũi tiếp theo.</string>
-    <string name="stitch_slip_stich_crochet_content_4">Lặp lại các bước trên để tiếp tục các mũi trượt.</string>
+    <string name="stitch_slip_stitch_crochet_description">Được viết tắt là SL hoặc ST, mũi này sẽ giúp bạn dời kim đến mũi mong muốn nào đó bất kỳ trên hàng móc. Mũi này thường được sử dụng để kết thúc một vòng tròn, hay giảm độ cao của hàng.</string>
+    <string name="stitch_slip_stitch_crochet_content_1">Sợi nằm phía sau kim móc.</string>
+    <string name="stitch_slip_stitch_crochet_content_2">Dùng kim lấy len và kéo len qua chân móc.</string>
+    <string name="stitch_slip_stitch_crochet_content_3">Hoàn thành 1 mũi trượt. Luồn kim qua chân mũi tiếp theo.</string>
+    <string name="stitch_slip_stitch_crochet_content_4">Lặp lại các bước trên để tiếp tục các mũi trượt.</string>
 
     <string name="stitch_chain_crochet_name" >Mũi bính</string>
     <string name="stitch_chain_crochet_description">Mũi bính được tính là mũi móc len cơ bản đầu tiên đối với bất kỳ các loại sản phẩm nào, được viết tắt là ch. Ký hiệu của mũi bính là hình oval nằm ngang. Và để bắt đầu một mũi bính bạn cần phải tạo mũi gút trước.</string>

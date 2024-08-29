@@ -4,25 +4,25 @@
       {
         "is_ads" : false,
         "symbol_id" : "1",
-        "symbol_des" : "slip_knot_crochet_description",
+        "symbol_des" : "stitch_slip_knot_crochet_description",
         "symbol_name" : "stitch_slip_knot_crochet_name",
         "icon_name" : "",
         "steps" : [
           {
-            "content" : "slip_knot_crochet_content_1",
-            "image_name" : "slip_knot_crochet_1"
+            "content" : "stitch_slip_knot_crochet_content_1",
+            "image_name" : "ico_slip_knot_crochet_1"
           },
           {
-            "content" : "slip_knot_crochet_content_2",
-            "image_name" : "slip_knot_crochet_2"
+            "content" : "stitch_slip_knot_crochet_content_2",
+            "image_name" : "ico_slip_knot_crochet_2"
           },
           {
-            "content" : "slip_knot_crochet_content_3",
-            "image_name" : "slip_knot_crochet_3"
+            "content" : "stitch_slip_knot_crochet_content_3",
+            "image_name" : "ico_slip_knot_crochet_3"
           },
           {
-            "content" : "slip_knot_crochet_content_4",
-            "image_name" : "slip_knot_crochet_4"
+            "content" : "stitch_slip_knot_crochet_content_4",
+            "image_name" : "ico_slip_knot_crochet_4"
           }
         ],
         "background_color" : "FED1B2",
@@ -32,24 +32,24 @@
       {
         "is_ads" : false,
         "symbol_id" : "2",
-        "symbol_des" : "slip_stitch_crochet_description",
+        "symbol_des" : "stitch_slip_stitch_crochet_description",
         "symbol_name" : "stitch_slip_stitch_crochet_name",
         "icon_name" : "ico_slip_stitch",
         "steps" : [
           {
-            "content" : "slip_stitch_crochet_content_1",
+            "content" : "stitch_slip_stitch_crochet_content_1",
             "image_name" : "ico_slip_stitch_1"
           },
           {
-            "content" : "slip_stitch_crochet_content_2",
+            "content" : "stitch_slip_stitch_crochet_content_2",
             "image_name" : "ico_slip_stitch_2"
           },
           {
-            "content" : "slip_stitch_crochet_content_3",
+            "content" : "stitch_slip_stitch_crochet_content_3",
             "image_name" : "ico_slip_stitch_3"
           },
           {
-            "content" : "slip_stitch_crochet_content_4",
+            "content" : "stitch_slip_stitch_crochet_content_4",
             "image_name" : "ico_slip_stitch_4"
           }
         ],
@@ -60,24 +60,24 @@
       {
         "is_ads" : false,
         "symbol_id" : "3",
-        "symbol_des" : "chain_crochet_description",
+        "symbol_des" : "stitch_chain_crochet_description",
         "symbol_name" : "stitch_chain_crochet_name",
         "icon_name" : "ico_chain_crochet",
         "steps" : [
           {
-            "content" : "chain_crochet_content_1",
+            "content" : "stitch_chain_crochet_content_1",
             "image_name" : "ico_chain_crochet_1"
           },
           {
-            "content" : "chain_crochet_content_2",
+            "content" : "stitch_chain_crochet_content_2",
             "image_name" : "ico_chain_crochet_2"
           },
           {
-            "content" : "chain_crochet_content_3",
+            "content" : "stitch_chain_crochet_content_3",
             "image_name" : "ico_chain_crochet_3"
           },
           {
-            "content" : "chain_crochet_content_4",
+            "content" : "stitch_chain_crochet_content_4",
             "image_name" : "ico_chain_crochet_4"
           }
         ],
@@ -88,24 +88,24 @@
       {
         "is_ads" : false,
         "symbol_id" : "4",
-        "symbol_des" : "single_crochet_description",
+        "symbol_des" : "stitch_single_crochet_description",
         "symbol_name" : "stitch_single_crochet_name",
         "icon_name" : "ico_single_crochet",
         "steps" : [
           {
-            "content" : "single_crochet_content_1",
+            "content" : "stitch_single_crochet_content_1",
             "image_name" : "ico_single_crochet_1"
           },
           {
-            "content" : "single_crochet_content_2",
+            "content" : "stitch_single_crochet_content_2",
             "image_name" : "ico_single_crochet_2"
           },
           {
-            "content" : "single_crochet_content_3",
+            "content" : "stitch_single_crochet_content_3",
             "image_name" : "ico_single_crochet_3"
           },
           {
-            "content" : "single_crochet_content_4",
+            "content" : "stitch_single_crochet_content_4",
             "image_name" : "ico_single_crochet_4"
           }
         ],
@@ -116,24 +116,24 @@
       {
         "is_ads" : false,
         "symbol_id" : "5",
-        "symbol_des" : "half_double_crochet_description",
+        "symbol_des" : "stitch_half_double_crochet_description",
         "symbol_name" : "stitch_half_double_crochet_name",
         "icon_name" : "ico_half_double_crochet",
         "steps" : [
           {
-            "content" : "half_double_crochet_content_1",
+            "content" : "stitch_half_double_crochet_content_1",
             "image_name" : "ico_half_double_crochet_1"
           },
           {
-            "content" : "half_double_crochet_content_2",
+            "content" : "stitch_half_double_crochet_content_2",
             "image_name" : "ico_half_double_crochet_2"
           },
           {
-            "content" : "half_double_crochet_content_3",
+            "content" : "stitch_half_double_crochet_content_3",
             "image_name" : "ico_half_double_crochet_3"
           },
           {
-            "content" : "half_double_crochet_content_4",
+            "content" : "stitch_half_double_crochet_content_4",
             "image_name" : "ico_half_double_crochet_4"
           }
         ],
@@ -144,28 +144,28 @@
       {
         "is_ads" : false,
         "symbol_id" : "6",
-        "symbol_des" : "double_crochet_description",
+        "symbol_des" : "stitch_double_crochet_description",
         "symbol_name" : "stitch_double_crochet_name",
         "icon_name" : "ico_double_crochet",
         "steps" : [
           {
-            "content" : "double_crochet_content_1",
+            "content" : "stitch_double_crochet_content_1",
             "image_name" : "ico_double_crochet_1"
           },
           {
-            "content" : "double_crochet_content_2",
+            "content" : "stitch_double_crochet_content_2",
             "image_name" : "ico_double_crochet_2"
           },
           {
-            "content" : "double_crochet_content_3",
+            "content" : "stitch_double_crochet_content_3",
             "image_name" : "ico_double_crochet_3"
           },
           {
-            "content" : "double_crochet_content_4",
+            "content" : "stitch_double_crochet_content_4",
             "image_name" : "ico_double_crochet_4"
           },
           {
-            "content" : "double_crochet_content_5",
+            "content" : "stitch_double_crochet_content_5",
             "image_name" : "ico_double_crochet_5"
           }
         ],
@@ -176,28 +176,28 @@
       {
         "is_ads" : false,
         "symbol_id" : "7",
-        "symbol_des" : "triple_crochet_description",
+        "symbol_des" : "stitch_triple_crochet_description",
         "symbol_name" : "stitch_triple_crochet_name",
         "icon_name" : "ico_triple_crochet",
         "steps" : [
           {
-            "content" : "triple_crochet_content_1",
+            "content" : "stitch_triple_crochet_content_1",
             "image_name" : "ico_triple_crochet_1"
           },
           {
-            "content" : "triple_crochet_content_2",
+            "content" : "stitch_triple_crochet_content_2",
             "image_name" : "ico_triple_crochet_2"
           },
           {
-            "content" : "triple_crochet_content_3",
+            "content" : "stitch_triple_crochet_content_3",
             "image_name" : "ico_triple_crochet_3"
           },
           {
-            "content" : "triple_crochet_content_4",
+            "content" : "stitch_triple_crochet_content_4",
             "image_name" : "ico_triple_crochet_4"
           },
           {
-            "content" : "triple_crochet_content_5",
+            "content" : "stitch_triple_crochet_content_5",
             "image_name" : "ico_triple_crochet_5"
           }
         ],
@@ -208,28 +208,28 @@
       {
         "is_ads" : false,
         "symbol_id" : "8",
-        "symbol_des" : "double_triple_crochet_description",
+        "symbol_des" : "stitch_double_triple_crochet_description",
         "symbol_name" : "stitch_double_triple_crochet_name",
         "icon_name" : "ico_double_triple",
         "steps" : [
           {
-            "content" : "double_triple_crochet_content_1",
+            "content" : "stitch_double_triple_crochet_content_1",
             "image_name" : "ico_double_triple_1"
           },
           {
-            "content" : "double_triple_crochet_content_2",
+            "content" : "stitch_double_triple_crochet_content_2",
             "image_name" : "ico_double_triple_2"
           },
           {
-            "content" : "double_triple_crochet_content_3",
+            "content" : "stitch_double_triple_crochet_content_3",
             "image_name" : "ico_double_triple_3"
           },
           {
-            "content" : "double_triple_crochet_content_4",
+            "content" : "stitch_double_triple_crochet_content_4",
             "image_name" : "ico_double_triple_4"
           },
           {
-            "content" : "double_triple_crochet_content_5",
+            "content" : "stitch_double_triple_crochet_content_5",
             "image_name" : "ico_double_triple_5"
           }
         ],
@@ -242,24 +242,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "1",
-        "symbol_des" : "hdc3tog_into_same_st_crochet_description",
+        "symbol_des" : "stitch_hdc3tog_into_same_st_crochet_description",
         "symbol_name" : "stitch_hdc3tog_into_same_st_crochet_name",
         "icon_name" : "ico_hdc3tog_into_same_st",
         "steps" : [
           {
-            "content" : "hdc3tog_into_same_st_crochet_content_1",
+            "content" : "stitch_hdc3tog_into_same_st_crochet_content_1",
             "image_name" : "ico_hdc3tog_into_same_st_1"
           },
           {
-            "content" : "hdc3tog_into_same_st_crochet_content_2",
+            "content" : "stitch_hdc3tog_into_same_st_crochet_content_2",
             "image_name" : "ico_hdc3tog_into_same_st_2"
           },
           {
-            "content" : "hdc3tog_into_same_st_crochet_content_3",
+            "content" : "stitch_hdc3tog_into_same_st_crochet_content_3",
             "image_name" : "ico_hdc3tog_into_same_st_3"
           },
           {
-            "content" : "hdc3tog_into_same_st_crochet_content_4",
+            "content" : "stitch_hdc3tog_into_same_st_crochet_content_4",
             "image_name" : "ico_hdc3tog_into_same_st_4"
           }
         ],
@@ -270,24 +270,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "2",
-        "symbol_des" : "dc3tog_into_same_st_crochet_description",
+        "symbol_des" : "stitch_dc3tog_into_same_st_crochet_description",
         "symbol_name" : "stitch_dc3tog_into_same_st_crochet_name",
         "icon_name" : "ico_dc3tog_into_same_st",
         "steps" : [
           {
-            "content" : "dc3tog_into_same_st_crochet_content_1",
+            "content" : "stitch_dc3tog_into_same_st_crochet_content_1",
             "image_name" : "ico_dc3tog_into_same_st_1"
           },
           {
-            "content" : "dc3tog_into_same_st_crochet_content_2",
+            "content" : "stitch_dc3tog_into_same_st_crochet_content_2",
             "image_name" : "ico_dc3tog_into_same_st_2"
           },
           {
-            "content" : "dc3tog_into_same_st_crochet_content_3",
+            "content" : "stitch_dc3tog_into_same_st_crochet_content_3",
             "image_name" : "ico_dc3tog_into_same_st_3"
           },
           {
-            "content" : "dc3tog_into_same_st_crochet_content_4",
+            "content" : "stitch_dc3tog_into_same_st_crochet_content_4",
             "image_name" : "ico_dc3tog_into_same_st_4"
           }
         ],
@@ -298,24 +298,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "3",
-        "symbol_des" : "dc5tog_into_same_st_crochet_description",
+        "symbol_des" : "stitch_dc5tog_into_same_st_crochet_description",
         "symbol_name" : "stitch_dc5tog_into_same_st_crochet_name",
         "icon_name" : "ico_dc5tog_into_same_st",
         "steps" : [
           {
-            "content" : "dc5tog_into_same_st_crochet_content_1",
+            "content" : "stitch_dc5tog_into_same_st_crochet_content_1",
             "image_name" : "ico_dc5tog_into_same_st_1"
           },
           {
-            "content" : "dc5tog_into_same_st_crochet_content_2",
+            "content" : "stitch_dc5tog_into_same_st_crochet_content_2",
             "image_name" : "ico_dc5tog_into_same_st_2"
           },
           {
-            "content" : "dc5tog_into_same_st_crochet_content_3",
+            "content" : "stitch_dc5tog_into_same_st_crochet_content_3",
             "image_name" : "ico_dc5tog_into_same_st_3"
           },
           {
-            "content" : "dc5tog_into_same_st_crochet_content_4",
+            "content" : "stitch_dc5tog_into_same_st_crochet_content_4",
             "image_name" : "ico_dc5tog_into_same_st_4"
           }
         ],
@@ -384,24 +384,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "3",
-        "symbol_des" : "3sc_into_same_st_crochet_description",
+        "symbol_des" : "stitch_3sc_into_same_st_crochet_description",
         "symbol_name" : "stitch_3sc_into_same_st_crochet_name",
         "icon_name" : "ico_3sc",
         "steps" : [
           {
-            "content" : "3sc_into_same_st_crochet_content_1",
+            "content" : "stitch_3sc_into_same_st_crochet_content_1",
             "image_name" : "ico_3sc_into_same_st_1"
           },
           {
-            "content" : "3sc_into_same_st_crochet_content_2",
+            "content" : "stitch_3sc_into_same_st_crochet_content_2",
             "image_name" : "ico_3sc_into_same_st_2"
           },
           {
-            "content" : "3sc_into_same_st_crochet_content_3",
+            "content" : "stitch_3sc_into_same_st_crochet_content_3",
             "image_name" : "ico_3sc_into_same_st_3"
           },
           {
-            "content" : "3sc_into_same_st_crochet_content_4",
+            "content" : "stitch_3sc_into_same_st_crochet_content_4",
             "image_name" : "ico_3sc_into_same_st_4"
           }
         ],
@@ -412,24 +412,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "4",
-        "symbol_des" : "2hdcs_into_same_st_crochet_description",
+        "symbol_des" : "stitch_2hdcs_into_same_st_crochet_description",
         "symbol_name" : "stitch_2hdcs_into_same_st_crochet_name",
         "icon_name" : "ico_2hdcs_into_same_st",
         "steps" : [
           {
-            "content" : "2hdcs_into_same_st_crochet_content_1",
+            "content" : "stitch_2hdcs_into_same_st_crochet_content_1",
             "image_name" : "ico_2hdc_into_same_st_1"
           },
           {
-            "content" : "2hdcs_into_same_st_crochet_content_2",
+            "content" : "stitch_2hdcs_into_same_st_crochet_content_2",
             "image_name" : "ico_2hdc_into_same_st_2"
           },
           {
-            "content" : "2hdcs_into_same_st_crochet_content_3",
+            "content" : "stitch_2hdcs_into_same_st_crochet_content_3",
             "image_name" : "ico_2hdc_into_same_st_3"
           },
           {
-            "content" : "2hdcs_into_same_st_crochet_content_4",
+            "content" : "stitch_2hdcs_into_same_st_crochet_content_4",
             "image_name" : "ico_2hdc_into_same_st_4"
           }
         ],
@@ -440,24 +440,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "5",
-        "symbol_des" : "3hdcs_into_same_st_crochet_description",
+        "symbol_des" : "stitch_3hdcs_into_same_st_crochet_description",
         "symbol_name" : "stitch_3hdcs_into_same_st_crochet_name",
         "icon_name" : "ico_3hdcs",
         "steps" : [
           {
-            "content" : "3hdcs_into_same_st_crochet_content_1",
+            "content" : "stitch_3hdcs_into_same_st_crochet_content_1",
             "image_name" : "ico_3hdc_into_same_st_1"
           },
           {
-            "content" : "3hdcs_into_same_st_crochet_content_2",
+            "content" : "stitch_3hdcs_into_same_st_crochet_content_2",
             "image_name" : "ico_3hdc_into_same_st_2"
           },
           {
-            "content" : "3hdcs_into_same_st_crochet_content_3",
+            "content" : "stitch_3hdcs_into_same_st_crochet_content_3",
             "image_name" : "ico_3hdc_into_same_st_3"
           },
           {
-            "content" : "3hdcs_into_same_st_crochet_content_4",
+            "content" : "stitch_3hdcs_into_same_st_crochet_content_4",
             "image_name" : "ico_3hdc_into_same_st_4"
           }
         ],
@@ -468,24 +468,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "6",
-        "symbol_des" : "2dcs_into_same_st_crochet_description",
+        "symbol_des" : "stitch_2dcs_into_same_st_crochet_description",
         "symbol_name" : "stitch_2dcs_into_same_st_crochet_name",
         "icon_name" : "ico_dcs",
         "steps" : [
           {
-            "content" : "2dcs_into_same_st_crochet_content_1",
+            "content" : "stitch_2dcs_into_same_st_crochet_content_1",
             "image_name" : "ico_2dcs_into_same_st_1"
           },
           {
-            "content" : "2dcs_into_same_st_crochet_content_2",
+            "content" : "stitch_2dcs_into_same_st_crochet_content_2",
             "image_name" : "ico_2dcs_into_same_st_2"
           },
           {
-            "content" : "2dcs_into_same_st_crochet_content_3",
+            "content" : "stitch_2dcs_into_same_st_crochet_content_3",
             "image_name" : "ico_2dcs_into_same_st_3"
           },
           {
-            "content" : "2dcs_into_same_st_crochet_content_4",
+            "content" : "stitch_2dcs_into_same_st_crochet_content_4",
             "image_name" : "ico_2dcs_into_same_st_4"
           }
         ],
@@ -496,24 +496,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "7",
-        "symbol_des" : "1dc_1ch_1dc_crochet_description",
+        "symbol_des" : "stitch_1dc_1ch_1dc_crochet_description",
         "symbol_name" : "stitch_1dc_1ch_1dc_crochet_name",
         "icon_name" : "ico_1dc_1ch_1dc",
         "steps" : [
           {
-            "content" : "1dc_1ch_1dc_crochet_content_1",
+            "content" : "stitch_1dc_1ch_1dc_crochet_content_1",
             "image_name" : "ico_1dc_1ch_1dc_into_same_st_1"
           },
           {
-            "content" : "1dc_1ch_1dc_crochet_content_2",
+            "content" : "stitch_1dc_1ch_1dc_crochet_content_2",
             "image_name" : "ico_1dc_1ch_1dc_into_same_st_2"
           },
           {
-            "content" : "1dc_1ch_1dc_crochet_content_3",
+            "content" : "stitch_1dc_1ch_1dc_crochet_content_3",
             "image_name" : "ico_1dc_1ch_1dc_into_same_st_3"
           },
           {
-            "content" : "1dc_1ch_1dc_crochet_content_4",
+            "content" : "stitch_1dc_1ch_1dc_crochet_content_4",
             "image_name" : "ico_1dc_1ch_1dc_into_same_st_4"
           }
         ],
@@ -524,24 +524,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "8",
-        "symbol_des" : "",
+        "symbol_des" : "stitch_3dc_into_same_st_crochet_description",
         "symbol_name" : "stitch_3dc_into_same_st_crochet_name",
         "icon_name" : "ico_3dc_into_same_st",
         "steps" : [
           {
-            "content" : "3dc_into_same_st_crochet_content_1",
+            "content" : "stitch_3dc_into_same_st_crochet_content_1",
             "image_name" : "ico_3dc_into_same_st_1"
           },
           {
-            "content" : "3dc_into_same_st_crochet_content_2",
+            "content" : "stitch_3dc_into_same_st_crochet_content_2",
             "image_name" : "ico_3dc_into_same_st_2"
           },
           {
-            "content" : "3dc_into_same_st_crochet_content_3",
+            "content" : "stitch_3dc_into_same_st_crochet_content_3",
             "image_name" : "ico_3dc_into_same_st_3"
           },
           {
-            "content" : "3dc_into_same_st_crochet_content_4",
+            "content" : "stitch_3dc_into_same_st_crochet_content_4",
             "image_name" : "ico_3dc_into_same_st_4"
           }
         ],
@@ -552,24 +552,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "9",
-        "symbol_des" : "5dcs_into_same_st_crochet_description",
+        "symbol_des" : "stitch_5dcs_into_same_st_crochet_description",
         "symbol_name" : "stitch_5dcs_into_same_st_crochet_name",
         "icon_name" : "ico_5dcs_into_same_st",
         "steps" : [
           {
-            "content" : "5dcs_into_same_st_crochet_content_1",
+            "content" : "stitch_5dcs_into_same_st_crochet_content_1",
             "image_name" : "ico_5dc_into_same_st_1"
           },
           {
-            "content" : "5dcs_into_same_st_crochet_content_2",
+            "content" : "stitch_5dcs_into_same_st_crochet_content_2",
             "image_name" : "ico_5dc_into_same_st_2"
           },
           {
-            "content" : "5dcs_into_same_st_crochet_content_3",
+            "content" : "stitch_5dcs_into_same_st_crochet_content_3",
             "image_name" : "ico_5dc_into_same_st_3"
           },
           {
-            "content" : "5dcs_into_same_st_crochet_content_4",
+            "content" : "stitch_5dcs_into_same_st_crochet_content_4",
             "image_name" : "ico_5dc_into_same_st_4"
           }
         ],
@@ -582,24 +582,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "1",
-        "symbol_des" : "sc2tog_crochet_description",
+        "symbol_des" : "stitch_sc2tog_crochet_description",
         "symbol_name" : "stitch_sc2tog_crochet_name",
         "icon_name" : "ico_sc2tog",
         "steps" : [
           {
-            "content" : "sc2tog_crochet_content_1",
+            "content" : "stitch_sc2tog_crochet_content_1",
             "image_name" : "ico_single_crochet_2_stiches_together_1"
           },
           {
-            "content" : "sc2tog_crochet_content_2",
+            "content" : "stitch_sc2tog_crochet_content_2",
             "image_name" : "ico_single_crochet_2_stiches_together_2"
           },
           {
-            "content" : "sc2tog_crochet_content_3",
+            "content" : "stitch_sc2tog_crochet_content_3",
             "image_name" : "ico_single_crochet_2_stiches_together_3"
           },
           {
-            "content" : "sc2tog_crochet_content_4",
+            "content" : "stitch_sc2tog_crochet_content_4",
             "image_name" : "ico_single_crochet_2_stiches_together_4"
           }
         ],
@@ -610,24 +610,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "2",
-        "symbol_des" : "hdc2tog_crochet_description",
+        "symbol_des" : "stitch_hdc2tog_crochet_description",
         "symbol_name" : "stitch_hdc2tog_crochet_name",
         "icon_name" : "ico_hdc2tog",
         "steps" : [
           {
-            "content" : "hdc2tog_crochet_content_1",
+            "content" : "stitch_hdc2tog_crochet_content_1",
             "image_name" : "ico_haft_double_crochet_2_stiches_together_1"
           },
           {
-            "content" : "hdc2tog_crochet_content_2",
+            "content" : "stitch_hdc2tog_crochet_content_2",
             "image_name" : "ico_haft_double_crochet_2_stiches_together_2"
           },
           {
-            "content" : "hdc2tog_crochet_content_3",
+            "content" : "stitch_hdc2tog_crochet_content_3",
             "image_name" : "ico_haft_double_crochet_2_stiches_together_3"
           },
           {
-            "content" : "hdc2tog_crochet_content_4",
+            "content" : "stitch_hdc2tog_crochet_content_4",
             "image_name" : "ico_haft_double_crochet_2_stiches_together_4"
           }
         ],
@@ -638,24 +638,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "3",
-        "symbol_des" : "dc2tog_crochet_description",
+        "symbol_des" : "stitch_dc2tog_crochet_description",
         "symbol_name" : "stitch_dc2tog_crochet_name",
         "icon_name" : "ico_dc2tog",
         "steps" : [
           {
-            "content" : "dc2tog_crochet_content_1",
+            "content" : "stitch_dc2tog_crochet_content_1",
             "image_name" : "ico_double_crochet_2_stiches _together_1"
           },
           {
-            "content" : "dc2tog_crochet_content_2",
+            "content" : "stitch_dc2tog_crochet_content_2",
             "image_name" : "ico_double_crochet_2_stiches _together_2"
           },
           {
-            "content" : "dc2tog_crochet_content_3",
+            "content" : "stitch_dc2tog_crochet_content_3",
             "image_name" : "ico_double_crochet_2_stiches _together_3"
           },
           {
-            "content" : "dc2tog_crochet_content_4",
+            "content" : "stitch_dc2tog_crochet_content_4",
             "image_name" : "ico_double_crochet_2_stiches _together_4"
           }
         ],
@@ -666,24 +666,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "4",
-        "symbol_des" : "sc3tog_crochet_description",
+        "symbol_des" : "stitch_sc3tog_crochet_description",
         "symbol_name" : "stitch_sc3tog_crochet_name",
         "icon_name" : "ico_sc3tog",
         "steps" : [
           {
-            "content" : "sc3tog_crochet_content_1",
+            "content" : "stitch_sc3tog_crochet_content_1",
             "image_name" : "ico_single_crochet_3_stiches_together_1"
           },
           {
-            "content" : "sc3tog_crochet_content_2",
+            "content" : "stitch_sc3tog_crochet_content_2",
             "image_name" : "ico_single_crochet_3_stiches_together_2"
           },
           {
-            "content" : "sc3tog_crochet_content_3",
+            "content" : "stitch_sc3tog_crochet_content_3",
             "image_name" : "ico_single_crochet_3_stiches_together_3"
           },
           {
-            "content" : "sc3tog_crochet_content_4",
+            "content" : "stitch_sc3tog_crochet_content_4",
             "image_name" : "ico_single_crochet_3_stiches_together_4"
           }
         ],
@@ -694,20 +694,20 @@
       {
         "is_ads" : true,
         "symbol_id" : "5",
-        "symbol_des" : "sc3tog_skipping_the_center_stitch_crochet_description",
+        "symbol_des" : "stitch_sc3tog_skipping_the_center_stitch_crochet_description",
         "symbol_name" : "stitch_sc3tog_skipping_the_center_stitch_crochet_name",
         "icon_name" : "ico_sc3tog",
         "steps" : [
           {
-            "content" : "sc3tog_skipping_the_center_stitch_crochet_content_1",
+            "content" : "stitch_sc3tog_skipping_the_center_stitch_crochet_content_1",
             "image_name" : "ico_c3tog_skipping_the_center_stitch_1"
           },
           {
-            "content" : "sc3tog_skipping_the_center_stitch_crochet_content_2",
+            "content" : "stitch_sc3tog_skipping_the_center_stitch_crochet_content_2",
             "image_name" : "ico_sc3tog_skipping_the_center_stitch_2"
           },
           {
-            "content" : "sc3tog_skipping_the_center_stitch_crochet_content_3",
+            "content" : "stitch_sc3tog_skipping_the_center_stitch_crochet_content_3",
             "image_name" : "ico_sc3tog_skipping_the_center_stitch_3"
           }
         ],
@@ -718,24 +718,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "6",
-        "symbol_des" : "hdc3tog_crochet_description",
+        "symbol_des" : "stitch_hdc3tog_crochet_description",
         "symbol_name" : "stitch_hdc3tog_crochet_name",
         "icon_name" : "ico_hdc3tog",
         "steps" : [
           {
-            "content" : "hdc3tog_crochet_content_1",
+            "content" : "stitch_hdc3tog_crochet_content_1",
             "image_name" : "ico_hdc_3_tog_1"
           },
           {
-            "content" : "hdc3tog_crochet_content_2",
+            "content" : "stitch_hdc3tog_crochet_content_2",
             "image_name" : "ico_hdc_3_tog_2"
           },
           {
-            "content" : "hdc3tog_crochet_content_3",
+            "content" : "stitch_hdc3tog_crochet_content_3",
             "image_name" : "ico_hdc_3_tog_3"
           },
           {
-            "content" : "hdc3tog_crochet_content_4",
+            "content" : "stitch_hdc3tog_crochet_content_4",
             "image_name" : "ico_hdc_3_tog_4"
           }
         ],
@@ -746,24 +746,24 @@
       {
         "is_ads" : true,
         "symbol_id" : "7",
-        "symbol_des" : "dc3tog_crochet_description",
+        "symbol_des" : "stitch_dc3tog_crochet_description",
         "symbol_name" : "stitch_dc3tog_crochet_name",
         "icon_name" : "ico_dc3tog",
         "steps" : [
           {
-            "content" : "dc3tog_crochet_content_1",
+            "content" : "stitch_dc3tog_crochet_content_1",
             "image_name" : "ico_dc3tog_1"
           },
           {
-            "content" : "dc3tog_crochet_content_2",
+            "content" : "stitch_dc3tog_crochet_content_2",
             "image_name" : "ico_dc3tog_2"
           },
           {
-            "content" : "dc3tog_crochet_content_3",
+            "content" : "stitch_dc3tog_crochet_content_3",
             "image_name" : "ico_dc3tog_3"
           },
           {
-            "content" : "dc3tog_crochet_content_4",
+            "content" : "stitch_dc3tog_crochet_content_4",
             "image_name" : "ico_dc3tog_4"
           }
         ],

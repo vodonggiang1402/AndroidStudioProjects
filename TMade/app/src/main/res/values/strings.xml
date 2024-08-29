@@ -13,21 +13,22 @@
     <string name="decreases_stitches">Decreases stitches</string>
     <string name="blo_flo_stitches">BLO &amp; FLO stitches</string>
     <string name="update_text">Updating…</string>
+    <string name="step_text">Step</string>
 
 
     <string name="stitch_slip_knot_crochet_name">Slip knot</string>
-    <string name="stitch_slip_knot_crochet_description"> </string>
+    <string name="stitch_slip_knot_crochet_description">Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên.Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên.</string>
     <string name="stitch_slip_knot_crochet_content_1">To make a starting loop - fold the yarn to make a loop.</string>
     <string name="stitch_slip_knot_crochet_content_2">Catch the yarn through the loop.</string>
     <string name="stitch_slip_knot_crochet_content_3">Pull it through.</string>
     <string name="stitch_slip_knot_crochet_content_4">Pull the ends to tighten the slipknot. Now put this slipknot on the left hand needle.</string>
 
     <string name="stitch_slip_stitch_crochet_name">Slip stitch</string>
-    <string name="stitch_slip_stich_crochet_description"> </string>
-    <string name="stitch_slip_stich_crochet_content_1">With yarn in back.</string>
-    <string name="stitch_slip_stich_crochet_content_2">Yarn over hook and draw through.</string>
-    <string name="stitch_slip_stich_crochet_content_3">1 slip stitch done. Insert hook into the next st.</string>
-    <string name="stitch_slip_stich_crochet_content_4">Repeat these steps to continue slip stitch.</string>
+    <string name="stitch_slip_stitch_crochet_description"> </string>
+    <string name="stitch_slip_stitch_crochet_content_1">With yarn in back.</string>
+    <string name="stitch_slip_stitch_crochet_content_2">Yarn over hook and draw through.</string>
+    <string name="stitch_slip_stitch_crochet_content_3">1 slip stitch done. Insert hook into the next st.</string>
+    <string name="stitch_slip_stitch_crochet_content_4">Repeat these steps to continue slip stitch.</string>
 
     <string name="stitch_chain_crochet_name">Chain</string>
     <string name="stitch_chain_crochet_description"> </string>

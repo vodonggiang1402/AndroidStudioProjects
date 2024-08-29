@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.tmadecrochet.tmade.R;
+
+import java.util.Locale;
+
 import Modules.CounterScreen.CounterFragment;
 import Modules.SettingScreen.SettingFragment;
 import Modules.SymbolScreen.SymbolFragment;
@@ -19,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_symbol);
         bottomNavigationView.setOnItemSelectedListener(navListener);
