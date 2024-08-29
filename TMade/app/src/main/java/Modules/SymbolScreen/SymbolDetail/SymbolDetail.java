@@ -2,9 +2,11 @@ package Modules.SymbolScreen.SymbolDetail;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +23,6 @@ import java.util.Objects;
 import Services.SymbolModel;
 
 public class SymbolDetail extends AppCompatActivity {
-    private TextView symbolTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,8 @@ public class SymbolDetail extends AppCompatActivity {
         //receive
         SymbolModel symbolModel = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
 
-        symbolTitle = findViewById(R.id.symbol_detail_title);
+        TextView symbolTitle = findViewById(R.id.symbol_detail_title);
+        RelativeLayout relativeLayout = findViewById(R.id.symbol_detail_title_relative_layout);
         if (symbolModel != null) {
             String symbolName = getStringByIdName(this, symbolModel.getSymbolName());
             if (!symbolName.isEmpty()) {
@@ -63,6 +65,8 @@ public class SymbolDetail extends AppCompatActivity {
                         this.getPackageName());
                 symbolTitle.setCompoundDrawablesWithIntrinsicBounds(id, 0, 0, 0);
             }
+
+            relativeLayout.setBackgroundColor(Color.parseColor("#"+ symbolModel.getBackgroundColor()));
         }
     }
 
