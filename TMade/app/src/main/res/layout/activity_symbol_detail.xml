@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/symbol_detail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/background_color"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="Modules.SymbolScreen.SymbolDetail.SymbolDetail">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/symbol_detail_toolbar"
@@ -28,4 +29,34 @@
             android:text="@string/symbol_detail_title"
             android:id="@+id/symbol_detail_toolbar_title"/>
     </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/symbol_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textColor="@android:color/black"
+        android:drawablePadding="10dp"
+        android:gravity="start"
+        android:lines="2"
+        />
+    <TextView
+        android:id="@+id/symbol_detail_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textColor="@android:color/black"
+        android:gravity="start"
+        android:lines="2"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="12dp" />
 </LinearLayout>

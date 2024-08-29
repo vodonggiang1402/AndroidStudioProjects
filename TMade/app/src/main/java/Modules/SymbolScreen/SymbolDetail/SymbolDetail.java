@@ -1,8 +1,11 @@
 package Modules.SymbolScreen.SymbolDetail;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +21,7 @@ import java.util.Objects;
 import Services.SymbolModel;
 
 public class SymbolDetail extends AppCompatActivity {
-
+    private TextView symbolTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +46,36 @@ public class SymbolDetail extends AppCompatActivity {
             }
         });
 
+
         //receive
-        SymbolModel model = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
-        Log.d("SymbolDetail", String.valueOf(model));
+        SymbolModel symbolModel = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
+
+        symbolTitle = findViewById(R.id.symbol_detail_title);
+        if (symbolModel != null) {
+            String symbolName = getStringByIdName(this, symbolModel.getSymbolName());
+            if (!symbolName.isEmpty()) {
+                symbolTitle.setText(symbolName);
+            }
+
+            String iconName = symbolModel.getIconName();
+            if (!iconName.isEmpty()) {
+                int id = this.getResources().getIdentifier(iconName, "drawable",
+                        this.getPackageName());
+                symbolTitle.setCompoundDrawablesWithIntrinsicBounds(id, 0, 0, 0);
+            }
+        }
+    }
+
+    public static String getStringByIdName(Context context, String idName) {
+        String resuls = "";
+        Resources res = context.getResources();
+        int resId = res.getIdentifier(idName, "string", context.getPackageName());
+        if (resId > 0) {
+            String resString = res.getString(resId);
+            if (!resString.isEmpty()) {
+                resuls = resString;
+            }
+        }
+        return resuls;
     }
 }
