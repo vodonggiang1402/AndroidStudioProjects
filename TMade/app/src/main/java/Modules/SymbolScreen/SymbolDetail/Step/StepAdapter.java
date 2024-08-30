@@ -56,7 +56,11 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
             Context context = holder.imageView.getContext();
             int id = context.getResources().getIdentifier(iconName, "drawable",
                     context.getPackageName());
-            holder.imageView.setImageResource(id);
+            if (id > 0) {
+                holder.imageView.setImageResource(id);
+            } else {
+                holder.imageView.setVisibility(View.INVISIBLE);
+            }
         } else {
             holder.imageView.setVisibility(View.INVISIBLE);
         }
