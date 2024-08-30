@@ -1,5 +1,6 @@
 package Modules.SymbolScreen.Symbol;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -31,12 +32,13 @@ import Services.SymbolModel;
 
 public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolViewHolder> {
     private final Context sContext;
-    private static List<SymbolModel> symbols;
+    private List<SymbolModel> symbols;
 
     public SymbolAdapter(Context sContext) {
         this.sContext = sContext;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolModel> list) {
         this.symbols = list;
         notifyDataSetChanged();

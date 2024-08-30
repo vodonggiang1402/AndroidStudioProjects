@@ -1,5 +1,6 @@
 package Modules.SymbolScreen.SymbolCategory;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,8 +29,10 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
         this.cContext = cContext;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolCategory> list) {
         this.listSymbolCategory =  list;
+        notifyDataSetChanged();
     }
 
     @NonNull

@@ -1,5 +1,6 @@
 package Modules.SymbolScreen.SymbolDetail.Step;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
@@ -21,14 +22,15 @@ import Services.SymbolStep;
 
 public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder> {
     private final Context sContext;
-    private static List<SymbolStep> steps;
+    private List<SymbolStep> steps;
 
     public StepAdapter(Context context) {
         this.sContext = context;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolStep> list) {
-        steps = list;
+        this.steps = list;
         notifyDataSetChanged();
     }
 
