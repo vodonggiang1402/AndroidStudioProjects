@@ -89,6 +89,7 @@ public class SymbolDetail extends AppCompatActivity {
                 symbolDes.setText(symbolDesText);
             } else {
                 symbolDes.setVisibility(View.INVISIBLE);
+                symbolDes.setHeight(0);
             }
 
             List<SymbolStep> steps = symbolModel.getSteps();
