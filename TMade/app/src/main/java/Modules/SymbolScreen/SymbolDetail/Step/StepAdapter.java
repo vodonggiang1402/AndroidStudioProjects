@@ -1,5 +1,8 @@
 package Modules.SymbolScreen.SymbolDetail.Step;
 
+import android.content.Context;
+import android.os.Bundle;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -45,11 +48,8 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
     public void onBindViewHolder(@NonNull StepViewHolder holder, int position) {
 
         SymbolStep symbolStep = steps.get(position);
-
-        String symbolName =  getStringByIdName(sContext, symbolStep.getContent());
-        if (!symbolName.isEmpty()) {
-            holder.textView.setText(symbolName);
-        }
+        String symbolStepName = sContext.getResources().getString(R.string.step_text) + " " + String.valueOf(position + 1) + ": " + getStringByIdName(sContext, symbolStep.getContent());
+        holder.textView.setText(symbolStepName);
 
         String iconName = symbolStep.getImageName();
         if (!iconName.isEmpty()) {
