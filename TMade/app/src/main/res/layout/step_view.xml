@@ -21,6 +21,6 @@
         android:contentDescription="@string/app_name"
         android:scaleType="center"
         android:src="@drawable/ico_chain_crochet"
-        android:background="@color/yellow"
+        android:background="@color/background_color"
         />
 </LinearLayout>

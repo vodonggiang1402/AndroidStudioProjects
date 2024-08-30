@@ -1,6 +1,8 @@
 [versions]
 agp = "8.5.2"
 cardview = "1.0.0"
+chromecastSender = "0.28"
+coreVersion = "12.1.0"
 gson = "2.10.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,7 +15,9 @@ recyclerview = "1.3.2"
 core = "1.13.1"
 
 [libraries]
+androidyoutubeplayer-core = { module = "com.pierfrancescosoffritti.androidyoutubeplayer:core", version.ref = "coreVersion" }
 cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+chromecast-sender = { module = "com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender", version.ref = "chromecastSender" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

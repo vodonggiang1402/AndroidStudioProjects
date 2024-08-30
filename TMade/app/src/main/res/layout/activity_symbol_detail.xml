@@ -69,7 +69,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:textColor="@android:color/black"
-                android:background="@color/blue"
+                android:background="@color/background_color"
                 android:gravity="start"
                 />
             <androidx.recyclerview.widget.RecyclerView
@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="20sp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:textColor="@android:color/black"
@@ -95,6 +95,32 @@
                 android:gravity="center_vertical"
                 android:text="@string/watch_video_text"
                 />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/youtube_player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/youtube_player_play_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:icon="@drawable/ico_play"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    app:iconSize="60dp"
+                    app:iconGravity="textStart"
+                    android:background="@color/white_50"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
+                    />
+            </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

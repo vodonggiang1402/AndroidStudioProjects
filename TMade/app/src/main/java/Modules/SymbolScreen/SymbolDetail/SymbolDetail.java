@@ -9,18 +9,29 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.button.MaterialButton;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.SymbolModel;
 import Services.SymbolStep;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+
 
 public class SymbolDetail extends AppCompatActivity {
     @Override
@@ -47,12 +58,14 @@ public class SymbolDetail extends AppCompatActivity {
             }
         });
 
-
         RelativeLayout relativeLayout = findViewById(R.id.symbol_detail_title_relative_layout);
         TextView symbolTitle = findViewById(R.id.symbol_detail_title);
         TextView symbolDes = findViewById(R.id.symbol_detail_des);
         RecyclerView rcvStepView = findViewById(R.id.rcv_step_view);
         rcvStepView.setNestedScrollingEnabled(false);
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
+        MaterialButton materialButton = findViewById(R.id.youtube_player_play_button);
+
         //receive
         SymbolModel symbolModel = (SymbolModel) getIntent().getSerializableExtra("SymbolModel");
         if (symbolModel != null) {
@@ -86,6 +99,22 @@ public class SymbolDetail extends AppCompatActivity {
                 stepAdapter.setData(steps);
                 rcvStepView.setAdapter(stepAdapter);
             }
+
+            getLifecycle().addObserver(youTubePlayerView);
+            youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                @Override
+                public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                    String videoId = extractYTId(symbolModel.getVideoUrl());
+                    youTubePlayer.cueVideo(videoId, 0);
+                }
+            });
+
+            materialButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
     }
 
@@ -101,4 +130,17 @@ public class SymbolDetail extends AppCompatActivity {
         }
         return resuls;
     }
+
+    public static String extractYTId(String ytUrl) {
+        String vId = null;
+        Pattern pattern = Pattern.compile(
+                "^https?://.*(?:youtu.be/|v/|u/\\w/|embed/|watch?v=)([^#&?]*).*$",
+                Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(ytUrl);
+        if (matcher.matches()){
+            vId = matcher.group(1);
+        }
+        return vId;
+    }
+
 }

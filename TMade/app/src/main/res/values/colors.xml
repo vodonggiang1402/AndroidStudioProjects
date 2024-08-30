@@ -5,6 +5,7 @@
     <color name="red">#F44336</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
     <color name="main_color">#F76A89</color>
     <color name="plash_color">#F6D4D2</color>
     <color name="background_color">#FAFAFA</color>
