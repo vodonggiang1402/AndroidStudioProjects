@@ -189,10 +189,10 @@
     <string name="stitch_sc3tog_crochet_content_4">This completes a sc3tog.</string>
 
     <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_name">sc3tog(skipping the center st)</string>
-    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_description"> </string>
-    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_1">Insert hook into the both loops of the first of three sts.</string>
-    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_2">This makes two incomplete scs. Yarn over and draw through all 3 loops on hook at once.</string>
-    <string name="stitch_sc3tog_skipping_the_center_stich_crochet_content_3">This completes a sc3tog.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_description"> </string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_content_1">Insert hook into the both loops of the first of three sts.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_content_2">This makes two incomplete scs. Yarn over and draw through all 3 loops on hook at once.</string>
+    <string name="stitch_sc3tog_skipping_the_center_stitch_crochet_content_3">This completes a sc3tog.</string>
 
     <string name="stitch_hdc3tog_crochet_name">hdc3tog</string>
     <string name="stitch_hdc3tog_crochet_description"> </string>

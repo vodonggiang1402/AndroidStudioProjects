@@ -672,15 +672,15 @@
         "steps" : [
           {
             "content" : "stitch_sc3tog_crochet_content_1",
-            "image_name" : "ico_single_crochet_3_stiches_together_1"
+            "image_name" : "ico_sc3tog_crochet_1"
           },
           {
             "content" : "stitch_sc3tog_crochet_content_2",
-            "image_name" : "ico_single_crochet_3_stiches_together_2"
+            "image_name" : "ico_sc3tog_crochet_2"
           },
           {
             "content" : "stitch_sc3tog_crochet_content_3",
-            "image_name" : "ico_single_crochet_3_stiches_together_3"
+            "image_name" : "ico_sc3tog_crochet_3"
           },
           {
             "content" : "stitch_sc3tog_crochet_content_4",
@@ -700,7 +700,7 @@
         "steps" : [
           {
             "content" : "stitch_sc3tog_skipping_the_center_stitch_crochet_content_1",
-            "image_name" : "ico_c3tog_skipping_the_center_stitch_1"
+            "image_name" : "ico_sc3tog_skipping_the_center_stitch_1"
           },
           {
             "content" : "stitch_sc3tog_skipping_the_center_stitch_crochet_content_2",
