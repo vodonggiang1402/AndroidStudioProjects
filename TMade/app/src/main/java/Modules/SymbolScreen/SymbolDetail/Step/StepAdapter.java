@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
@@ -46,11 +47,12 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull StepViewHolder holder, int position) {
-
         SymbolStep symbolStep = steps.get(position);
+        if (symbolStep == null) {
+            return;
+        }
         String symbolStepName = sContext.getResources().getString(R.string.step_text) + " " + String.valueOf(position + 1) + ": " + getStringByIdName(sContext, symbolStep.getContent());
         holder.textView.setText(symbolStepName);
-
         String iconName = symbolStep.getImageName();
         if (!iconName.isEmpty()) {
             Context context = holder.imageView.getContext();
@@ -64,6 +66,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
         } else {
             holder.imageView.setVisibility(View.INVISIBLE);
         }
+
     }
 
     @Override
@@ -76,7 +79,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
 
     public static class StepViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView imageView;
+        private final AppCompatImageView imageView;
         private final TextView textView;
 
         public StepViewHolder(@NonNull View itemView) {

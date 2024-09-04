@@ -208,4 +208,16 @@
     <string name="stitch_dc3tog_crochet_content_3">Dùng kim lấy len và kéo qua cả 4 vòng len trên kim.</string>
     <string name="stitch_dc3tog_crochet_content_4">Hoàn thành 1 mũi dc3tog (3 mũi kép chụm đầu).</string>
 
+    <string name="language_text">Ngôn ngữ ứng dụng</string>;
+    <string name="contact_text">Contact us</string> = "Liên hệ chúng tôi";
+    <string name="share_text">Chia sẻ ứng dụng</string>;
+    <string name="rate_text">Đánh giá ứng dụng</string>;
+    <string name="app_version_text">Phiên bản</string>;
+
+    <string name="setting_screen_header_title">Cài đặt</string>;
+    <string name="language_screen_header_title">Ngôn ngữ ứng dụng</string>;
+    <string name="term_screen_header_title">Điều khoản hoạt động</string>;
+    <string name="policy_screen_header_title">Chính sách bảo mật</string>;
+    <string name="contact_screen_header_title">Liên hệ chúng tôi</string>;
+
 </resources>

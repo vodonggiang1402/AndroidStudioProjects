@@ -102,16 +102,6 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
             textView = itemView.findViewById(R.id.symbol_title);
             cardView = itemView.findViewById(R.id.card_view);
         }
-
-        public void setClickMethod(int position){
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "abc", Toast.LENGTH_LONG).show();
-                }
-            });
-
-        }
     }
 
     public static String getStringByIdName(Context context, String idName) {

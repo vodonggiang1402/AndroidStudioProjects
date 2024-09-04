@@ -208,4 +208,15 @@
     <string name="stitch_dc3tog_crochet_content_3">Yarn over hook and draw through all 4 loops on hook at once.</string>
     <string name="stitch_dc3tog_crochet_content_4">This completes a dc3tog</string>
 
+    <string name="language_text">Language Application</string>;
+    <string name="contact_text">Contact us</string> = "Contact us";
+    <string name="share_text">Share Application</string>;
+    <string name="rate_text">Rate Application</string>;
+    <string name="app_version_text">Version</string>;
+
+    <string name="setting_screen_header_title">Setting</string>;
+    <string name="language_screen_header_title">Language Application</string>;
+    <string name="term_screen_header_title">Term Application</string>;
+    <string name="policy_screen_header_title">Policy Application</string>;
+    <string name="contact_screen_header_title">Contact us</string>;
 </resources>
