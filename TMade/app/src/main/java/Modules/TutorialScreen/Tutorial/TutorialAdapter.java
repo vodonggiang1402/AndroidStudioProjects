@@ -2,6 +2,7 @@ package Modules.TutorialScreen.Tutorial;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -18,6 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
+
+import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
+import Modules.TutorialScreen.TutorialDetail.TutorialDetailScreen;
 import Services.Tutorial.TutorialModel;
 
 public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.TutorialViewHolder> {
@@ -65,6 +69,15 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
         }
 
         holder.linearLayout.setBackgroundColor(Color.parseColor("#"+ tutorialModel.getColorString()));
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(tContext, TutorialDetailScreen.class);
+                intent.putExtra("TutorialModel", tutorialModel);
+                tContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
