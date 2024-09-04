@@ -1,4 +1,4 @@
-package Services;
+package Services.Symbol;
 import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;

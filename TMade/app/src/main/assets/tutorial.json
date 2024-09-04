@@ -1,0 +1,180 @@
+{
+    "data" : [
+        {
+        "tutorial_name" : "tips_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "tips_image",
+        "color" : "FFA500",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn kỹ thuật kết thúc hàng tinh tế",
+                "item_des" : "Mô tả: Khi xuất hiện cụm từ fasten off trong chart móc tiếng Anh, các bạn áp dụng ngay kỹ thuật này nhé.",
+                "item_color" : "FFA500",
+                "item_image" : "",
+                "item_url" : "UxbRYPuL1js"
+            },
+            {
+                "item_name" : "Hướng dẫn kỹ thuật tản mũi",
+                "item_des" : "Mô tả: Kỹ thuật này giúp các bạn có thể móc được 1 hình tròn hoàn hảo",
+                "item_color" : "FFA500",
+                "item_image" : "",
+                "item_url" : "6mkKwNXCo1o"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "toy_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "toy_image",
+        "color" : "FED1B2",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc gà con",
+                "item_des" : "Chart móc con gà không chỉ trở thành một tác phẩm nghệ thuật tinh xảo mà còn mang lại ý nghĩa về may mắn và sự thịnh vượng.",
+                "item_color" : "FED1B2",
+                "item_image" : "",
+                "item_url" : "TKgp9_FIc7w"
+            },
+            {
+                "item_name" : "Hướng dẫn móc gấu Teddy Mr Bean",
+                "item_des" : "Nếu bạn là một fan của Mr.Bean với tính cách khá ngốc ngếch, đáng yêu và trẻ con thì chắc hẳn bạn đã rất quen thuộc với chú gấu bông Teddy mà ông luôn mang theo bên mình.",
+                "item_color" : "FED1B2",
+                "item_image" : "",
+                "item_url" : "HQe-eSzkSmc"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "bag_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "bag_image",
+        "color" : "088DA5",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc túi hoa hướng dương",
+                "item_des" : "Mô tả: Cách móc túi hoa hướng dương",
+                "item_color" : "088DA5",
+                "item_image" : "",
+                "item_url" : "5PpSR0B2OJ8"
+            },
+            {
+                "item_name" : "Hướng dẫn móc túi lưới sợi vải",
+                "item_des" :  "Mô tả: Cách móc túi lưới sợi vải",
+                "item_color" : "088DA5",
+                "item_image" : "",
+                "item_url" : "Hm_DrV3GjIU"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "glove_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "glove_image",
+        "color" : "52BF90",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc găng tay kiểu cơ bản",
+                "item_des" :  "Mô tả: \n - Kim móc: 4 mm. \n - Chất liệu: Len milk cotton.",
+                "item_color" : "088DA5",
+                "item_image" : "",
+                "item_url" : "0El2GswFQUo"
+            },
+            {
+                "item_name" : "Hướng dẫn móc găng tay dài hở ngón siêu đơn giản",
+                "item_des" :  "Mô tả: \nChúc mọi người làm thành công và có một đôi găng tay xinh xinh nhé!",
+                "item_color" : "088DA5",
+                "item_image" : "",
+                "item_url" : "Vc0wLYud6L0"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "scarf_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "scarf_image",
+        "color" : "FFCC5C",
+        "list": [
+            {
+                "item_name" : "Móc khăn quàng cổ phong cách Hàn Quốc",
+                "item_des" : "Mô tả: \n - 300 gr len Yaoh Wool (có thể thay bằng len ống) \n - Kim móc 5mm \n - Ghim đánh dấu \n - Kim khâu len \n - Kéo cắt",
+                "item_color" : "FFCC5C",
+                "item_image" : "",
+                "item_url" : "G7fZYwwexQI"
+            },
+            {
+                "item_name" : "Hướng dẫn móc khăn len cơ bản",
+                "item_des" : "Mô tả: \nKhăn len móc ngang 22cm dài 155cm. \n Cần 4 cuộn len trộng lượng 100gram mỗi cuộn \n1 kim móc 8mm \n1 kim may len (dấu sợi thừa)",
+                "item_color" : "FFCC5C",
+                "item_image" : "",
+                "item_url" : "huekBFvo8l8"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "sweater_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "sweater_image",
+        "color" : "7FBFBF",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc áo croptop viền ren",
+                "item_des" : "Mô tả: \n- Kim móc 2.25mm. \n- Sợi cotton vn 1mm (chập đôi). \n- 7 hạt nút. \n- Kéo. \n- Kim khâu.",
+                "item_color" : "7FBFBF",
+                "item_image" : "",
+                "item_url" : "EZXPxu6Wkvk"
+            },
+            {
+                "item_name" : "Hướng dẫn móc áo Cardigan",
+                "item_des" : "Mô tả: \nMóc giống hoàn toàn hướng dẫn:  Size áo cho bạn tầm 60kg trở lại. \nSố đo: vai 42 -ngực 88cm. Thành phẩm áo ngang 49.5cm, dài áo 57cm. \nNguyên liệu: len AC, kim móc 2.5mm",
+                "item_color" : "7FBFBF",
+                "item_image" : "",
+                "item_url" : "NygZRcKksyc"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "woolly_hat_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "woolly_hat_image",
+        "color" : "ff6f69",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc nón len hoa nhí",
+                "item_des" : "Mô tả: \nSợi dệt: 1-2 cuộn \nKim móc: 2.5mm \nKéo, kim đánh dấu, kim khâu len.",
+                "item_color" : "ff6f69",
+                "item_image" : "",
+                "item_url" : "124LGCnughk"
+            },
+            {
+                "item_name" : "Hướng dẫn móc nón bucket",
+                "item_des" : "Mô tả: \nDưới đây là hướng dẫn nhanh chóng và dễ dàng về cách móc một chiếc nón đơn giản! Mẫu này có thể được điều chỉnh để phù hợp với mọi kích thước. Đây là dự án đầu tiên hoàn hảo dành cho người mới bắt đầu vì nó sử dụng các mũi móc cơ bản nhất.",
+                "item_color" : "ff6f69",
+                "item_image" : "",
+                "item_url" : "ps7lSAG1nIg"
+            }
+        ]
+        },
+        {
+        "tutorial_name" : "doormat_key_name",
+        "tutorial_des" : "",
+        "tutorial_image" : "doormat_image",
+        "color" : "F76A89",
+        "list": [
+            {
+                "item_name" : "Hướng dẫn móc chậu cây xương rồng",
+                "item_des" : "Mô tả: \n Cách móc chậu cây xương rồng",
+                "item_color" : "F76A89",
+                "item_image" : "",
+                "item_url" : "fX5PSAqZ5Hc"
+            },
+            {
+                "item_name" : "Hướng dẫn móc lót ly hình hoa cho người mới bắt đầu",
+                "item_des" : "Mô tả: Đây là mẫu lót ly xinh xắn nhưng cách móc rất đơn giản bằng các mũi móc len cơ bản. \n- Kim móc: 2.5mm. \n- Len milk bò 50gram  2 màu \n- Kéo \n- Kim khâu len",
+                "item_color" : "F76A89",
+                "item_image" : "",
+                "item_url" : "St7ytCVsijM"
+            }
+        ]
+        }
+    ]
+}

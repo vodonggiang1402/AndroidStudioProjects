@@ -220,4 +220,12 @@
     <string name="policy_screen_header_title">Chính sách bảo mật</string>;
     <string name="contact_screen_header_title">Liên hệ chúng tôi</string>;
 
+    <string name="toy_key_name">Hướng dẫn móc đồ chơi.</string>;
+    <string name="bag_key_name">Hướng dẫn móc túi."</string>;
+    <string name="glove_key_name">Hướng dẫn móc găng tay</string>";
+    <string name="scarf_key_name">Hướng dẫn móc khăn.</string>;
+    <string name="sweater_key_name">Hướng dẫn móc áo.</string>;
+    <string name="woolly_hat_key_name">Hướng dẫn móc nón.</string> ;
+    <string name="doormat_key_name">Hướng dẫn móc đồ trang trí nhà cửa.</string>;
+    <string name="tips_key_name">Các mẹo trong móc len.</string>;
 </resources>

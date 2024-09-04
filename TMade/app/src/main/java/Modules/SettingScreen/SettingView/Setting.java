@@ -1,12 +1,22 @@
 package Modules.SettingScreen.SettingView;
 
 public class Setting {
+    private int currentIndex;
     private int iconName;
     private String text;
 
-    public Setting(int iconName, String text) {
+    public Setting(int currentIndex, int iconName, String text) {
+        this.currentIndex = currentIndex;
         this.iconName = iconName;
         this.text = text;
+    }
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(int currentIndex) {
+        this.currentIndex = currentIndex;
     }
 
     public int getIconName() {

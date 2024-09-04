@@ -1,4 +1,4 @@
-package Services;
+package Services.Symbol;
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 

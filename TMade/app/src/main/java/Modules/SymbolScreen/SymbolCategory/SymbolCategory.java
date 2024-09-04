@@ -1,6 +1,6 @@
 package Modules.SymbolScreen.SymbolCategory;
 import java.util.ArrayList;
-import Services.SymbolModel;
+import Services.Symbol.SymbolModel;
 
 public class SymbolCategory {
     private String nameCategory;

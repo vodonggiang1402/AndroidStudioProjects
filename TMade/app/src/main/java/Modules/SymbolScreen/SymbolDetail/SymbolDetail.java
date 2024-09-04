@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.button.MaterialButton;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.tmadecrochet.tmade.R;
 
@@ -27,10 +26,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
-import Services.SymbolModel;
-import Services.SymbolStep;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
+import Services.Symbol.SymbolModel;
+import Services.Symbol.SymbolStep;
 
 
 public class SymbolDetail extends AppCompatActivity {

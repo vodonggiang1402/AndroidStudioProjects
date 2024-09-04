@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +18,11 @@ import android.view.ViewGroup;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
 import Modules.SymbolScreen.SymbolCategory.SymbolCategoryAdapter;
-import Services.SymbolModel;
-import Services.SymbolResponse;
+import Services.Symbol.SymbolModel;
+import Services.Symbol.SymbolResponse;
 import Helper.SharedPrefHelper;
 
 public class SymbolFragment extends Fragment {
@@ -57,7 +55,7 @@ public class SymbolFragment extends Fragment {
 
     private ArrayList<SymbolCategory> getListSymbolCategory(Context context) {
         ArrayList<SymbolCategory> listSymbolCategory  = new ArrayList<>();
-        SymbolResponse data = (SymbolResponse) SharedPrefHelper.getSharedOBJECT(context,"symbol_response");
+        SymbolResponse data = (SymbolResponse) SharedPrefHelper.getSharedOBJECT(context,"symbol_response", SymbolResponse.class);
 
         ArrayList<ArrayList<SymbolModel>> listCategory =  data.list;
         for (int i=0; i<listCategory.size(); i++) {

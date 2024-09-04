@@ -21,7 +21,8 @@ import java.nio.charset.StandardCharsets;
 import Main.MainActivity;
 import com.tmadecrochet.tmade.R;
 import Helper.SharedPrefHelper;
-import Services.SymbolResponse;
+import Services.Symbol.SymbolResponse;
+import Services.Tutorial.TutorialResponse;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -36,12 +37,24 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
+        //get data for symbol
         try {
             String jsonFileContent = readFile("symbols.json");
             Gson gson = new Gson();
             SymbolResponse response = gson.fromJson(jsonFileContent, SymbolResponse.class);
             Log.i("response","response" + response);
             SharedPrefHelper.setSharedOBJECT(this,"symbol_response", response);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //get data for tutorial
+        try {
+            String jsonFileContent = readFile("tutorial.json");
+            Gson gson = new Gson();
+            TutorialResponse response = gson.fromJson(jsonFileContent, TutorialResponse.class);
+            Log.i("response","response" + response);
+            SharedPrefHelper.setSharedOBJECT(this,"tutorial_response", response);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

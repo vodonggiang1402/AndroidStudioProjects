@@ -19,7 +19,7 @@ import java.util.List;
 
 import Modules.SymbolScreen.Symbol.SymbolAdapter;
 import Modules.SymbolScreen.UpdateView.UpdateViewAdapter;
-import Services.SymbolModel;
+import Services.Symbol.SymbolModel;
 
 public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAdapter.SymbolCategoryViewHolder> {
     private final Context cContext;

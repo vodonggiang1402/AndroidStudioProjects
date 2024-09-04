@@ -1,6 +1,5 @@
 package Modules.SettingScreen;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,13 +18,8 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
-import Helper.SharedPrefHelper;
 import Modules.SettingScreen.SettingView.Setting;
-import Modules.SettingScreen.SettingView.SettingApdater;
-import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
-import Modules.SymbolScreen.SymbolCategory.SymbolCategoryAdapter;
-import Services.SymbolModel;
-import Services.SymbolResponse;
+import Modules.SettingScreen.SettingView.SettingAdapter;
 
 public class SettingFragment extends Fragment {
 
@@ -47,23 +41,23 @@ public class SettingFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
         rcvSettingView.setLayoutManager(layoutManager);
 
-        SettingApdater settingApdater = new SettingApdater(this.getContext());
+        SettingAdapter settingAdapter = new SettingAdapter(this.getContext());
 
         rcvSettingView.setItemAnimator(new DefaultItemAnimator());
 
-        settingApdater.setData(getListSymbolCategory());
-        rcvSettingView.setAdapter(settingApdater);
+        settingAdapter.setData(getListSymbolCategory());
+        rcvSettingView.setAdapter(settingAdapter);
 
         return view;
     }
 
     private ArrayList<Setting> getListSymbolCategory() {
         ArrayList<Setting> settings  = new ArrayList<>();
-        settings.add(new Setting(R.drawable.ico_setting_language, this.getString(R.string.language_text)));
-        settings.add(new Setting(R.drawable.ico_setting_create_contact, this.getString(R.string.contact_text)));
-        settings.add(new Setting(R.drawable.ico_setting_share, this.getString(R.string.share_text)));
-        settings.add(new Setting(R.drawable.ico_setting_rate, this.getString(R.string.rate_text)));
-        settings.add(new Setting(R.drawable.ico_app_version, this.getString(R.string.app_version_text)));
+        settings.add(new Setting(0, R.drawable.ico_setting_language, this.getString(R.string.language_text)));
+        settings.add(new Setting(1, R.drawable.ico_setting_create_contact, this.getString(R.string.contact_text)));
+        settings.add(new Setting(2, R.drawable.ico_setting_share, this.getString(R.string.share_text)));
+        settings.add(new Setting(3, R.drawable.ico_setting_rate, this.getString(R.string.rate_text)));
+        settings.add(new Setting(4, R.drawable.ico_app_version, this.getString(R.string.app_version_text)));
         return  settings;
     }
 }

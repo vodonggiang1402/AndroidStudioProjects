@@ -1,15 +1,12 @@
 package Modules.SymbolScreen.SymbolDetail.Step;
 
 import android.content.Context;
-import android.os.Bundle;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,9 +17,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
-import Modules.SymbolScreen.Symbol.SymbolAdapter;
-import Services.SymbolModel;
-import Services.SymbolStep;
+import Services.Symbol.SymbolStep;
 
 public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder> {
     private final Context sContext;
