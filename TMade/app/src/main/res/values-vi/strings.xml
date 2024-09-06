@@ -228,4 +228,7 @@
     <string name="woolly_hat_key_name">Hướng dẫn móc nón.</string> ;
     <string name="doormat_key_name">Hướng dẫn móc đồ trang trí nhà cửa.</string>;
     <string name="tips_key_name">Các mẹo trong móc len.</string>;
+
+    <string name="main_counter_text">Bộ đếm chính</string>;
+    <string name="extra_counter_text">Bộ đếm phụ</string>;
 </resources>

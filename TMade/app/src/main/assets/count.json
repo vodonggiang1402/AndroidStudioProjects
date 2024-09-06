@@ -1,0 +1,15 @@
+{
+    "data" : [
+        [
+            {
+            "is_global" : true,
+            "count_name" : "main_counter_default",
+            "count": 1,
+            "color" : "F76A89"
+            }
+        ],
+        [
+            
+        ]
+    ]
+}

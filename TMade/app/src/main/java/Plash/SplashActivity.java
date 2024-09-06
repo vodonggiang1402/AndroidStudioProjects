@@ -21,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 import Main.MainActivity;
 import com.tmadecrochet.tmade.R;
 import Helper.SharedPrefHelper;
+import Services.Counter.CounterResponse;
 import Services.Symbol.SymbolResponse;
 import Services.Tutorial.TutorialResponse;
 
@@ -44,6 +45,17 @@ public class SplashActivity extends AppCompatActivity {
             SymbolResponse response = gson.fromJson(jsonFileContent, SymbolResponse.class);
             Log.i("response","response" + response);
             SharedPrefHelper.setSharedOBJECT(this,"symbol_response", response);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //get data for counter
+        try {
+            String jsonFileContent = readFile("count.json");
+            Gson gson = new Gson();
+            CounterResponse response = gson.fromJson(jsonFileContent, CounterResponse.class);
+            Log.i("response","response" + response);
+            SharedPrefHelper.setSharedOBJECT(this,"counter_response", response);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
