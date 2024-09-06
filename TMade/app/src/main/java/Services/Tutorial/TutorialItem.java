@@ -24,7 +24,7 @@ public class TutorialItem implements Serializable {
     @Expose
     private final String itemColor;
 
-    @SerializedName("list")
+    @SerializedName("item_url")
     @Expose
     private final String itemUrl;
 

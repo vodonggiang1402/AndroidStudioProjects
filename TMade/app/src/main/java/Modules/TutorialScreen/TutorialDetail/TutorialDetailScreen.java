@@ -67,7 +67,7 @@ public class TutorialDetailScreen extends AppCompatActivity {
             if (!items.isEmpty()) {
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
                 rcvTutorialDetailView.setLayoutManager(linearLayoutManager);
-                TutorialDetailAdapter tutorialDetailAdapter = new TutorialDetailAdapter(this);
+                TutorialDetailAdapter tutorialDetailAdapter = new TutorialDetailAdapter(this, this.getLifecycle());
                 tutorialDetailAdapter.setData(items);
                 rcvTutorialDetailView.setAdapter(tutorialDetailAdapter);
             }

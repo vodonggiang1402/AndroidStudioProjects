@@ -29,6 +29,8 @@ import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.Symbol.SymbolModel;
 import Services.Symbol.SymbolStep;
 
+import android.content.Intent;
+
 
 public class SymbolDetail extends AppCompatActivity {
     @Override
