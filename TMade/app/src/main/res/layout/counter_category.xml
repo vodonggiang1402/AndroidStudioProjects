@@ -15,12 +15,13 @@
         android:textColor="@android:color/black"
         android:text="@string/main_counter_text"
         android:drawablePadding="10dp"
+        android:background="@color/background_color"
         app:drawableLeftCompat="@drawable/ico_symbol_header_1" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_counter_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background_color"
         android:layout_marginStart="12dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginEnd="12dp" />
 </LinearLayout>

@@ -6,7 +6,6 @@
     android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Modules.CounterScreen.CounterFragment">
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/counter_toolbar"
         android:layout_width="match_parent"
