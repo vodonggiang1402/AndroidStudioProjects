@@ -17,14 +17,14 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
-import Modules.SymbolScreen.Symbol.SymbolAdapter;
-import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
+import Helper.SharedPrefHelper;
 import Services.Counter.CounterModel;
-import Services.Symbol.SymbolModel;
+import Services.Counter.CounterResponse;
 
 public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterViewHolder> {
     private final Context cContext;
@@ -68,6 +68,9 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
             @Override
             public void onClick(View v) {
                 counterModel.setCount(counterModel.getCount() - 1);
+                Gson gson = new Gson();
+                String stringCounterModel = gson.toJson(counterModel);
+                SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", stringCounterModel);
             }
         });
 
@@ -75,6 +78,9 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
             @Override
             public void onClick(View v) {
                 counterModel.setCount(counterModel.getCount() + 1);
+                Gson gson = new Gson();
+                String stringCounterModel = gson.toJson(counterModel);
+                SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", stringCounterModel);
             }
         });
     }

@@ -49,7 +49,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             return;
         }
         holder.nameCounterCategory.setText(counterCategory.getCounterCategoryName());
-        holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, 0, 0);
+        holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, counterCategory.getIconActionName(), 0);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
         holder.rcvCounterCategory.setLayoutManager(linearLayoutManager);

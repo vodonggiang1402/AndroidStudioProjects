@@ -69,21 +69,24 @@ public class CounterFragment extends Fragment {
         for (int i=0; i<listCategory.size(); i++) {
             String text= "";
             int iconName = R.drawable.ico_extra_counter;
+            int iconActionName = R.drawable.ico_refresh;
             boolean isGlobal = false;
             switch (i) {
                 case 0:
                     isGlobal = true;
                     text = getString(R.string.main_counter_text);
                     iconName = R.drawable.ico_global_counter;
+                    iconActionName = R.drawable.ico_refresh;
                     break;
                 case 1:
                     text = getString(R.string.extra_counter_text);
                     iconName = R.drawable.ico_extra_counter;
+                    iconActionName = R.drawable.ico_more;
                     break;
                 default:
                     break;
             }
-            listSymbolCategory.add(new CounterCategory(isGlobal, text, iconName, listCategory.get(i)));
+            listSymbolCategory.add(new CounterCategory(isGlobal, text, iconName, iconActionName, listCategory.get(i)));
         }
 
         return  listSymbolCategory;

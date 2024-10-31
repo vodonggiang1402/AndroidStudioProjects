@@ -30,5 +30,13 @@ public class SharedPrefHelper {
         String json = sharedPreferences.getString(key, "");
         return gson.fromJson(json, classType);
     }
+
+    public static void saveSharedOBJECT(Context context, String variable, String data)
+    {
+        SharedPreferences sharedPreferences =  context.getSharedPreferences(
+                context.getPackageName(), Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = sharedPreferences.edit();
+        prefsEditor.putString(variable, data).apply();
+    }
 }
 
