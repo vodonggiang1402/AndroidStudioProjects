@@ -48,6 +48,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         if (counterCategory == null) {
             return;
         }
+
         holder.nameCounterCategory.setText(counterCategory.getCounterCategoryName());
         holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, counterCategory.getIconActionName(), 0);
 
