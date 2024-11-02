@@ -2,6 +2,7 @@ package Modules.CounterScreen.CounterCategory;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
-
 import Modules.CounterScreen.Counter.CounterAdapter;
-import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
-import Modules.SymbolScreen.UpdateView.UpdateViewAdapter;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
 
@@ -51,7 +50,11 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
 
         holder.nameCounterCategory.setText(counterCategory.getCounterCategoryName());
         holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, counterCategory.getIconActionName(), 0);
-
+        holder.nameCounterCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
         holder.rcvCounterCategory.setLayoutManager(linearLayoutManager);
         CounterAdapter counterAdapter  = new CounterAdapter(this.cContext);
