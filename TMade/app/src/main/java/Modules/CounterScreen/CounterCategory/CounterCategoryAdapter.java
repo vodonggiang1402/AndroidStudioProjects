@@ -1,11 +1,17 @@
 package Modules.CounterScreen.CounterCategory;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.provider.CalendarContract;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
+import java.util.Objects;
+
 import Modules.CounterScreen.Counter.CounterAdapter;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -53,6 +61,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         holder.nameCounterCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showDialog();
             }
         });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
@@ -79,5 +88,51 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             nameCounterCategory = itemView.findViewById(R.id.counter_category_title);
             rcvCounterCategory = itemView.findViewById(R.id.rcv_counter_category);
         }
+    }
+
+    private void showDialog()
+    {
+        final Dialog dialog = new Dialog(cContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottom_sheet_layout);
+
+        LinearLayout editLayout = dialog.findViewById(R.id.layout_edit);
+        LinearLayout resetLayout = dialog.findViewById(R.id.layout_reset);
+        LinearLayout removeLayout = dialog.findViewById(R.id.layout_remove);
+        LinearLayout cancelLayout = dialog.findViewById(R.id.layout_cancel);
+
+        editLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        resetLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        removeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        cancelLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 }

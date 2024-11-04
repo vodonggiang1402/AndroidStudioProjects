@@ -231,4 +231,10 @@
 
     <string name="main_counter_text">Bộ đếm chính</string>;
     <string name="extra_counter_text">Bộ đếm phụ</string>;
+    <string name="counter_title_sheet_text">Chọn</string>;
+
+    <string name="edit_counter_text">Chỉnh sửa</string>;
+    <string name="reset_counter_text">Đếm lại</string>;
+    <string name="remove_title_sheet_text">Xoá đếm</string>;
+    <string name="cancel_title_sheet_text">Bỏ qua</string>;
 </resources>

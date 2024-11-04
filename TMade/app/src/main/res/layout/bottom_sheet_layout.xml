@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_sheet_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/layout_edit"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <TextView android:id="@+id/edit_counter_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text = "@string/edit_counter_text"
+            android:textSize="25sp"
+            android:textStyle="normal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_reset"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <TextView android:id="@+id/reset_counter_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text = "@string/reset_counter_text"
+            android:textSize="25sp"
+            android:textStyle="normal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_remove"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <TextView android:id="@+id/remove_count_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text = "@string/remove_title_sheet_text"
+            android:textSize="25sp"
+            android:textStyle="normal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_cancel"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <TextView android:id="@+id/cancel_count_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:gravity="center"
+            android:text = "@string/cancel_title_sheet_text"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 </LinearLayout>

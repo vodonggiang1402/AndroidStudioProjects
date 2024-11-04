@@ -233,4 +233,10 @@
 
     <string name="main_counter_text">Main counter</string>;
     <string name="extra_counter_text">Extra counter</string>;
+    <string name="counter_title_sheet_text">Choose</string>;
+
+    <string name="edit_counter_text">Edit</string>;
+    <string name="reset_counter_text">Reset</string>;
+    <string name="remove_title_sheet_text">Remove</string>;
+    <string name="cancel_title_sheet_text">Cancel</string>;
 </resources>
