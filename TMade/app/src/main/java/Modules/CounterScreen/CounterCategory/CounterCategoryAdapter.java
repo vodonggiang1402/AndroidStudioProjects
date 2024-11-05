@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -57,11 +58,16 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         }
 
         holder.nameCounterCategory.setText(counterCategory.getCounterCategoryName());
-        holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, counterCategory.getIconActionName(), 0);
-        holder.nameCounterCategory.setOnClickListener(new View.OnClickListener() {
+        holder.nameCounterCategory.setCompoundDrawablesWithIntrinsicBounds(counterCategory.getIconName(), 0, 0, 0);
+        holder.buttonCategory.setCompoundDrawablesWithIntrinsicBounds(0, 0, counterCategory.getIconActionName(), 0);
+        holder.buttonCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                if (counterCategory.isGlobal()) {
+                    showDialog();
+                } else {
+                    showDialogAddCounterTitle();
+                }
             }
         });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
@@ -82,12 +88,43 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
     public static class CounterCategoryViewHolder extends RecyclerView.ViewHolder {
         private final TextView nameCounterCategory;
         private final RecyclerView rcvCounterCategory;
+        private final Button buttonCategory;
 
         public CounterCategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             nameCounterCategory = itemView.findViewById(R.id.counter_category_title);
+            buttonCategory = itemView.findViewById(R.id.counter_refresh_button);
             rcvCounterCategory = itemView.findViewById(R.id.rcv_counter_category);
         }
+    }
+
+    private void showDialogAddCounterTitle()
+    {
+        final Dialog dialog = new Dialog(cContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
+
+        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
+        okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
     private void showDialog()

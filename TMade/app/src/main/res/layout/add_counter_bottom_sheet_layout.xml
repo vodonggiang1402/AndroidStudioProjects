@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_counter_bottom_sheet_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dialog_bg"
@@ -18,7 +19,7 @@
             android:paddingBottom="10dp"
             android:gravity="center"
             android:text = "@string/counter_add_title_text"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="normal"/>
     </LinearLayout>
     <LinearLayout
@@ -48,14 +49,14 @@
         <Button
             android:id="@+id/counter_ok_btn"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel_btn_text" />
 
         <Button
             android:id="@+id/counter_cancel_btn"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ok_btn_text" />
     </LinearLayout>
