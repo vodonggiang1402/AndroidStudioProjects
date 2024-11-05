@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,10 +22,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import Helper.SharedPrefHelper;
 import Modules.CounterScreen.Counter.CounterAdapter;
+import Services.Counter.CounterModel;
+import Services.Counter.CounterResponse;
+
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
@@ -104,10 +110,16 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
 
+        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
         Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CounterResponse data = (CounterResponse) SharedPrefHelper.getSharedOBJECT(cContext,"counter_response", CounterResponse.class);
+                ArrayList<ArrayList<CounterModel>> listCategory =  data.list;
+                CounterModel counterModel = new CounterModel(false, editText.getText().toString(), 1, "F76A89");
+                ArrayList<CounterModel> extraList =  listCategory.get(1);
+                extraList.add(counterModel);
                 dialog.dismiss();
             }
         });

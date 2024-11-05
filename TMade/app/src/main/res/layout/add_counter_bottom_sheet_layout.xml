@@ -47,14 +47,14 @@
         android:gravity="center"
         android:padding="8dp">
         <Button
-            android:id="@+id/counter_ok_btn"
+            android:id="@+id/counter_cancel_btn"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel_btn_text" />
 
         <Button
-            android:id="@+id/counter_cancel_btn"
+            android:id="@+id/counter_ok_btn"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
