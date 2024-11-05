@@ -239,4 +239,9 @@
     <string name="reset_counter_text">Reset</string>;
     <string name="remove_title_sheet_text">Remove</string>;
     <string name="cancel_title_sheet_text">Cancel</string>;
+
+    <string name="counter_add_title_text">Information</string>;
+    <string name="ok_btn_text">OK</string>;
+    <string name="cancel_btn_text">Cancel</string>;
+    <string name="edit_text_hint">Please type the information</string>;
 </resources>

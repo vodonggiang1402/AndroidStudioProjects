@@ -237,4 +237,9 @@
     <string name="reset_counter_text">Đếm lại</string>;
     <string name="remove_title_sheet_text">Xoá đếm</string>;
     <string name="cancel_title_sheet_text">Bỏ qua</string>;
+
+    <string name="counter_add_title_text">Nhập thông tin</string>;
+    <string name="ok_btn_text">Đồng ý</string>;
+    <string name="cancel_btn_text">Bỏ qua</string>;
+    <string name="edit_text_hint">Vui lòng nhập thông tin</string>;
 </resources>
