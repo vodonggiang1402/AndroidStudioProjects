@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import Services.Symbol.SymbolResponse;
 
 public class SharedPrefHelper {
-    // save data in sharedPrefences
+
     public static void setSharedOBJECT(Context context, String key,
                                        Object value) {
 
@@ -20,7 +20,6 @@ public class SharedPrefHelper {
         prefsEditor.apply();
     }
 
-    //get data from sharedPrefences
     public static <GenericClass> GenericClass getSharedOBJECT(Context context, String key, Class<GenericClass> classType) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(
@@ -37,6 +36,7 @@ public class SharedPrefHelper {
                 context.getPackageName(), Context.MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = sharedPreferences.edit();
         prefsEditor.putString(variable, data).apply();
+        prefsEditor.apply();
     }
 }
 

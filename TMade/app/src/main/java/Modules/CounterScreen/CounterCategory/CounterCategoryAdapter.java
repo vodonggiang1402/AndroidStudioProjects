@@ -5,14 +5,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.provider.CalendarContract;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,27 +21,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import Helper.SharedPrefHelper;
 import Modules.CounterScreen.Counter.CounterAdapter;
-import Services.Counter.CounterModel;
-import Services.Counter.CounterResponse;
-
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import Modules.CounterScreen.SelectItemListener;
 
 public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
 
     private final Context cContext;
-    private List<CounterCategory> listCounterCategory;
+    private ArrayList<CounterCategory> listCounterCategory;
+    private final SelectItemListener listener;
 
-    public CounterCategoryAdapter(Context cContext) {
+    public CounterCategoryAdapter(Context cContext, SelectItemListener selectItemListener) {
         this.cContext = cContext;
+        this.listener = selectItemListener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void setData(List<CounterCategory> list) {
+    public void setData(ArrayList<CounterCategory> list) {
         this.listCounterCategory =  list;
         notifyDataSetChanged();
     }
@@ -72,7 +67,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
                 if (counterCategory.isGlobal()) {
                     showDialog();
                 } else {
-                    showDialogAddCounterTitle();
+                    listener.onItemClicked(cContext, counterCategory, position);
                 }
             }
         });
@@ -102,41 +97,6 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             buttonCategory = itemView.findViewById(R.id.counter_refresh_button);
             rcvCounterCategory = itemView.findViewById(R.id.rcv_counter_category);
         }
-    }
-
-    private void showDialogAddCounterTitle()
-    {
-        final Dialog dialog = new Dialog(cContext);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
-
-        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
-        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
-        okBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CounterResponse data = (CounterResponse) SharedPrefHelper.getSharedOBJECT(cContext,"counter_response", CounterResponse.class);
-                ArrayList<ArrayList<CounterModel>> listCategory =  data.list;
-                CounterModel counterModel = new CounterModel(false, editText.getText().toString(), 1, "F76A89");
-                ArrayList<CounterModel> extraList =  listCategory.get(1);
-                extraList.add(counterModel);
-                dialog.dismiss();
-            }
-        });
-
-        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
     private void showDialog()
@@ -185,3 +145,4 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 }
+

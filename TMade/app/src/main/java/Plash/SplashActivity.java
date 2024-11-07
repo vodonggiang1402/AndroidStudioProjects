@@ -24,6 +24,7 @@ import Helper.SharedPrefHelper;
 import Services.Counter.CounterResponse;
 import Services.Symbol.SymbolResponse;
 import Services.Tutorial.TutorialResponse;
+import android.content.SharedPreferences;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -38,45 +39,62 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-        //get data for symbol
-        try {
-            String jsonFileContent = readFile("symbols.json");
-            Gson gson = new Gson();
-            SymbolResponse response = gson.fromJson(jsonFileContent, SymbolResponse.class);
-            Log.i("response","response" + response);
-            SharedPrefHelper.setSharedOBJECT(this,"symbol_response", response);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        //get data for counter
-        try {
-            String jsonFileContent = readFile("count.json");
-            Gson gson = new Gson();
-            CounterResponse response = gson.fromJson(jsonFileContent, CounterResponse.class);
-            Log.i("response","response" + response);
-            SharedPrefHelper.setSharedOBJECT(this,"counter_response", response);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        //get data for tutorial
-        try {
-            String jsonFileContent = readFile("tutorial.json");
-            Gson gson = new Gson();
-            TutorialResponse response = gson.fromJson(jsonFileContent, TutorialResponse.class);
-            Log.i("response","response" + response);
-            SharedPrefHelper.setSharedOBJECT(this,"tutorial_response", response);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//        SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
+//        boolean prefValue = prefs.getBoolean("init_app", false);
+//        if(!prefValue) {
+            //get data for symbol
+            try {
+                String jsonFileContent = readFile("symbols.json");
+                Gson gson = new Gson();
+                SymbolResponse response = gson.fromJson(jsonFileContent, SymbolResponse.class);
+                Log.i("response", "response" + response);
+                SharedPrefHelper.setSharedOBJECT(this, "symbol_response", response);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        }, 3000);
+
+            //get data for counter
+            try {
+                String jsonFileContent = readFile("count.json");
+                Gson gson = new Gson();
+                CounterResponse response = gson.fromJson(jsonFileContent, CounterResponse.class);
+                Log.i("response", "response" + response);
+                SharedPrefHelper.setSharedOBJECT(this, "counter_response", response);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            //get data for tutorial
+            try {
+                String jsonFileContent = readFile("tutorial.json");
+                Gson gson = new Gson();
+                TutorialResponse response = gson.fromJson(jsonFileContent, TutorialResponse.class);
+                Log.i("response", "response" + response);
+                SharedPrefHelper.setSharedOBJECT(this, "tutorial_response", response);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    //Save information that this application has run for the first time
+                    SharedPreferences settings = getSharedPreferences("hasFirstRunApp", 0);
+                    SharedPreferences.Editor edit = settings.edit();
+                    edit.putBoolean("init_app", true);
+                    edit.apply();
+
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
+            }, 3000);
+//        } else {
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                }
+//            }, 3000);
+//        }
     }
 
     public String readFile(String fileName) throws IOException

@@ -1,6 +1,9 @@
 package Modules.CounterScreen;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,13 +14,18 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import Helper.SharedPrefHelper;
 import Modules.CounterScreen.CounterCategory.CounterCategory;
@@ -31,7 +39,11 @@ import Services.Symbol.SymbolResponse;
 import Services.Tutorial.TutorialModel;
 import Services.Tutorial.TutorialResponse;
 
-public class CounterFragment extends Fragment {
+public class CounterFragment extends Fragment implements SelectItemListener {
+    CounterCategoryAdapter counterCategoryAdapter;
+    RecyclerView rcvCounterCategory;
+    LinearLayoutManager layoutManager;
+    ArrayList<CounterCategory> currentList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,16 +58,18 @@ public class CounterFragment extends Fragment {
         }
 
         final FragmentActivity c = getActivity();
-        RecyclerView rcvCounterCategory = (RecyclerView) view.findViewById(R.id.rcv_counter_category);
+        rcvCounterCategory = (RecyclerView) view.findViewById(R.id.rcv_counter_category);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         rcvCounterCategory.setLayoutManager(layoutManager);
 
-        CounterCategoryAdapter counterCategoryAdapter = new CounterCategoryAdapter(this.getContext());
+        counterCategoryAdapter = new CounterCategoryAdapter(this.getContext(), this);
 
         rcvCounterCategory.setItemAnimator(new DefaultItemAnimator());
 
-        counterCategoryAdapter.setData(getListCounterCategory(getContext()));
+        currentList = getListCounterCategory(getContext());
+
+        counterCategoryAdapter.setData(currentList);
         rcvCounterCategory.setAdapter(counterCategoryAdapter);
 
         return view;
@@ -90,5 +104,46 @@ public class CounterFragment extends Fragment {
         }
 
         return  listSymbolCategory;
+    }
+
+
+    private void showDialogAddCounterTitle(Context context, CounterCategory category, int position)
+    {
+        final Dialog dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
+
+        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
+        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
+        okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CounterModel counterModel = new CounterModel(false, editText.getText().toString(), 1, "F76A89");
+                ArrayList<CounterModel> extraList = category.getCounters();
+                extraList.add(counterModel);
+                counterCategoryAdapter.notifyItemChanged(position);
+                dialog.dismiss();
+            }
+        });
+
+        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    @Override
+    public void onItemClicked(Context context, CounterCategory category, int position) {
+        showDialogAddCounterTitle(context, category, position);
     }
 }
