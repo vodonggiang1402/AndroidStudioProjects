@@ -39,12 +39,7 @@ import Services.Symbol.SymbolResponse;
 import Services.Tutorial.TutorialModel;
 import Services.Tutorial.TutorialResponse;
 
-public class CounterFragment extends Fragment implements SelectItemListener {
-    CounterCategoryAdapter counterCategoryAdapter;
-    RecyclerView rcvCounterCategory;
-    LinearLayoutManager layoutManager;
-    ArrayList<CounterCategory> currentList;
-
+public class CounterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,18 +53,16 @@ public class CounterFragment extends Fragment implements SelectItemListener {
         }
 
         final FragmentActivity c = getActivity();
-        rcvCounterCategory = (RecyclerView) view.findViewById(R.id.rcv_counter_category);
+        RecyclerView rcvCounterCategory = (RecyclerView) view.findViewById(R.id.rcv_counter_category);
 
-        layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         rcvCounterCategory.setLayoutManager(layoutManager);
 
-        counterCategoryAdapter = new CounterCategoryAdapter(this.getContext(), this);
+        CounterCategoryAdapter counterCategoryAdapter = new CounterCategoryAdapter(this.getContext());
 
         rcvCounterCategory.setItemAnimator(new DefaultItemAnimator());
 
-        currentList = getListCounterCategory(getContext());
-
-        counterCategoryAdapter.setData(currentList);
+        counterCategoryAdapter.setData(getListCounterCategory(getContext()));
         rcvCounterCategory.setAdapter(counterCategoryAdapter);
 
         return view;
@@ -104,46 +97,5 @@ public class CounterFragment extends Fragment implements SelectItemListener {
         }
 
         return  listSymbolCategory;
-    }
-
-
-    private void showDialogAddCounterTitle(Context context, CounterCategory category, int position)
-    {
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
-
-        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
-        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
-        okBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                CounterModel counterModel = new CounterModel(false, editText.getText().toString(), 1, "F76A89");
-                ArrayList<CounterModel> extraList = category.getCounters();
-                extraList.add(counterModel);
-                counterCategoryAdapter.notifyItemChanged(position);
-                dialog.dismiss();
-            }
-        });
-
-        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
-    }
-
-    @Override
-    public void onItemClicked(Context context, CounterCategory category, int position) {
-        showDialogAddCounterTitle(context, category, position);
     }
 }

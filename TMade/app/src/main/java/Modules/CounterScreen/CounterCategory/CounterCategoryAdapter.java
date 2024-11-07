@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,16 +26,16 @@ import java.util.Objects;
 
 import Modules.CounterScreen.Counter.CounterAdapter;
 import Modules.CounterScreen.SelectItemListener;
+import Services.Counter.CounterModel;
 
 public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
 
     private final Context cContext;
     private ArrayList<CounterCategory> listCounterCategory;
-    private final SelectItemListener listener;
+    private CounterAdapter counterAdapter;
 
-    public CounterCategoryAdapter(Context cContext, SelectItemListener selectItemListener) {
+    public CounterCategoryAdapter(Context cContext) {
         this.cContext = cContext;
-        this.listener = selectItemListener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -67,13 +68,13 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
                 if (counterCategory.isGlobal()) {
                     showDialog();
                 } else {
-                    listener.onItemClicked(cContext, counterCategory, position);
+                    showDialogAddCounterTitle(counterCategory);
                 }
             }
         });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
         holder.rcvCounterCategory.setLayoutManager(linearLayoutManager);
-        CounterAdapter counterAdapter  = new CounterAdapter(this.cContext);
+        counterAdapter  = new CounterAdapter(this.cContext);
         counterAdapter.setData(counterCategory.getCounters());
         holder.rcvCounterCategory.setAdapter(counterAdapter);
     }
@@ -132,6 +133,39 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         });
 
         cancelLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    private void showDialogAddCounterTitle(CounterCategory counterCategory)
+    {
+        final Dialog dialog = new Dialog(cContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
+
+        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
+        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
+        okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (counterAdapter != null) {
+                    counterAdapter.addItemData(new CounterModel(false, "New", 1, "F76A89"));
+                }
+                dialog.dismiss();
+            }
+        });
+
+        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();

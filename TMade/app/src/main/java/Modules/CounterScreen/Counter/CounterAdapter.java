@@ -29,7 +29,6 @@ import Services.Counter.CounterResponse;
 public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterViewHolder> {
     private final Context cContext;
     private List<CounterModel> counters;
-
     public CounterAdapter(Context cContext) {
         this.cContext = cContext;
     }
@@ -37,6 +36,12 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<CounterModel> list) {
         this.counters = list;
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void addItemData(CounterModel counterModel) {
+        this.counters.add(counterModel);
         notifyDataSetChanged();
     }
 
@@ -57,6 +62,8 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         String counterName =  getStringByIdName(cContext, counterModel.getCountName());
         if (!counterName.isEmpty()) {
             holder.titleTextView.setText(counterName);
+        } else {
+            holder.titleTextView.setText(counterModel.getCountName());
         }
 
         holder.counterTextView.setText(String.valueOf(counterModel.getCount()));
