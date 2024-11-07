@@ -19,14 +19,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+import Helper.SharedPrefHelper;
 import Modules.CounterScreen.Counter.CounterAdapter;
 import Modules.CounterScreen.SelectItemListener;
 import Services.Counter.CounterModel;
+import Services.Counter.CounterResponse;
 
 public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
 
@@ -160,10 +163,23 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             public void onClick(View v) {
                 String nameText = editText.getText().toString();
                 if (!nameText.isEmpty()) {
-                    counterAdapter.addItemData(new CounterModel(false, nameText, 1, "F76A89"));
+                    counterAdapter.addItemData(new CounterModel(false, "New counter", 1, "F76A89"));
                 } else {
                     counterAdapter.addItemData(new CounterModel(false, "New counter", 1, "F76A89"));
                 }
+
+                ArrayList<ArrayList<CounterModel>> list = new ArrayList<ArrayList<CounterModel>>();
+                CounterCategory mainCounterCategory =  listCounterCategory.get(0);
+                list.add(mainCounterCategory.getCounters());
+
+                CounterCategory extraCounterCategory =  listCounterCategory.get(1);
+                list.add(extraCounterCategory.getCounters());
+
+                Gson gson = new Gson();
+                CounterResponse response = new CounterResponse(list);
+                String responseString = gson.toJson(response);
+                SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", responseString);
+
                 dialog.dismiss();
             }
         });

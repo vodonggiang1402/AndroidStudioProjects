@@ -39,9 +39,9 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-//        SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
-//        boolean prefValue = prefs.getBoolean("init_app", false);
-//        if(!prefValue) {
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
+        boolean prefValue = prefs.getBoolean("init_app", false);
+        if(!prefValue) {
             //get data for symbol
             try {
                 String jsonFileContent = readFile("symbols.json");
@@ -87,14 +87,14 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
             }, 3000);
-//        } else {
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
-//                }
-//            }, 3000);
-//        }
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
+            }, 3000);
+        }
     }
 
     public String readFile(String fileName) throws IOException

@@ -13,6 +13,10 @@ public class CounterResponse {
     @SerializedName("data")
     public ArrayList<ArrayList<CounterModel>> list;
 
+    public CounterResponse(ArrayList<ArrayList<CounterModel>> list) {
+        this.list = list;
+    }
+
     public ArrayList<ArrayList<CounterModel>> getList() {
         return list;
     }
