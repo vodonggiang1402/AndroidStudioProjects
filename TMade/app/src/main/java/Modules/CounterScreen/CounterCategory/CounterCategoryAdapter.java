@@ -69,7 +69,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             @Override
             public void onClick(View v) {
                 if (counterCategory.isGlobal()) {
-                    showDialog();
+
                 } else {
                     showDialogAddCounterTitle(counterCategory);
                 }
@@ -101,52 +101,6 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             buttonCategory = itemView.findViewById(R.id.counter_refresh_button);
             rcvCounterCategory = itemView.findViewById(R.id.rcv_counter_category);
         }
-    }
-
-    private void showDialog()
-    {
-        final Dialog dialog = new Dialog(cContext);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottom_sheet_layout);
-
-        LinearLayout editLayout = dialog.findViewById(R.id.layout_edit);
-        LinearLayout resetLayout = dialog.findViewById(R.id.layout_reset);
-        LinearLayout removeLayout = dialog.findViewById(R.id.layout_remove);
-        LinearLayout cancelLayout = dialog.findViewById(R.id.layout_cancel);
-
-        editLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        resetLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        removeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        cancelLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
     private void showDialogAddCounterTitle(CounterCategory counterCategory)
