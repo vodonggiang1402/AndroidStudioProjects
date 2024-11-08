@@ -3,7 +3,7 @@
         [
             {
             "is_global" : true,
-            "count_name" : "main_counter_default",
+            "count_name" : "Main",
             "count": 1,
             "color" : "F76A89"
             }
