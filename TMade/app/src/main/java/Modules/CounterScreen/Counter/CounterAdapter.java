@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,30 +26,68 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.tmadecrochet.tmade.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 import Helper.SharedPrefHelper;
+import Modules.CounterScreen.CounterCategory.CounterCategory;
+import Modules.CounterScreen.SelectICounterItemListener;
 import Services.Counter.CounterModel;
 import Services.Counter.CounterResponse;
 
 public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterViewHolder> {
     private final Context cContext;
     private List<CounterModel> counters;
+    private SelectICounterItemListener listener;
 
-    public CounterAdapter(Context cContext) {
+    public CounterAdapter(Context cContext, SelectICounterItemListener selectICounterItemListener) {
         this.cContext = cContext;
+        this.listener = selectICounterItemListener;
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<CounterModel> list) {
         this.counters = list;
-        notifyDataSetChanged();
+        updateDataSetChanged();
+    }
+
+    public void addItemData(CounterModel counterModel) {
+        this.counters.add(counterModel);
+        updateDataSetChanged();
+    }
+
+    public void removeItemData(CounterModel counterModel) {
+        this.counters.remove(counterModel);
+        this.listener.onUpdateItemClicked();
+        updateDataSetChanged();
+    }
+
+    public void updateItemCountData(CounterModel counterModel, boolean isMinus) {
+        if (isMinus) {
+            if (counterModel.getCount() > 1) {
+                counterModel.setCount(counterModel.getCount() - 1);
+            }
+        } else {
+            counterModel.setCount(counterModel.getCount() + 1);
+        }
+        this.listener.onUpdateItemClicked();
+        updateDataSetChanged();
+    }
+
+    public void resetItemCountData(CounterModel counterModel) {
+        counterModel.setCount(1);
+        this.listener.onUpdateItemClicked();
+        updateDataSetChanged();
+    }
+
+    public void updateItemNameData(CounterModel counterModel, String text) {
+        counterModel.setCountName("123456");
+        updateDataSetChanged();
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void addItemData(CounterModel counterModel) {
-        this.counters.add(counterModel);
+    public void updateDataSetChanged() {
+        this.listener.onUpdateItemClicked();
         notifyDataSetChanged();
     }
 
@@ -84,7 +123,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
             holder.moreBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showDialog();
+                    showDialog(counterModel);
                 }
             });
         }
@@ -92,20 +131,14 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         holder.minusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counterModel.setCount(counterModel.getCount() - 1);
-                Gson gson = new Gson();
-                String stringCounterModel = gson.toJson(counterModel);
-                SharedPrefHelper.saveSharedOBJECT(cContext, "counter_response", stringCounterModel);
+                updateItemCountData(counterModel, true);
             }
         });
 
         holder.plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counterModel.setCount(counterModel.getCount() + 1);
-                Gson gson = new Gson();
-                String stringCounterModel = gson.toJson(counterModel);
-                SharedPrefHelper.saveSharedOBJECT(cContext, "counter_response", stringCounterModel);
+                updateItemCountData(counterModel, false);
             }
         });
     }
@@ -153,7 +186,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         return resuls;
     }
 
-    private void showDialog()
+    private void showDialog(CounterModel counterModel)
     {
         final Dialog dialog = new Dialog(cContext);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -167,6 +200,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         editLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showDialogEditName(counterModel);
                 dialog.dismiss();
             }
         });
@@ -174,6 +208,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         resetLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                resetItemCountData(counterModel);
                 dialog.dismiss();
             }
         });
@@ -181,6 +216,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         removeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                removeItemData(counterModel);
                 dialog.dismiss();
             }
         });
@@ -198,4 +234,37 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+
+    private void showDialogEditName(CounterModel counterModel)
+    {
+        final Dialog dialog = new Dialog(cContext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
+
+        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
+
+        Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
+        okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateItemNameData(counterModel, "123");
+                dialog.dismiss();
+            }
+        });
+
+        Button cancelBtn = dialog.findViewById(R.id.counter_cancel_btn);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
 }
+

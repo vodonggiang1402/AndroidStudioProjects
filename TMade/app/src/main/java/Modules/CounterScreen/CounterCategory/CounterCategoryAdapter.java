@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,11 +26,11 @@ import java.util.Objects;
 
 import Helper.SharedPrefHelper;
 import Modules.CounterScreen.Counter.CounterAdapter;
-import Modules.CounterScreen.SelectItemListener;
+import Modules.CounterScreen.SelectICounterItemListener;
 import Services.Counter.CounterModel;
 import Services.Counter.CounterResponse;
 
-public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> {
+public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategoryAdapter.CounterCategoryViewHolder> implements SelectICounterItemListener {
 
     private final Context cContext;
     private ArrayList<CounterCategory> listCounterCategory;
@@ -77,7 +76,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.cContext, RecyclerView.VERTICAL,false);
         holder.rcvCounterCategory.setLayoutManager(linearLayoutManager);
-        counterAdapter  = new CounterAdapter(this.cContext);
+        counterAdapter  = new CounterAdapter(this.cContext, this);
         counterAdapter.setData(counterCategory.getCounters());
         holder.rcvCounterCategory.setAdapter(counterAdapter);
     }
@@ -88,6 +87,11 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             return listCounterCategory.size();
         }
         return 0;
+    }
+
+    @Override
+    public void onUpdateItemClicked() {
+        updateDataLocal();
     }
 
     public static class CounterCategoryViewHolder extends RecyclerView.ViewHolder {
@@ -121,19 +125,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
                 } else {
                     counterAdapter.addItemData(new CounterModel(false, "New counter", 1, "F76A89"));
                 }
-
-                ArrayList<ArrayList<CounterModel>> list = new ArrayList<ArrayList<CounterModel>>();
-                CounterCategory mainCounterCategory =  listCounterCategory.get(0);
-                list.add(mainCounterCategory.getCounters());
-
-                CounterCategory extraCounterCategory =  listCounterCategory.get(1);
-                list.add(extraCounterCategory.getCounters());
-
-                Gson gson = new Gson();
-                CounterResponse response = new CounterResponse(list);
-                String responseString = gson.toJson(response);
-                SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", responseString);
-
+                updateDataLocal();
                 dialog.dismiss();
             }
         });
@@ -151,6 +143,21 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    private void updateDataLocal() {
+        ArrayList<ArrayList<CounterModel>> list = new ArrayList<ArrayList<CounterModel>>();
+        CounterCategory mainCounterCategory =  listCounterCategory.get(0);
+        list.add(mainCounterCategory.getCounters());
+
+        CounterCategory extraCounterCategory =  listCounterCategory.get(1);
+        list.add(extraCounterCategory.getCounters());
+
+        Gson gson = new Gson();
+        CounterResponse response = new CounterResponse(list);
+        String responseString = gson.toJson(response);
+        SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", responseString);
+
     }
 }
 
