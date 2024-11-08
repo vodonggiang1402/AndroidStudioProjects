@@ -41,8 +41,8 @@
         android:id="@+id/rcv_counter_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingBottom="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
         android:background="@color/background_color"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp" />
