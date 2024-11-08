@@ -88,7 +88,7 @@ public class CounterFragment extends Fragment {
                 case 1:
                     text = getString(R.string.extra_counter_text);
                     iconName = R.drawable.ico_extra_counter;
-                    iconActionName = R.drawable.ico_more;
+                    iconActionName = R.drawable.ico_add_counter;
                     break;
                 default:
                     break;
