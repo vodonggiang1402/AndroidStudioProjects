@@ -23,6 +23,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 import Helper.SharedPrefHelper;
 import Modules.CounterScreen.Counter.CounterAdapter;
@@ -158,6 +159,13 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         String responseString = gson.toJson(response);
         SharedPrefHelper.saveSharedOBJECT(cContext,"counter_response", responseString);
 
+    }
+
+    private boolean isNumeric(String string) {
+        if(Pattern.matches("\\d{1,3}((\\.\\d{1,2})?)", string))
+            return true;
+        else
+            return false;
     }
 }
 

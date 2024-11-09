@@ -81,7 +81,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
     }
 
     public void updateItemNameData(CounterModel counterModel, String text) {
-        counterModel.setCountName("123456");
+        counterModel.setCountName(text);
         updateDataSetChanged();
     }
 
@@ -247,7 +247,13 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateItemNameData(counterModel, "123");
+                String nameText = editText.getText().toString();
+                if (!nameText.isEmpty()) {
+                    updateItemNameData(counterModel, nameText);
+                } else {
+                    updateItemNameData(counterModel, "New counter");
+                }
+
                 dialog.dismiss();
             }
         });

@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:autofillHints="string/edit_text_hint"
             android:ems="10"
+            android:inputType="text"
             android:minHeight="48dp"
             tools:ignore="LabelFor,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
         <requestFocus />
