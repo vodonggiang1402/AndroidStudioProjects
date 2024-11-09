@@ -113,7 +113,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.add_counter_bottom_sheet_layout);
 
-        EditText editText = dialog.findViewById(R.id.counter_add_edit_text);
+        EditText editText = (EditText)dialog.findViewById(R.id.counter_add_edit_text);
 
         Button okBtn = dialog.findViewById(R.id.counter_ok_btn);
         okBtn.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +121,7 @@ public class CounterCategoryAdapter extends RecyclerView.Adapter<CounterCategory
             public void onClick(View v) {
                 String nameText = editText.getText().toString();
                 if (!nameText.isEmpty()) {
-                    counterAdapter.addItemData(new CounterModel(false, "New counter", 1, "F76A89"));
+                    counterAdapter.addItemData(new CounterModel(false, nameText, 1, "F76A89"));
                 } else {
                     counterAdapter.addItemData(new CounterModel(false, "New counter", 1, "F76A89"));
                 }

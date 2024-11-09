@@ -25,6 +25,7 @@ public class CounterModel implements Serializable {
     @Expose
     private String color;
 
+
     public CounterModel(boolean isGlobal, String countName, int count, String color) {
         this.isGlobal = isGlobal;
         this.countName = countName;
