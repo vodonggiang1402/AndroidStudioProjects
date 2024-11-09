@@ -1,38 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
-    android:layout_marginEnd="5dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/symbol_item_background_color"
-    app:cardCornerRadius="8dp">
-
+    android:background="@color/background_color">
     <LinearLayout
-        android:id="@+id/symbol_item_linear_layout"
+        android:id="@+id/symbol_item_main_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/symbol_item_background_color"
-        android:paddingBottom="10dp"
+        android:background="@color/background_color"
         android:orientation="vertical">
-        <ImageView
-            android:id="@+id/img_symbol"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:contentDescription="@string/app_name"
-            android:scaleType="center"
-            android:src="@drawable/ico_chain_crochet"/>
-        <TextView
-            android:id="@+id/symbol_title"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:lines="2"
-            />
+            android:background="@color/symbol_item_background_color"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:id="@+id/symbol_item_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/symbol_item_background_color"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_symbol"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="center"
+                    android:src="@drawable/ico_chain_crochet"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/symbol_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/symbol_lock_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_lock"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/symbol_clock_btn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:importantForAccessibility="no"
+                    android:scaleType="center"
+                    android:src="@drawable/ico_clock"
+                    android:layout_centerInParent="true"
+                    tools:ignore="ImageContrastCheck,ObsoleteLayoutParam,SpeakableTextPresentCheck" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

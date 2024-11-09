@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -68,11 +70,18 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sContext, SymbolDetail.class);
-                intent.putExtra("SymbolModel", symbolModel);
-                sContext.startActivity(intent);
+                if (symbolModel.isAds()) {
+                    Log.i("Show Ads", "Show Ads");
+                } else {
+                    Intent intent = new Intent(sContext, SymbolDetail.class);
+                    intent.putExtra("SymbolModel", symbolModel);
+                    sContext.startActivity(intent);
+                }
             }
         });
+        if (!symbolModel.isAds()) {
+            holder.lockLinearLayout.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -88,12 +97,14 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         private final LinearLayout linearLayout;
         private final ImageView imageView;
         private final TextView textView;
+        private final LinearLayout lockLinearLayout;
         public SymbolViewHolder(@NonNull View itemView) {
             super(itemView);
             linearLayout = itemView.findViewById(R.id.symbol_item_linear_layout);
             imageView = itemView.findViewById(R.id.img_symbol);
             textView = itemView.findViewById(R.id.symbol_title);
             cardView = itemView.findViewById(R.id.card_view);
+            lockLinearLayout = itemView.findViewById(R.id.symbol_lock_linear_layout);
         }
     }
 
