@@ -39,7 +39,7 @@ import Services.Counter.CounterResponse;
 public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterViewHolder> {
     private final Context cContext;
     private List<CounterModel> counters;
-    private SelectICounterItemListener listener;
+    private final SelectICounterItemListener listener;
 
     public CounterAdapter(Context cContext, SelectICounterItemListener selectICounterItemListener) {
         this.cContext = cContext;
