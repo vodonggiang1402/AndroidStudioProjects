@@ -70,13 +70,13 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (symbolModel.isAds()) {
-                    Log.i("Show Ads", "Show Ads");
-                } else {
+//                if (symbolModel.isAds()) {
+//                    Log.i("Show Ads", "Show Ads");
+//                } else {
                     Intent intent = new Intent(sContext, SymbolDetail.class);
                     intent.putExtra("SymbolModel", symbolModel);
                     sContext.startActivity(intent);
-                }
+//                }
             }
         });
         if (!symbolModel.isAds()) {

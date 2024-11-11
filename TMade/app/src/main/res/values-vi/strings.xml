@@ -242,4 +242,8 @@
     <string name="ok_btn_text">Đồng ý</string>;
     <string name="cancel_btn_text">Bỏ qua</string>;
     <string name="edit_text_hint">Vui lòng nhập thông tin</string>;
+
+    <string name="language_select_title_text">Chọn ngôn ngữ</string>;
+    <string name="language_viet_name_text">Tiếng Việt</string>;
+    <string name="language_english_text">Tiếng Anh</string>;
 </resources>

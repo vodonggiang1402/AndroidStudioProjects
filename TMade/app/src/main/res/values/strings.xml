@@ -244,4 +244,9 @@
     <string name="ok_btn_text">OK</string>;
     <string name="cancel_btn_text">Cancel</string>;
     <string name="edit_text_hint">Please type the information</string>;
+
+    <string name="language_select_title_text">Select Language </string>;
+    <string name="language_viet_name_text">Vietnamese</string>;
+    <string name="language_english_text">English</string>;
+
 </resources>
