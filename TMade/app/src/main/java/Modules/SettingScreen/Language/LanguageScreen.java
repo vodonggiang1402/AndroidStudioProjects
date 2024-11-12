@@ -65,23 +65,23 @@ public class LanguageScreen extends AppCompatActivity {
         });
 
         RecyclerView rcvCategory = (RecyclerView) findViewById(R.id.rcv_language);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getApplicationContext(), RecyclerView.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false);
         rcvCategory.setLayoutManager(layoutManager);
 
-        languageAdapter = new LanguageAdapter(this.getApplicationContext(), LanguageUtils.getLanguageData());
-        rcvCategory.setItemAnimator(new DefaultItemAnimator());
-        rcvCategory.setAdapter(languageAdapter);
-        languageAdapter.setCurrentLanguage(LanguageUtils.getCurrentLanguage());
-
+        languageAdapter = new LanguageAdapter();
+        languageAdapter.setData(LanguageUtils.getLanguageData());
         languageAdapter.setListener(new ItemClickListener<Language>() {
             @Override
-            public void onClickItem(int position, Language language) {
+            public void onClickItem(Language language) {
                 if (!language.getCode().equals(LanguageUtils.getCurrentLanguage().getCode())) {
                     onChangeLanguageSuccessfully(language);
                 }
             }
         });
+
+        rcvCategory.setItemAnimator(new DefaultItemAnimator());
+        rcvCategory.setAdapter(languageAdapter);
+
     }
 
     private void onChangeLanguageSuccessfully(final Language language) {

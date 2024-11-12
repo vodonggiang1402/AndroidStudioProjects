@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
+import Helper.utils.LanguageUtils;
 import Main.MainActivity;
 import com.tmadecrochet.tmade.R;
 import Helper.SharedPrefHelper;
@@ -38,6 +39,7 @@ public class SplashActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        LanguageUtils.loadLocale();
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
         boolean prefValue = prefs.getBoolean("init_app", false);
