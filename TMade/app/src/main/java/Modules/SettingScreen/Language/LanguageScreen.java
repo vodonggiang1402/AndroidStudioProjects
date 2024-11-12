@@ -1,42 +1,22 @@
 package Modules.SettingScreen.Language;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tmadecrochet.tmade.R;
 
-import java.util.ArrayList;
-import java.util.Locale;
-
-import Data.ItemClickListener;
-import Helper.LocaleHelper;
-import Helper.SharedPrefHelper;
 import Helper.utils.LanguageUtils;
-import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
-import Modules.SymbolScreen.SymbolCategory.SymbolCategoryAdapter;
-import Plash.SplashActivity;
 import Services.Language.Language;
-import Services.Symbol.SymbolModel;
-import Services.Symbol.SymbolResponse;
 
-public class LanguageScreen extends AppCompatActivity {
+public class LanguageScreen extends AppCompatActivity implements ItemClickListener {
 
     private LanguageAdapter languageAdapter;
 
@@ -68,16 +48,8 @@ public class LanguageScreen extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false);
         rcvCategory.setLayoutManager(layoutManager);
 
-        languageAdapter = new LanguageAdapter();
+        languageAdapter = new LanguageAdapter(this);
         languageAdapter.setData(LanguageUtils.getLanguageData());
-        languageAdapter.setListener(new ItemClickListener<Language>() {
-            @Override
-            public void onClickItem(Language language) {
-                if (!language.getCode().equals(LanguageUtils.getCurrentLanguage().getCode())) {
-                    onChangeLanguageSuccessfully(language);
-                }
-            }
-        });
 
         rcvCategory.setItemAnimator(new DefaultItemAnimator());
         rcvCategory.setAdapter(languageAdapter);
@@ -89,5 +61,13 @@ public class LanguageScreen extends AppCompatActivity {
         LanguageUtils.changeLanguage(language);
         setResult(RESULT_OK, new Intent());
         finish();
+    }
+
+
+    @Override
+    public void onClickItem(Language item) {
+        if (!item.getCode().equals(LanguageUtils.getCurrentLanguage().getCode())) {
+            onChangeLanguageSuccessfully(item);
+        }
     }
 }

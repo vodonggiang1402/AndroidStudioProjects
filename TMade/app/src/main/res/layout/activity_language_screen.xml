@@ -37,16 +37,4 @@
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="12dp"
         android:background="@color/background_color" />
-
-    <Button
-        android:id="@+id/language_save_button"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/save_button_text"
-        android:background="@drawable/button_border"
-        tools:ignore="SpeakableTextPresentCheck" />
 </LinearLayout>
