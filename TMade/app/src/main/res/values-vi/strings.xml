@@ -246,4 +246,5 @@
     <string name="language_select_title_text">Chọn ngôn ngữ</string>;
     <string name="language_viet_name_text">Tiếng Việt</string>;
     <string name="language_english_text">Tiếng Anh</string>;
+    <string name="save_button_text">Lưu</string>;
 </resources>

@@ -16,6 +16,24 @@
     <string name="step_text">Step </string>
     <string name="watch_video_text">Watch video</string>
 
+    <string-array name="language_names">
+        <item>@string/language_vietnamese</item>
+        <item>@string/language_english</item>
+    </string-array>
+
+    <string-array name="language_codes">
+        <item>@string/language_vietnamese_code</item>
+        <item>@string/language_english_code</item>
+    </string-array>
+
+    <!--untranslatable-->
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_vietnamese" translatable="false">Tiếng Việt</string>
+
+    <!--untranslatable-->
+    <string name="language_english_code" translatable="false">en</string>
+    <string name="language_vietnamese_code" translatable="false">vi</string>
+
 
     <string name="stitch_slip_knot_crochet_name">Slip knot</string>
     <string name="stitch_slip_knot_crochet_description">Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên.Trong các hướng dẫn của chart móc thì mũi gút(slip knot) thường không được viết và chúng không tính là mũi đầu tiên.</string>
@@ -249,4 +267,5 @@
     <string name="language_viet_name_text">Vietnamese</string>;
     <string name="language_english_text">English</string>;
 
+    <string name="save_button_text">Save</string>;
 </resources>

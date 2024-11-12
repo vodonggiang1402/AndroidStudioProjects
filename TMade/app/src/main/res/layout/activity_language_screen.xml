@@ -28,27 +28,25 @@
             android:text="@string/language_screen_header_title"
             android:id="@+id/language_toolbar_title"/>
     </androidx.appcompat.widget.Toolbar>
-    <RadioGroup
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:orientation="horizontal"
-        android:id="@+id/group_language">
-        <RadioButton
-            android:id = "@+id/viet_name_language"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text= "@string/language_viet_name_text"
-            android:padding="8dp"
-            android:checked="true"/>
-        <RadioButton
-            android:id = "@+id/english_language"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text= "@string/language_english_text"
-            android:padding="8dp"
-            android:checked="true"/>
-    </RadioGroup>
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/background_color" />
+
+    <Button
+        android:id="@+id/language_save_button"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/save_button_text"
+        android:background="@drawable/button_border"
+        tools:ignore="SpeakableTextPresentCheck" />
 </LinearLayout>
