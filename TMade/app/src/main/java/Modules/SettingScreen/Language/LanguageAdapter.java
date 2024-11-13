@@ -55,6 +55,7 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langua
             @Override
             public void onClick(View v) {
                 setCurrentLanguage(language);
+                mListener.onClickItem(language);
             }
         });
     }
