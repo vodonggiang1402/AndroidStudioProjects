@@ -20,17 +20,17 @@ import Services.Language.Language;
 
 public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.LanguageHolder> {
     private List<Language> mLanguageList;
-    private final ItemClickListener listener;
+    private ItemClickListener<Language> mListener;
     private Language mCurrentLanguage = LanguageUtils.getCurrentLanguage();
-
-    public LanguageAdapter(ItemClickListener mListener) {
-        this.listener = mListener;
-    }
 
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<Language> list) {
         mLanguageList = list;
         notifyDataSetChanged();
+    }
+
+    public void setListener(ItemClickListener<Language> listener) {
+        mListener = listener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -57,7 +57,6 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langua
                 setCurrentLanguage(language);
             }
         });
-
     }
 
     @Override
@@ -71,7 +70,6 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.Langua
     public static class LanguageHolder extends RecyclerView.ViewHolder {
         private final FrameLayout frameLayout;
         private final RadioButton languageRadioBtn;
-
         public LanguageHolder(@NonNull View itemView) {
             super(itemView);
             frameLayout = itemView.findViewById(R.id.frame_item_language);
