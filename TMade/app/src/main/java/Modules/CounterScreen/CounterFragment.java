@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.tmadecrochet.tmade.R;
 
@@ -52,6 +53,9 @@ public class CounterFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
             activity.setTitle(null);
         }
+
+        TextView textView = (TextView)view.findViewById(R.id.counter_toolbar_title);
+        textView.setText(LanguageUtils.getLocaleStringResource(R.string.tab_counter_title, getContext()));
 
         final FragmentActivity c = getActivity();
         RecyclerView rcvCounterCategory = (RecyclerView) view.findViewById(R.id.rcv_counter_category);

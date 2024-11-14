@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.tmadecrochet.tmade.R;
 
@@ -37,6 +38,9 @@ public class SymbolFragment extends Fragment {
             activity.setSupportActionBar(toolbar);
             activity.setTitle(null);
         }
+
+        TextView textView = (TextView)view.findViewById(R.id.symbol_toolbar_title);
+        textView.setText(LanguageUtils.getLocaleStringResource(R.string.tab_symbol_title, getContext()));
 
         final FragmentActivity c = getActivity();
         RecyclerView rcvCategory = (RecyclerView) view.findViewById(R.id.rcv_category);
