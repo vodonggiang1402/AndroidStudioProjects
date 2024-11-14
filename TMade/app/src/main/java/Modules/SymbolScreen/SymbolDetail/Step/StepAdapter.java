@@ -17,6 +17,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
+import Helper.utils.LanguageUtils;
 import Services.Symbol.SymbolStep;
 
 public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder> {
@@ -89,7 +90,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString = LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

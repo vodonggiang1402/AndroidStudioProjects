@@ -22,6 +22,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
+import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
 import Services.Symbol.SymbolModel;
 
@@ -113,7 +114,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString =  LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

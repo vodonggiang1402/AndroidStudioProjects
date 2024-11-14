@@ -18,6 +18,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
+import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.Symbol.SymbolModel;
 import Services.Symbol.SymbolStep;
@@ -80,7 +81,7 @@ public class TutorialDetailScreen extends AppCompatActivity {
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString = LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

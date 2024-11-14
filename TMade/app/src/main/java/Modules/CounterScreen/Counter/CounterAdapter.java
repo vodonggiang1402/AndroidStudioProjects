@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Objects;
 
 import Helper.SharedPrefHelper;
+import Helper.utils.LanguageUtils;
 import Modules.CounterScreen.CounterCategory.CounterCategory;
 import Modules.CounterScreen.SelectICounterItemListener;
 import Services.Counter.CounterModel;
@@ -178,7 +179,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString = LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

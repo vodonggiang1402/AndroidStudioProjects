@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.Symbol.SymbolModel;
 import Services.Symbol.SymbolStep;
@@ -123,7 +124,7 @@ public class SymbolDetail extends AppCompatActivity {
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString = LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

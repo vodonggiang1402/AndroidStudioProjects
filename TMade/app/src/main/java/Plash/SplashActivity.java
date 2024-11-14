@@ -40,7 +40,6 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
         LanguageUtils.loadLocale();
-
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
         boolean prefValue = prefs.getBoolean("init_app", false);
         if(!prefValue) {

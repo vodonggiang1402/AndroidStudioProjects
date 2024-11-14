@@ -20,6 +20,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
+import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
 import Modules.TutorialScreen.TutorialDetail.TutorialDetailScreen;
 import Services.Tutorial.TutorialModel;
@@ -108,7 +109,7 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.Tutori
         Resources res = context.getResources();
         int resId = res.getIdentifier(idName, "string", context.getPackageName());
         if (resId > 0) {
-            String resString = res.getString(resId);
+            String resString = LanguageUtils.getLocaleStringResource(resId, context);
             if (!resString.isEmpty()) {
                 resuls = resString;
             }

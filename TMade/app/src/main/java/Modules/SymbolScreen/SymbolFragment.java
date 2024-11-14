@@ -19,6 +19,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
+import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
 import Modules.SymbolScreen.SymbolCategory.SymbolCategoryAdapter;
 import Services.Symbol.SymbolModel;
@@ -63,23 +64,23 @@ public class SymbolFragment extends Fragment {
             int iconName = R.drawable.ico_symbol_header_1;
             switch (i) {
                 case 0:
-                    text = getString(R.string.basic_stitches);
+                    text = LanguageUtils.getLocaleStringResource(R.string.basic_stitches, getContext());
                     iconName = R.drawable.ico_symbol_header_1;
                     break;
                 case 1:
-                    text = getString(R.string.puff_stitches);
+                    text = LanguageUtils.getLocaleStringResource(R.string.puff_stitches, getContext());
                     iconName = R.drawable.ico_symbol_header_2;
                     break;
                 case 2:
-                    text = getString(R.string.increases_stitches);
+                    text = LanguageUtils.getLocaleStringResource(R.string.increases_stitches, getContext());
                     iconName = R.drawable.ico_symbol_header_3;
                     break;
                 case 3:
-                    text = getString(R.string.decreases_stitches);
+                    text = LanguageUtils.getLocaleStringResource(R.string.decreases_stitches, getContext());
                     iconName = R.drawable.ico_symbol_header_4;
                     break;
                 case 4:
-                    text = getString(R.string.blo_flo_stitches);
+                    text = LanguageUtils.getLocaleStringResource(R.string.blo_flo_stitches, getContext());
                     iconName = R.drawable.ico_symbol_header_5;
                     break;
                 default:

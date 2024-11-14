@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import Helper.SharedPrefHelper;
+import Helper.utils.LanguageUtils;
 import Modules.CounterScreen.CounterCategory.CounterCategory;
 import Modules.CounterScreen.CounterCategory.CounterCategoryAdapter;
 import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
@@ -81,12 +82,12 @@ public class CounterFragment extends Fragment {
             switch (i) {
                 case 0:
                     isGlobal = true;
-                    text = getString(R.string.main_counter_text);
+                    text = LanguageUtils.getLocaleStringResource(R.string.main_counter_text, getContext());
                     iconName = R.drawable.ico_global_counter;
                     iconActionName = R.drawable.ico_refresh;
                     break;
                 case 1:
-                    text = getString(R.string.extra_counter_text);
+                    text = LanguageUtils.getLocaleStringResource(R.string.extra_counter_text, getContext());
                     iconName = R.drawable.ico_extra_counter;
                     iconActionName = R.drawable.ico_add_counter;
                     break;

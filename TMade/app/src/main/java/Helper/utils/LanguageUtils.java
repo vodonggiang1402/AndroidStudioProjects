@@ -1,7 +1,11 @@
 package Helper.utils;
 
+import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
+import android.util.Log;
 
 import com.tmadecrochet.tmade.R;
 
@@ -70,14 +74,42 @@ public class LanguageUtils {
     /**
      * change app language
      */
-    @SuppressWarnings("deprecation")
     public static void changeLanguage(Language language) {
-        SharedPrefs.getInstance().put(SharedPrefs.LANGUAGE, language);
-        sCurrentLanguage = language;
-        Locale locale = new Locale(language.getCode());
-        Resources resources = TMadeApp.self().getResources();
-        Configuration configuration = resources.getConfiguration();
-        configuration.setLocale(locale);
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        try {
+            SharedPrefs.getInstance().put(SharedPrefs.LANGUAGE, language);
+            sCurrentLanguage = language;
+            Locale locale = new Locale(language.getCode());
+            Resources resources = TMadeApp.self().getResources();
+            Configuration configuration = resources.getConfiguration();
+            configuration.setLocale(locale);
+            configuration.setLayoutDirection(locale);
+            resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        } catch (Exception ex){
+            Log.e("Error", String.valueOf(ex));
+        }
+    }
+
+    public static String getLocaleStringResource(int resourceId, Context context) {
+        String result;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) { // use latest api
+            Configuration config = new Configuration(context.getResources().getConfiguration());
+            config.setLocale(new Locale(sCurrentLanguage.getCode()));
+            result = context.createConfigurationContext(config).getText(resourceId).toString();
+        }
+        else { // support older android versions
+            Resources resources = context.getResources();
+            Configuration conf = resources.getConfiguration();
+            Locale savedLocale = conf.locale;
+            conf.locale = new Locale(sCurrentLanguage.getCode());
+            resources.updateConfiguration(conf, null);
+
+            // retrieve resources from desired locale
+            result = resources.getString(resourceId);
+
+            // restore original locale
+            conf.locale = savedLocale;
+            resources.updateConfiguration(conf, null);
+        }
+        return result;
     }
 }

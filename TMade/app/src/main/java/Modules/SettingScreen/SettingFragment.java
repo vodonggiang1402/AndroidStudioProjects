@@ -18,6 +18,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
+import Helper.utils.LanguageUtils;
 import Modules.SettingScreen.SettingView.Setting;
 import Modules.SettingScreen.SettingView.SettingAdapter;
 
@@ -53,11 +54,11 @@ public class SettingFragment extends Fragment {
 
     private ArrayList<Setting> getListSymbolCategory() {
         ArrayList<Setting> settings  = new ArrayList<>();
-        settings.add(new Setting(0, R.drawable.ico_setting_language, this.getString(R.string.language_text)));
-        settings.add(new Setting(1, R.drawable.ico_setting_create_contact, this.getString(R.string.contact_text)));
-        settings.add(new Setting(2, R.drawable.ico_setting_share, this.getString(R.string.share_text)));
-        settings.add(new Setting(3, R.drawable.ico_setting_rate, this.getString(R.string.rate_text)));
-        settings.add(new Setting(4, R.drawable.ico_app_version, this.getString(R.string.app_version_text)));
+        settings.add(new Setting(0, R.drawable.ico_setting_language, LanguageUtils.getLocaleStringResource(R.string.language_text, getContext())));
+        settings.add(new Setting(1, R.drawable.ico_setting_create_contact, LanguageUtils.getLocaleStringResource(R.string.contact_text, getContext())));
+        settings.add(new Setting(2, R.drawable.ico_setting_share, LanguageUtils.getLocaleStringResource(R.string.share_text, getContext())));
+        settings.add(new Setting(3, R.drawable.ico_setting_rate, LanguageUtils.getLocaleStringResource(R.string.rate_text, getContext())));
+        settings.add(new Setting(4, R.drawable.ico_app_version, LanguageUtils.getLocaleStringResource(R.string.app_version_text, getContext())));
         return  settings;
     }
 }
