@@ -19,7 +19,7 @@ import Helper.utils.LanguageUtils;
 import Services.Language.Language;
 
 public class LanguageScreen extends AppCompatActivity {
-    private Language mCurrentLanguage;
+    private Language mCurrentLanguage = LanguageUtils.getCurrentLanguage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +58,7 @@ public class LanguageScreen extends AppCompatActivity {
         languageAdapter.setListener(new ItemClickListener<Language>() {
             @Override
             public void onClickItem(Language item) {
-                if (!item.getCode().equals(LanguageUtils.getCurrentLanguage().getCode())) {
-                    mCurrentLanguage = item;
-                }
+                mCurrentLanguage = item;
             }
         });
 
@@ -71,7 +69,9 @@ public class LanguageScreen extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onChangeLanguageSuccessfully(mCurrentLanguage);
+                if (!mCurrentLanguage.getCode().equals(LanguageUtils.getCurrentLanguage().getCode())) {
+                    onChangeLanguageSuccessfully(mCurrentLanguage);
+                }
             }
         });
 
