@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +36,9 @@ public class LanguageScreen extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        TextView textView = (TextView)findViewById(R.id.language_toolbar_title);
+        textView.setText(LanguageUtils.getLocaleStringResource(R.string.language_screen_header_title, getApplicationContext()));
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

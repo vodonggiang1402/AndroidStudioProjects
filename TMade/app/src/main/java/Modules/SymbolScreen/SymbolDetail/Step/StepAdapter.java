@@ -47,7 +47,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepViewHolder
         if (symbolStep == null) {
             return;
         }
-        String symbolStepName = sContext.getResources().getString(R.string.step_text) + " " + String.valueOf(position + 1) + ": " + getStringByIdName(sContext, symbolStep.getContent());
+        String symbolStepName =  LanguageUtils.getLocaleStringResource(R.string.step_text, sContext) + " " + String.valueOf(position + 1) + ": " + getStringByIdName(sContext, symbolStep.getContent());
         holder.textView.setText(symbolStepName);
         String iconName = symbolStep.getImageName();
         if (!iconName.isEmpty()) {

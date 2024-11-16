@@ -268,4 +268,5 @@
     <string name="language_english_text">English</string>;
 
     <string name="save_button_text">Save</string>;
+    <string name="contact_screen_description_text">If you have any questions or suggestions, please contact us.</string>;
 </resources>
