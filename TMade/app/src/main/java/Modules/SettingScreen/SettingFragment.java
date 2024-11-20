@@ -1,5 +1,8 @@
 package Modules.SettingScreen;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,18 +13,28 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.review.ReviewException;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.review.model.ReviewErrorCode;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
 import Helper.utils.LanguageUtils;
+import Modules.SettingScreen.Contact.ContactScreen;
+import Modules.SettingScreen.Language.LanguageScreen;
 import Modules.SettingScreen.SettingView.Setting;
 import Modules.SettingScreen.SettingView.SettingAdapter;
+import Modules.SettingScreen.SettingView.SettingItemClickListener;
 
 public class SettingFragment extends Fragment {
 
@@ -46,12 +59,29 @@ public class SettingFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
         rcvSettingView.setLayoutManager(layoutManager);
 
-        SettingAdapter settingAdapter = new SettingAdapter(this.getContext(), getActivity());
+        SettingAdapter settingAdapter = new SettingAdapter(this.getContext());
 
         rcvSettingView.setItemAnimator(new DefaultItemAnimator());
 
         settingAdapter.setData(getListSymbolCategory());
         rcvSettingView.setAdapter(settingAdapter);
+
+        settingAdapter.setListener(new SettingItemClickListener<Setting>() {
+            @Override
+            public void onClickItem(Setting item) {
+                switch (item.getCurrentIndex()) {
+                    case 2:
+                        Log.i("Share", "Share");
+                        break;
+                    case 3:
+                        Log.i("Rate", "Rate");
+                        reviewApp(getContext(), getActivity());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
 
         return view;
     }
@@ -64,5 +94,25 @@ public class SettingFragment extends Fragment {
         settings.add(new Setting(3, R.drawable.ico_setting_rate, LanguageUtils.getLocaleStringResource(R.string.rate_text, getContext())));
         settings.add(new Setting(4, R.drawable.ico_app_version, LanguageUtils.getLocaleStringResource(R.string.app_version_text, getContext())));
         return  settings;
+    }
+
+    private static void reviewApp(Context context, Activity activity) {
+        ReviewManager manager = ReviewManagerFactory.create(context);
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // We can get the ReviewInfo object
+                ReviewInfo reviewInfo = task.getResult();
+                Task<Void> flow = manager.launchReviewFlow(activity, reviewInfo);
+                flow.addOnCompleteListener(task1 -> {
+                    // The flow has finished. The API does not indicate whether the user
+                    // reviewed or not, or even whether the review dialog was shown. Thus, no
+                    // matter the result, we continue our app flow.
+                });
+            } else {
+                // There was some problem, log or handle the error code.
+                @ReviewErrorCode int reviewErrorCode = ((ReviewException) task.getException()).getErrorCode();
+            }
+        });
     }
 }
