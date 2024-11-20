@@ -249,4 +249,9 @@
     <string name="save_button_text">Lưu</string>;
 
     <string name="contact_screen_description_text">Nếu bạn có bất kỳ câu hỏi và đề xuất nào, vui lòng liên hệ chúng tôi.</string>;
+    <string name="rate_app_title">Đánh giá ứng dụng</string>;
+    <string name="rate_app_message">Rate App</string>;
+    <string name="rate_btn_now">Đánh giá ngay</string>;
+    <string name="rate_btn_later">Nhắc tôi sau</string>;
+    <string name="rate_btn_no">Không cảm ơn</string>;
 </resources>

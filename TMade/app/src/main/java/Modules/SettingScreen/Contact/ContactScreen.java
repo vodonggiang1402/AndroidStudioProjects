@@ -25,6 +25,7 @@ import Modules.SettingScreen.Language.ItemClickListener;
 import Modules.SettingScreen.Language.LanguageAdapter;
 import Modules.SymbolScreen.SymbolCategory.SymbolCategory;
 import Services.Contact.ContactModel;
+import Services.Contact.ContactType;
 import Services.Language.Language;
 
 public class ContactScreen extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class ContactScreen extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false);
         rcvContact.setLayoutManager(layoutManager);
 
-        ContactAdapter contactAdapter = new ContactAdapter();
+        ContactAdapter contactAdapter = new ContactAdapter(getApplicationContext());
         contactAdapter.setData(getListContact(getApplicationContext()));
         rcvContact.setItemAnimator(new DefaultItemAnimator());
         rcvContact.setAdapter(contactAdapter);
@@ -72,9 +73,9 @@ public class ContactScreen extends AppCompatActivity {
 
     private ArrayList<ContactModel> getListContact(Context context) {
         ArrayList<ContactModel> result = new ArrayList<>();
-        result.add(new ContactModel(R.drawable.ico_phone, "+84357798368"));
-        result.add(new ContactModel(R.drawable.ico_setting_create_contact, "tmadeapp@gmail.com"));
-        result.add(new ContactModel(R.drawable.ico_youtube, "tmade-0705"));
+        result.add(new ContactModel(R.drawable.ico_phone, "+84357798368", ContactType.PHONE));
+        result.add(new ContactModel(R.drawable.ico_setting_create_contact, "tmadeapp@gmail.com", ContactType.MAIL));
+        result.add(new ContactModel(R.drawable.ico_youtube, "tmade-0705", ContactType.YOUTUBE));
         return result;
     }
 }

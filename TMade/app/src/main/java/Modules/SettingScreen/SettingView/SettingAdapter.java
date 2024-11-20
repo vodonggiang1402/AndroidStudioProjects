@@ -1,8 +1,11 @@
 package Modules.SettingScreen.SettingView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,14 +22,21 @@ import java.util.List;
 
 import Modules.SettingScreen.Contact.ContactScreen;
 import Modules.SettingScreen.Language.LanguageScreen;
-import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.Task;
 
 public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingViewHolder> {
     private final Context sContext;
+    private final Activity sActivity;
     private List<Setting> settings;
+    private ReviewManager reviewManager;
 
-    public SettingAdapter(Context sContext) {
+    public SettingAdapter(Context sContext, Activity activity) {
         this.sContext = sContext;
+        this.sActivity = activity;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -48,7 +58,12 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
         if (setting == null) {
             return;
         }
-        holder.textView.setText(setting.getText());
+        if (setting.getCurrentIndex() == 4) {
+            String versionName = setting.getText() + " " + getVersion(sContext);
+            holder.textView.setText(versionName);
+        } else {
+            holder.textView.setText(setting.getText());
+        }
         holder.textView.setCompoundDrawablesWithIntrinsicBounds(setting.getIconName(), 0, 0, 0);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +84,7 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
                         break;
                     case 3:
                         Log.i("Rate", "Rate");
+                        showRateApp();
                         break;
                     case 4:
                         Log.i("Version", "Version");
@@ -99,4 +115,51 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.SettingV
         }
     }
 
+    public String getVersion(Context context) {
+        try {
+            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            return pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            return "1.0.0";
+        }
+    }
+
+    public void showRateApp() {
+        Task<ReviewInfo> request = reviewManager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // We can get the ReviewInfo object
+                ReviewInfo reviewInfo = task.getResult();
+
+                Task<Void> flow = reviewManager.launchReviewFlow(sActivity, reviewInfo);
+                flow.addOnCompleteListener(task1 -> {
+                    // The flow has finished. The API does not indicate whether the user
+                    // reviewed or not, or even whether the review dialog was shown. Thus, no
+                    // matter the result, we continue our app flow.
+                });
+            } else {
+                // There was some problem, continue regardless of the result.
+                // show native rate app dialog on error
+                showRateAppFallbackDialog();
+            }
+        });
+    }
+
+    private void showRateAppFallbackDialog() {
+        new MaterialAlertDialogBuilder(sContext)
+                .setTitle(R.string.rate_app_title)
+                .setMessage(R.string.rate_app_message)
+                .setPositiveButton(R.string.rate_btn_now, (dialog, which) -> {
+
+                })
+                .setNegativeButton(R.string.rate_btn_later,
+                        (dialog, which) -> {
+                        })
+                .setNeutralButton(R.string.rate_btn_no,
+                        (dialog, which) -> {
+                        })
+                .setOnDismissListener(dialog -> {
+                })
+                .show();
+    }
 }

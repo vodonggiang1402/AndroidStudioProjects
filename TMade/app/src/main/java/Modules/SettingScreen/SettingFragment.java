@@ -46,7 +46,7 @@ public class SettingFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext(), RecyclerView.VERTICAL, false);
         rcvSettingView.setLayoutManager(layoutManager);
 
-        SettingAdapter settingAdapter = new SettingAdapter(this.getContext());
+        SettingAdapter settingAdapter = new SettingAdapter(this.getContext(), getActivity());
 
         rcvSettingView.setItemAnimator(new DefaultItemAnimator());
 
