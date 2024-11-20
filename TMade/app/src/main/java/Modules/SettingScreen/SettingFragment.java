@@ -25,6 +25,7 @@ import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.google.android.play.core.review.model.ReviewErrorCode;
+import com.tmadecrochet.tmade.BuildConfig;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
@@ -72,6 +73,7 @@ public class SettingFragment extends Fragment {
                 switch (item.getCurrentIndex()) {
                     case 2:
                         Log.i("Share", "Share");
+                        shareApp(getContext());
                         break;
                     case 3:
                         Log.i("Rate", "Rate");
@@ -114,5 +116,19 @@ public class SettingFragment extends Fragment {
                 @ReviewErrorCode int reviewErrorCode = ((ReviewException) task.getException()).getErrorCode();
             }
         });
+    }
+
+    private static void shareApp(Context context) {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+            String shareMessage= "\nLet me recommend you this application\n\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+            context.startActivity(Intent.createChooser(shareIntent, "choose one"));
+        } catch(Exception e) {
+            //e.toString();
+        }
     }
 }
