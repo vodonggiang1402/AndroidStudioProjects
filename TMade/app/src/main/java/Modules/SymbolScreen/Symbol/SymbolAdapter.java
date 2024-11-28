@@ -1,6 +1,7 @@
 package Modules.SymbolScreen.Symbol;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -18,25 +19,48 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
 import Helper.utils.LanguageUtils;
+import Modules.CounterScreen.SelectICounterItemListener;
+import Modules.SymbolScreen.SelectSymbolItemListener;
 import Modules.SymbolScreen.SymbolDetail.SymbolDetail;
+import Services.Counter.CounterModel;
 import Services.Symbol.SymbolModel;
 
 public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolViewHolder> {
     private final Context sContext;
     private List<SymbolModel> symbols;
+    private final SelectSymbolItemListener listener;
+    private InterstitialAd sInterstitialAd;
+    private final Activity sActivity;
 
-    public SymbolAdapter(Context sContext) {
+    public SymbolAdapter(Context sContext, SelectSymbolItemListener listener, Activity activity) {
         this.sContext = sContext;
+        this.listener = listener;
+        this.sActivity = activity;
     }
 
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolModel> list) {
         this.symbols = list;
+        initAds(sContext);
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateItemSymbolData(SymbolModel symbolModel) {
+        symbolModel.setAds(false);
+        this.listener.onUpdateItemClicked();
         notifyDataSetChanged();
     }
 
@@ -53,6 +77,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         if (symbolModel == null) {
             return;
         }
+
         String iconName = symbolModel.getIconName();
         if (!iconName.isEmpty()) {
             Context context = holder.imageView.getContext();
@@ -71,17 +96,59 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (symbolModel.isAds()) {
-//                    Log.i("Show Ads", "Show Ads");
-//                } else {
+                if (symbolModel.isAds()) {
+                    if (sInterstitialAd != null) {
+                        showAds(symbolModel);
+                    } else {
+                        initAds(sContext);
+                    }
+                } else {
                     Intent intent = new Intent(sContext, SymbolDetail.class);
                     intent.putExtra("SymbolModel", symbolModel);
                     sContext.startActivity(intent);
-//                }
+                }
             }
         });
         if (!symbolModel.isAds()) {
             holder.lockLinearLayout.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public void showAds(SymbolModel currentSymbolModel) {
+        if (sInterstitialAd != null) {
+            sInterstitialAd.show(sActivity);
+            sInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+                @Override
+                public void onAdClicked() {
+                    // Called when a click is recorded for an ad.
+                    Log.d("TAG", "Ad was clicked.");
+                }
+
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    Log.d("TAG","onAdDismissedFullScreenContent");
+                    sInterstitialAd = null;
+                    updateItemSymbolData(currentSymbolModel);
+                }
+
+                @Override
+                public void onAdFailedToShowFullScreenContent(AdError adError) {
+                    Log.d("TAG","onAdFailedToShowFullScreenContent");
+                    sInterstitialAd = null;
+                }
+
+                @Override
+                public void onAdImpression() {
+                    Log.d("TAG","onAdImpression");
+                }
+
+                @Override
+                public void onAdShowedFullScreenContent() {
+                    Log.d("TAG","onAdShowedFullScreenContent");
+                }
+            });
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }
     }
 
@@ -121,4 +188,25 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         }
         return resuls;
     }
+
+    private void initAds(Context context) {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(context,"ca-app-pub-3940256099942544/4411468910", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        sInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        sInterstitialAd = null;
+                    }
+                });
+    }
+
 }

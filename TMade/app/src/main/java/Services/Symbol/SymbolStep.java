@@ -21,10 +21,6 @@ public class SymbolStep implements Serializable {
     @Expose
     private String imageName;
 
-    public  SymbolStep () {
-
-    }
-
     public SymbolStep(String stepName, String content, String imageName) {
         this.stepName = stepName;
         this.content = content;
@@ -42,6 +38,19 @@ public class SymbolStep implements Serializable {
     public String getImageName() {
         return imageName;
     }
+
+    public void setStepName(String stepName) {
+        this.stepName = stepName;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
 
     @NonNull
     @Override

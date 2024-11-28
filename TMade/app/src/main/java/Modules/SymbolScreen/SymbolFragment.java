@@ -1,8 +1,10 @@
 package Modules.SymbolScreen;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
@@ -28,6 +34,7 @@ import Services.Symbol.SymbolResponse;
 import Helper.SharedPrefHelper;
 
 public class SymbolFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_symbol, container, false);
@@ -48,7 +55,7 @@ public class SymbolFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         rcvCategory.setLayoutManager(layoutManager);
 
-        SymbolCategoryAdapter symbolCategoryAdapter = new SymbolCategoryAdapter(this.getContext());
+        SymbolCategoryAdapter symbolCategoryAdapter = new SymbolCategoryAdapter(this.getContext(), getActivity());
 
         rcvCategory.setItemAnimator(new DefaultItemAnimator());
 
@@ -96,5 +103,4 @@ public class SymbolFragment extends Fragment {
 
         return  listSymbolCategory;
     }
-
 }

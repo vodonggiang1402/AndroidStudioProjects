@@ -3,7 +3,20 @@ plugins {
 }
 
 android {
-
+    signingConfigs {
+        debug {
+            storeFile file('/Users/xuanthao070593/Desktop/android/google_play_key/tmadeKey')
+            storePassword '@GiangVo1402#'
+            keyAlias 'tmade_upload'
+            keyPassword '@GiangVo1402#'
+        }
+        release {
+            storeFile file('/Users/xuanthao070593/Desktop/android/google_play_key/tmadeKey')
+            keyAlias 'tmade_upload'
+            storePassword '@GiangVo1402#'
+            keyPassword '@GiangVo1402#'
+        }
+    }
     buildFeatures {
         buildConfig = true
     }
@@ -23,8 +36,10 @@ android {
 
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -44,6 +59,8 @@ android {
 }
 
 dependencies {
+    implementation libs.lifecycle.process
+    implementation libs.play.services.ads
     implementation libs.review
     implementation libs.androidyoutubeplayer.core
     implementation libs.recyclerview

@@ -1,6 +1,7 @@
 package Modules.SymbolScreen.SymbolCategory;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +13,31 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import Helper.SharedPrefHelper;
+import Modules.CounterScreen.CounterCategory.CounterCategory;
+import Modules.SymbolScreen.SelectSymbolItemListener;
 import Modules.SymbolScreen.Symbol.SymbolAdapter;
 import Modules.SymbolScreen.UpdateView.UpdateViewAdapter;
+import Services.Counter.CounterModel;
+import Services.Counter.CounterResponse;
 import Services.Symbol.SymbolModel;
 
-public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAdapter.SymbolCategoryViewHolder> {
+public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAdapter.SymbolCategoryViewHolder>  implements SelectSymbolItemListener {
     private final Context cContext;
-    private List<SymbolCategory> listSymbolCategory;
+    private final Activity cActivity;
 
-    public SymbolCategoryAdapter(Context cContext) {
+    public SymbolCategoryAdapter(Context cContext, Activity activity) {
         this.cContext = cContext;
+        this.cActivity = activity;
     }
+
+    private List<SymbolCategory> listSymbolCategory;
 
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolCategory> list) {
@@ -55,7 +65,7 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
         if (!list.isEmpty()) {
             GridLayoutManager gridlayoutManager = new GridLayoutManager(this.cContext, 3);
             holder.rcvSymbolCategory.setLayoutManager(gridlayoutManager);
-            SymbolAdapter symbolAdapter = new SymbolAdapter(this.cContext);
+            SymbolAdapter symbolAdapter = new SymbolAdapter(cContext, this, cActivity);
             symbolAdapter.setData(symbolCategory.getSymbols());
             holder.rcvSymbolCategory.setAdapter(symbolAdapter);
         } else  {
@@ -72,6 +82,15 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
             return listSymbolCategory.size();
         }
         return 0;
+    }
+
+    @Override
+    public void onUpdateItemClicked() {
+        updateDataLocal();
+    }
+
+    private void updateDataLocal() {
+
     }
 
     public static class SymbolCategoryViewHolder extends RecyclerView.ViewHolder {

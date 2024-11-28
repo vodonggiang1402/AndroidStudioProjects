@@ -1,4 +1,5 @@
 package Services.Symbol;
+
 import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
@@ -11,39 +12,75 @@ public class SymbolModel implements Serializable {
 
     @SerializedName("symbol_id")
     @Expose
-    private final String symbolId;
+    private  String symbolId;
 
     @SerializedName("symbol_name")
     @Expose
-    private final String symbolName;
+    private  String symbolName;
 
     @SerializedName("symbol_des")
     @Expose
-    private final String symbolDes;
+    private  String symbolDes;
 
     @SerializedName("icon_name")
     @Expose
-    private final String iconName;
+    private  String iconName;
 
     @SerializedName("video_url")
     @Expose
-    private final String videoUrl;
+    private  String videoUrl;
 
     @SerializedName("background_color")
     @Expose
-    private final String backgroundColor;
+    private  String backgroundColor;
 
     @SerializedName("is_ads")
     @Expose
-    private final boolean isAds;
+    private  boolean isAds;
 
     @SerializedName("steps")
     @Expose
-    private final ArrayList<SymbolStep> steps;
+    private  ArrayList<SymbolStep> steps;
+
+    public void setVideoCount(String videoCount) {
+        this.videoCount = videoCount;
+    }
+
+    public void setSteps(ArrayList<SymbolStep> steps) {
+        this.steps = steps;
+    }
+
+    public void setAds(boolean ads) {
+        isAds = ads;
+    }
+
+    public void setBackgroundColor(String backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
+    public void setIconName(String iconName) {
+        this.iconName = iconName;
+    }
+
+    public void setSymbolDes(String symbolDes) {
+        this.symbolDes = symbolDes;
+    }
+
+    public void setSymbolName(String symbolName) {
+        this.symbolName = symbolName;
+    }
+
+    public void setSymbolId(String symbolId) {
+        this.symbolId = symbolId;
+    }
 
     @SerializedName("video_count")
     @Expose
-    private final String videoCount;
+    private  String videoCount;
 
     public SymbolModel(String symbolId, String symbolName, String symbolDes, String iconName, String videoUrl, String backgroundColor, boolean isAds, ArrayList<SymbolStep> steps, String videoCount) {
         this.symbolId = symbolId;
@@ -92,6 +129,7 @@ public class SymbolModel implements Serializable {
     public String getVideoCount() {
         return videoCount;
     }
+
 
     @NonNull
     @Override
