@@ -127,7 +127,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
                 @Override
                 public void onAdDismissedFullScreenContent() {
                     Log.d("TAG","onAdDismissedFullScreenContent");
-                    sInterstitialAd = null;
+                    initAds(sContext);
                     updateItemSymbolData(currentSymbolModel);
                 }
 
