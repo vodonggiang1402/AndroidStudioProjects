@@ -27,6 +27,7 @@ import Modules.SymbolScreen.UpdateView.UpdateViewAdapter;
 import Services.Counter.CounterModel;
 import Services.Counter.CounterResponse;
 import Services.Symbol.SymbolModel;
+import Services.Symbol.SymbolResponse;
 
 public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAdapter.SymbolCategoryViewHolder>  implements SelectSymbolItemListener {
     private final Context cContext;
@@ -90,7 +91,26 @@ public class SymbolCategoryAdapter extends RecyclerView.Adapter<SymbolCategoryAd
     }
 
     private void updateDataLocal() {
+        ArrayList<ArrayList<SymbolModel>> list = new ArrayList<ArrayList<SymbolModel>>();
+        SymbolCategory list0 =  listSymbolCategory.get(0);
+        list.add(list0.getSymbols());
 
+        SymbolCategory list1 =  listSymbolCategory.get(1);
+        list.add(list1.getSymbols());
+
+        SymbolCategory list2 =  listSymbolCategory.get(2);
+        list.add(list2.getSymbols());
+
+        SymbolCategory list3 =  listSymbolCategory.get(3);
+        list.add(list3.getSymbols());
+
+        SymbolCategory list4 =  listSymbolCategory.get(4);
+        list.add(list4.getSymbols());
+
+        Gson gson = new Gson();
+        SymbolResponse response = new SymbolResponse(list);
+        String responseString = gson.toJson(response);
+        SharedPrefHelper.saveSharedOBJECT(cContext,"symbol_response", responseString);
     }
 
     public static class SymbolCategoryViewHolder extends RecyclerView.ViewHolder {
