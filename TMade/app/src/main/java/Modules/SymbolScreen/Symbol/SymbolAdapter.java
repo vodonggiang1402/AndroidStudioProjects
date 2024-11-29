@@ -30,6 +30,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
+import Data.Constant;
 import Helper.utils.LanguageUtils;
 import Modules.CounterScreen.SelectICounterItemListener;
 import Modules.SymbolScreen.SelectSymbolItemListener;
@@ -191,8 +192,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
 
     private void initAds(Context context) {
         AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(context,"ca-app-pub-3940256099942544/4411468910", adRequest,
+        InterstitialAd.load(context, Constant.Ads.getInterstitialAdsId(), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
