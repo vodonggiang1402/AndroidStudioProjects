@@ -4,6 +4,10 @@ import com.tmadecrochet.tmade.BuildConfig;
 
 public class Constant {
 
+    public static class Timer_Ads {
+        public static final double OPEN_APP = 4;
+    }
+
     public static class Value {
         public static final int DEFAULT_LANGUAGE_ID = 0;
     }
@@ -23,7 +27,7 @@ public class Constant {
 
         public static String getOpenAppAdsId() {
             if (BuildConfig.DEBUG) {
-                openAppAdsId =  "ca-app-pub-3940256099942544/5575463023";
+                openAppAdsId =  "ca-app-pub-3940256099942544/9257395921";
             } else {
                 openAppAdsId =  "ca-app-pub-9183925814024348/4095837925";
             }

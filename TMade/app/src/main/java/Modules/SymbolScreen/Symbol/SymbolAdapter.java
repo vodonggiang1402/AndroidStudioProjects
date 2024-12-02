@@ -54,7 +54,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
     @SuppressLint("NotifyDataSetChanged")
     public void setData(List<SymbolModel> list) {
         this.symbols = list;
-        initAds(sContext);
+        initInterstitialAds(sContext);
         notifyDataSetChanged();
     }
 
@@ -101,7 +101,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
                     if (sInterstitialAd != null) {
                         showAds(symbolModel);
                     } else {
-                        initAds(sContext);
+                        initInterstitialAds(sContext);
                     }
                 } else {
                     Intent intent = new Intent(sContext, SymbolDetail.class);
@@ -122,19 +122,19 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
                 @Override
                 public void onAdClicked() {
                     // Called when a click is recorded for an ad.
-                    Log.d("TAG", "Ad was clicked.");
+                    Log.d("sInterstitialAd", "Ad was clicked.");
                 }
 
                 @Override
                 public void onAdDismissedFullScreenContent() {
-                    Log.d("TAG","onAdDismissedFullScreenContent");
-                    initAds(sContext);
+                    Log.d("sInterstitialAd","onAdDismissedFullScreenContent");
+                    initInterstitialAds(sContext);
                     updateItemSymbolData(currentSymbolModel);
                 }
 
                 @Override
                 public void onAdFailedToShowFullScreenContent(AdError adError) {
-                    Log.d("TAG","onAdFailedToShowFullScreenContent");
+                    Log.d("sInterstitialAd","onAdFailedToShowFullScreenContent");
                     sInterstitialAd = null;
                 }
 
@@ -145,7 +145,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
 
                 @Override
                 public void onAdShowedFullScreenContent() {
-                    Log.d("TAG","onAdShowedFullScreenContent");
+                    Log.d("sInterstitialAd","onAdShowedFullScreenContent");
                 }
             });
         } else {
@@ -190,8 +190,9 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
         return resuls;
     }
 
-    private void initAds(Context context) {
+    private void initInterstitialAds(Context context) {
         AdRequest adRequest = new AdRequest.Builder().build();
+        Log.e("initInterstitialAds", Constant.Ads.getInterstitialAdsId());
         InterstitialAd.load(context, Constant.Ads.getInterstitialAdsId(), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
@@ -203,6 +204,7 @@ public class SymbolAdapter extends RecyclerView.Adapter<SymbolAdapter.SymbolView
 
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        Log.d("sInterstitialAd", loadAdError.toString());
                         // Handle the error
                         sInterstitialAd = null;
                     }

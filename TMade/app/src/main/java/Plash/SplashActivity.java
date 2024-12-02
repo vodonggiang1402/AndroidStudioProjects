@@ -1,5 +1,6 @@
 package Plash;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
+import Base.TMadeApp;
 import Helper.utils.LanguageUtils;
 import Main.MainActivity;
 import com.tmadecrochet.tmade.R;
@@ -34,11 +36,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         LanguageUtils.loadLocale();
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("hasFirstRunApp", MODE_PRIVATE);
         boolean prefValue = prefs.getBoolean("init_app", false);
@@ -76,26 +80,40 @@ public class SplashActivity extends AppCompatActivity {
                 throw new RuntimeException(e);
             }
 
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //Save information that this application has run for the first time
-                    SharedPreferences settings = getSharedPreferences("hasFirstRunApp", 0);
-                    SharedPreferences.Editor edit = settings.edit();
-                    edit.putBoolean("init_app", true);
-                    edit.apply();
+            //Save information that this application has run for the first time
+            SharedPreferences settings = getSharedPreferences("hasFirstRunApp", 0);
+            SharedPreferences.Editor edit = settings.edit();
+            edit.putBoolean("init_app", true);
+            edit.apply();
+            finishedLoadSplashView();
 
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                }
-            }, 3000);
         } else {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                }
-            }, 3000);
+            finishedLoadSplashView();
         }
+    }
+
+    public void finishedLoadSplashView() {
+        Application application = getApplication();
+        ((TMadeApp)application).showAdIfAvailable(this, new TMadeApp.OnShowAdCompleteListener() {
+            @Override
+            public void onShowAdComplete() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startMainActivity();
+                    }
+                }, 3000);
+            }
+
+            @Override
+            public void onShowAdDismiss() {
+                startMainActivity();
+            }
+        });
+    }
+
+    public void startMainActivity() {
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
     }
 
     public String readFile(String fileName) throws IOException
