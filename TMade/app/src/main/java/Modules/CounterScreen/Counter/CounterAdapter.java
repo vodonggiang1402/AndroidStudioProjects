@@ -1,6 +1,7 @@
 package Modules.CounterScreen.Counter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.gson.Gson;
 import com.tmadecrochet.tmade.R;
 
@@ -30,25 +38,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import Data.Constant;
 import Helper.SharedPrefHelper;
 import Helper.utils.LanguageUtils;
 import Modules.CounterScreen.CounterCategory.CounterCategory;
 import Modules.CounterScreen.SelectICounterItemListener;
 import Services.Counter.CounterModel;
 import Services.Counter.CounterResponse;
+import Services.Symbol.SymbolModel;
 
 public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterViewHolder> {
     private final Context cContext;
     private List<CounterModel> counters;
     private final SelectICounterItemListener listener;
+    private InterstitialAd cInterstitialAd;
+    private final Activity cActivity;
 
-    public CounterAdapter(Context cContext, SelectICounterItemListener selectICounterItemListener) {
+    public CounterAdapter(Context cContext, SelectICounterItemListener selectICounterItemListener, Activity activity) {
         this.cContext = cContext;
         this.listener = selectICounterItemListener;
+        this.cActivity = activity;
     }
 
     public void setData(List<CounterModel> list) {
         this.counters = list;
+        initInterstitialAds(cContext);
         updateDataSetChanged();
     }
 
@@ -209,7 +223,7 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         resetLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetItemCountData(counterModel);
+                showAds(counterModel);
                 dialog.dismiss();
             }
         });
@@ -272,6 +286,65 @@ public class CounterAdapter extends RecyclerView.Adapter<CounterAdapter.CounterV
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT) );
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialoAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    public void showAds(CounterModel counterModel) {
+        if (cInterstitialAd != null) {
+            cInterstitialAd.show(cActivity);
+            cInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+                @Override
+                public void onAdClicked() {
+                    // Called when a click is recorded for an ad.
+                    Log.d("sInterstitialAd", "Ad was clicked.");
+                }
+
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    Log.d("sInterstitialAd","onAdDismissedFullScreenContent");
+                    initInterstitialAds(cContext);
+                    resetItemCountData(counterModel);
+                }
+
+                @Override
+                public void onAdFailedToShowFullScreenContent(AdError adError) {
+                    Log.d("sInterstitialAd","onAdFailedToShowFullScreenContent");
+                    cInterstitialAd = null;
+                }
+
+                @Override
+                public void onAdImpression() {
+                    Log.d("TAG","onAdImpression");
+                }
+
+                @Override
+                public void onAdShowedFullScreenContent() {
+                    Log.d("sInterstitialAd","onAdShowedFullScreenContent");
+                }
+            });
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
+    }
+
+    private void initInterstitialAds(Context context) {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        Log.e("initInterstitialAds", Constant.Ads.getInterstitialAdsId());
+        InterstitialAd.load(context, Constant.Ads.getInterstitialAdsId(), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        cInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        Log.d("sInterstitialAd", loadAdError.toString());
+                        // Handle the error
+                        cInterstitialAd = null;
+                    }
+                });
     }
 }
 

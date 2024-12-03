@@ -63,7 +63,7 @@ public class CounterFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         rcvCounterCategory.setLayoutManager(layoutManager);
 
-        CounterCategoryAdapter counterCategoryAdapter = new CounterCategoryAdapter(this.getContext());
+        CounterCategoryAdapter counterCategoryAdapter = new CounterCategoryAdapter(this.getContext(), getActivity());
 
         rcvCounterCategory.setItemAnimator(new DefaultItemAnimator());
 
