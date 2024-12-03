@@ -3,6 +3,7 @@ package Modules.TutorialScreen;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -13,12 +14,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.tmadecrochet.tmade.BuildConfig;
 import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
+import Data.Constant;
 import Helper.SharedPrefHelper;
 import Helper.utils.LanguageUtils;
 import Modules.TutorialScreen.Tutorial.TutorialAdapter;
@@ -39,7 +50,7 @@ public class TutorialFragment extends Fragment {
             activity.setTitle(null);
         }
 
-        TextView textView = (TextView)view.findViewById(R.id.tutorial_toolbar_title);
+        TextView textView = (TextView) view.findViewById(R.id.tutorial_toolbar_title);
         textView.setText(LanguageUtils.getLocaleStringResource(R.string.tab_tutorial_title, getContext()));
 
         final FragmentActivity c = getActivity();
@@ -52,15 +63,29 @@ public class TutorialFragment extends Fragment {
         tutorialAdapter.setData(getListTutorial(getContext()));
         rcvTutorial.setAdapter(tutorialAdapter);
 
+        initAds(getContext(), view);
+
         return view;
     }
 
     private ArrayList<TutorialModel> getListTutorial(Context context) {
-        TutorialResponse data = (TutorialResponse) SharedPrefHelper.getSharedOBJECT(context,"tutorial_response", TutorialResponse.class);
+        TutorialResponse data = (TutorialResponse) SharedPrefHelper.getSharedOBJECT(context, "tutorial_response", TutorialResponse.class);
         if (!data.list.isEmpty()) {
             return data.list;
         }
-        return  null;
+        return null;
     }
 
+    public void initAds(Context context, View view) {
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdView adView = (AdView)view.findViewById(R.id.tutorial_banner_ad_view);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+    }
 }

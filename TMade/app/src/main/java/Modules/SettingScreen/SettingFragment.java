@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.review.ReviewException;
 import com.google.android.play.core.review.ReviewInfo;
@@ -30,6 +36,7 @@ import com.tmadecrochet.tmade.R;
 
 import java.util.ArrayList;
 
+import Data.Constant;
 import Helper.utils.LanguageUtils;
 import Modules.SettingScreen.Contact.ContactScreen;
 import Modules.SettingScreen.Language.LanguageScreen;
@@ -85,6 +92,8 @@ public class SettingFragment extends Fragment {
             }
         });
 
+        initAds(getContext(), view);
+
         return view;
     }
 
@@ -130,5 +139,18 @@ public class SettingFragment extends Fragment {
         } catch(Exception e) {
             //e.toString();
         }
+    }
+
+    public void initAds(Context context, View view) {
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdView adView = (AdView)view.findViewById(R.id.setting_banner_ad_view);
+        AdRequest adRequest= new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 }

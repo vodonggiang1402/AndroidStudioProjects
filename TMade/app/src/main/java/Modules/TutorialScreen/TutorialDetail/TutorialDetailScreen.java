@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -14,10 +15,16 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.tmadecrochet.tmade.R;
 
 import java.util.List;
 
+import Data.Constant;
 import Helper.utils.LanguageUtils;
 import Modules.SymbolScreen.SymbolDetail.Step.StepAdapter;
 import Services.Symbol.SymbolModel;
@@ -74,6 +81,8 @@ public class TutorialDetailScreen extends AppCompatActivity {
             }
         }
 
+        initAds(getApplicationContext());
+
     }
 
     public static String getStringByIdName(Context context, String idName) {
@@ -87,5 +96,19 @@ public class TutorialDetailScreen extends AppCompatActivity {
             }
         }
         return resuls;
+    }
+
+    public void initAds(Context context) {
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdView adView = findViewById(R.id.tutorial_detail_banner_ad_view);
+        AdRequest adRequest= new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
     }
 }

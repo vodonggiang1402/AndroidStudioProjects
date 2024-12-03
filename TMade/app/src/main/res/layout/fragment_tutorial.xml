@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Modules.TutorialScreen.TutorialFragment">
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tutorial_toolbar"
         android:layout_width="match_parent"
@@ -33,5 +33,15 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="64dp"
         android:background="@color/background_color" />
-</FrameLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tutorial_banner_ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="ca-app-pub-9183925814024348/9503141499" />
+</RelativeLayout>
