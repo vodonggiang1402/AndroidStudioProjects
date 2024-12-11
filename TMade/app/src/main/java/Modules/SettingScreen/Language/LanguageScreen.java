@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tmadecrochet.tmade.R;
 
 import Helper.utils.LanguageUtils;
+import Main.MainActivity;
+import Modules.SettingScreen.SettingFragment;
 import Services.Language.Language;
 
 public class LanguageScreen extends AppCompatActivity {
@@ -80,6 +83,14 @@ public class LanguageScreen extends AppCompatActivity {
     private void onChangeLanguageSuccessfully(final Language language) {
         LanguageUtils.changeLanguage(language);
         setResult(RESULT_OK, new Intent());
-        finish();
+        restartApp();
     }
+
+    private void restartApp() {
+        Intent i = getBaseContext().getPackageManager()
+                .getLaunchIntentForPackage(getBaseContext().getPackageName());
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
 }
